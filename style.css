@@ -1,0 +1,57 @@
+.row
+{
+    margin: 0!important;
+    padding: 0!important;
+    text-decoration: none;
+    list-style: none;
+}
+
+ul a
+{
+    color: #fff!important;
+    font-size: 14px!important;
+}
+
+.navbar-expand-lg .navbar-nav .dropdown-menu 
+    {
+        border-color: #fff!important;
+        background-color: transparent!important;
+    }
+
+#banner
+{
+    background-image: url(assets/Banniere.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 38rem;
+}
+
+#text-left h1
+{
+    font-family: 'HelveticaNeue-CondensedBlack';
+    font-size: 50px!important;
+    color: #FFFFFF;
+    letter-spacing: 2.75px;
+}
+
+.find_button
+{
+    background: #FFFFFF!important;
+    font-family: 'HelveticaNeue-CondensedBlack';
+    font-size: 14px!important;
+    letter-spacing: 0.9px;
+    margin-top: 1rem!important;
+}
+
+
+@media (max-width: 992px)
+{
+    .connected_button {
+        margin-left: -18px;
+    }
+    .navbar-expand-lg .navbar-nav .dropdown-menu 
+    {
+        border: none;
+    }
+}
