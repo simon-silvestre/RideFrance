@@ -55,6 +55,7 @@ ul a
     font-size: 14px!important;
     letter-spacing: 0.9px;
     margin-top: 1rem!important;
+    color: #5CAFED;
 }
 
 /************************** HomeIcons **************************/
@@ -68,6 +69,72 @@ ul a
     text-align: center;
 }
 
+/************************** Actualités **************************/
+
+#Actualités h2
+{
+    font-family: 'HelveticaNeue-CondensedBlack';
+    font-size: 40px!important;
+    letter-spacing: 0.9px;
+}
+
+.card-style
+{
+    border: none!important;
+}
+
+.carousel-indicators
+{
+    top: 21rem!important;
+}
+
+.carousel-indicators li
+{
+    background-color: grey!important;
+    width: 12px!important;
+    height: 12px!important;
+    border-radius: 50%!important;
+    opacity: 0.15!important;
+}
+
+.carousel-indicators .active
+{
+    background-color: #5CAFED!important;
+    opacity: 1!important;
+}
+
+.date-card
+{
+    font-family: 'HelveticaNeue-Medium';
+    font-size: 16px;
+    color: #807465;
+    line-height: 28px;
+}
+
+.card-body
+{
+    padding-left: 0!important;
+}
+
+.card-description
+{
+    padding-left: 0!important;
+    font-weight: bold;
+    font-size: 20px;
+    color: #2F281E;
+    line-height: 34px;
+}
+
+.card-description-orange
+{
+    color: #5CAFED!important;
+}
+
+img .card-img-top 
+{
+    border-radius: 0.80rem 0.80rem 0rem 0rem;
+    cursor: pointer;
+}
 
 /************************** MediaQueries **************************/
 
@@ -84,5 +151,33 @@ ul a
 
     .connected_button {
         margin-left: -18px;
+    }
+
+    /**************** Actualités ****************/
+
+    .card-description
+    {
+        padding: 0!important;
+    }
+
+    .card-body 
+    {
+        padding-right: 0!important;
+    }
+
+    .carousel-indicators
+    {
+        top: 62rem!important;
+    }
+}
+
+@media screen and (max-width: 375px)
+{
+    /**************** Actualités ****************/
+
+    .card-description 
+    {
+        font-size: 18px!important;
+        line-height: 28px!important;
     }
 }
