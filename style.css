@@ -1,10 +1,4 @@
-.row
-{
-    margin: 0!important;
-    padding: 0!important;
-    text-decoration: none;
-    list-style: none;
-}
+/************************** NavBar **************************/
 
 ul a
 {
@@ -13,10 +7,21 @@ ul a
 }
 
 .navbar-expand-lg .navbar-nav .dropdown-menu 
-    {
-        border-color: #fff!important;
-        background-color: transparent!important;
-    }
+{
+    border-color: #fff!important;
+    background-color: transparent!important;
+}
+
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+    color: #e5eef3bf!important;
+}
+
+.dropdown-item:focus, .dropdown-item:hover 
+{
+    background-color: #0554F2!important;
+}
+
+/************************** Banner **************************/
 
 #banner
 {
@@ -25,6 +30,14 @@ ul a
     background-repeat: no-repeat;
     background-size: cover;
     height: 38rem;
+}
+
+#banner .row
+{
+    margin: 0!important;
+    padding: 0!important;
+    text-decoration: none;
+    list-style: none;
 }
 
 #text-left h1
@@ -44,14 +57,32 @@ ul a
     margin-top: 1rem!important;
 }
 
+/************************** HomeIcons **************************/
+
+.home_icon_text
+{
+    font-family: 'HelveticaNeue-CondensedBold';
+    font-size: 20px;
+    color: #000;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+
+/************************** MediaQueries **************************/
 
 @media (max-width: 992px)
 {
-    .connected_button {
-        margin-left: -18px;
-    }
+    /**************** NavBar ****************/
+
     .navbar-expand-lg .navbar-nav .dropdown-menu 
     {
         border: none;
+    }
+
+    /**************** Banner ****************/
+
+    .connected_button {
+        margin-left: -18px;
     }
 }

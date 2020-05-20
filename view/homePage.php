@@ -46,6 +46,8 @@
         </form>
       </div>
     </nav>
+
+
     <div class="row justify-content-around">
       <div class="col-lg-5 text-center text-lg-left mt-lg-5 ml-4" id="text-left">
         <h1 class="text-center text-lg-left mt-lg-5">Envie de rider ?</br>trouve un skatepark </h1>
@@ -54,6 +56,30 @@
       <div class="col-lg-6 col-md-8 col-sm-10 mt-lg-5" id="image-container">
         <img src="assets/quarter.png" alt="rampe" class="col-12 mt-5" id="img-right">
       </div>
+    </div>
+  </div>
+
+  <div class="container-fluid" id="homeIcon">
+    <div class="row justify-content-around mt-5">
+      <div class="home_icon col-4 text-center mt-3">
+        <img class="mx-auto" src="assets/icon-carte.png" alt="carte de france">
+        <p class="home_icon_text text-center mt-3">chosir sa région</p>
+      </div>
+      <div class="home_icon col-4 text-center mt-3">
+        <img class="mx-auto" src="assets/icon-skate.png" alt="skateur">
+        <p class="home_icon_text text-center mt-3">Aller rider</p>
+      </div>
+      <div class="home_icon col-4 text-center mt-3">
+        <img class="mx-auto" src="assets/icon-notes.png" alt="notes">
+        <p class="home_icon_text text-center mt-3">noter le park</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container-fluid" id="Actualités">
+    <div class="row mt-5">
+      <h2 class="text-center">les dernières actualités</h2>
     </div>
   </div>
 </body>
