@@ -12,7 +12,7 @@ class ControllerbackEnd
     {
         $hashpass = password_hash($mdp, PASSWORD_BCRYPT);
 
-        $userManager = new UserManager();
+        $userManager = new Simon\RideFrance\Model\UserManager();
         $Register = $userManager->Register($nom, $prenom, $email, $pseudo, $hashpass);
 
         $_SESSION['message'] = "Vous êtes maintenant inscrit";
@@ -23,7 +23,7 @@ class ControllerbackEnd
 
     function LoginSysteme($pseudo, $mdp)
     {
-        $userManager = new UserManager();
+        $userManager = new Simon\RideFrance\Model\UserManager();
 
         $resultLogin = $userManager->Login($pseudo);
 

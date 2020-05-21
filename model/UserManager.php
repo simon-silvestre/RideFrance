@@ -1,5 +1,10 @@
 <?php 
-class UserManager
+
+namespace Simon\RideFrance\Model;
+
+require_once("model/Config.php");
+
+class UserManager extends Config
 {
     public function register($nom, $prenom, $email, $pseudo, $hashpass)
     {
@@ -20,9 +25,4 @@ class UserManager
         return $resultLogin;
     }
 
-    private function dbConnect()
-    {
-        $db = new PDO('mysql:host=localhost;dbname=rideFrance;charset=utf8', 'root', 'root');
-        return $db;
-    }
 }
