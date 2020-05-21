@@ -13,162 +13,167 @@
 </head>
 
 <body>
-  <div class="container-fluid" id="banner">
-    <nav class="navbar navbar-expand-lg navbar-dark py-4">
-      <a class="navbar-brand" href="#"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <header id="banner">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-dark py-4">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse mr-lg-5" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto mr-lg-3">
-          <li class="nav-item active">
-            <a class="nav-link mr-lg-3" href="#">ACCUEIL <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link mr-lg-3" href="#">SKATEPARKS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link mr-lg-3" href="#">CONTACT</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link mr-lg-3 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              ADMINISTRATEUR
-            </a>
-            <div class="dropdown-menu" aria-labelled="navbarDropdown">
-              <a class="dropdown-item" href="#">POSTS MANAGER</a>
-              <a class="dropdown-item" href="#">COMMENTAIRES MANAGER</a>
-            </div>
-          </li>
-        </ul>
-        <form class="form-inline navbar">
-          <a href="#" class="btn btn-outline-light connected_button">SE CONNECTER</a>
-        </form>
-      </div>
-    </nav>
-
-
-    <div class="row justify-content-around">
-      <div class="col-lg-5 text-center text-lg-left mt-lg-5 ml-md-4" id="text-left">
-        <h1 class="text-center text-lg-left mt-lg-5">Envie de rider ?</br>trouve un skatepark </h1>
-        <a href="index.php?action=login" class="btn find_button rounded-pill px-4 py-2">Trouver un skatepark</a>
-      </div>
-      <div class="col-lg-6 col-md-8 col-sm-10 mt-lg-5" id="image-container">
-        <img src="assets/quarter.png" alt="rampe" class="col-12 mt-5" id="img-right">
-      </div>
-    </div>
-  </div>
-
-  <div class="container-fluid" id="homeIcon">
-    <div class="row justify-content-around mt-5">
-      <div class="home_icon col-xl-3 col-md-4 col-7 text-center mt-5">
-        <img class="mx-auto col-xl-9 col-lg-8 col-md-8 col-sm-7" src="assets/map.png" alt="carte de france" id="home_icon_img">
-        <p class="home_icon_text text-center mt-3">chosir sa région</p>
-      </div>
-      <div class="home_icon col-xl-3 col-md-4 col-7 text-center mt-5">
-        <img class="mx-auto col-xl-9 col-lg-8 col-md-8 col-sm-7" src="assets/skate.png" alt="skateur" id="home_icon_img">
-        <p class="home_icon_text text-center mt-3">Aller rider</p>
-      </div>
-      <div class="home_icon col-xl-3 col-md-4 col-7 text-center mt-5">
-        <img class="mx-auto col-xl-9 col-lg-8 col-md-8 col-sm-7" src="assets/review.png" alt="notes" id="home_icon_img">
-        <p class="home_icon_text text-center mt-3">noter le park</p>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="container-fluid" id="Actualités">
-    <div class="row mt-5">
-      <h2 class="mx-auto text-center mt-5">les dernières actualités</h2>
-    </div>
-    <div class="col-xl-10 col-lg-12 col-md-7 col-sm-9 ml-lg-8 mt-lg-3 mx-auto mt-5 text-lg-left text-center">
-        <div id="carouselExampleCaptions" class="carousel slide mt-5" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="card-container d-flex justify-content-lg-between justify-content-center flex-wrap">
-                <div class="card card-style" style="width: 18rem;">
-                  <img src="assets/1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <p class="card-text date-card"><strong>Gennevillier</strong> |  03 March 2019</p>
-                    <p class="card-description col-12 col-lg-11">Ici sera placer l'intro du skatepark</p>
-                  </div>
-                </div>
-                <div class="card card-style" style="width: 18rem;">
-                  <img src="assets/2.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text date-card"><strong>Poissy</strong> |  04 March 2019</p>
-                    <p class="card-description card-description-orange col-12 col-lg-11">Ici sera placer l'intro du skatepark</p>
-                  </div>
-                </div>
-                <div class="card card-style" style="width: 18rem;">
-                  <img src="assets/3.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text date-card"><strong>Deauville</strong> |  05 March 2019</p>
-                    <p class="card-description col-12">Ici sera placer l'intro du skatepark</p>
-                  </div>
-                </div>
+        <div class="collapse navbar-collapse mr-lg-5" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mr-lg-3">
+            <li class="nav-item active">
+              <a class="nav-link mr-lg-3" href="#">ACCUEIL <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mr-lg-3" href="#">SKATEPARKS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mr-lg-3" href="#">CONTACT</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link mr-lg-3 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                ADMINISTRATEUR
+              </a>
+              <div class="dropdown-menu" aria-labelled="navbarDropdown">
+                <a class="dropdown-item" href="#">POSTS MANAGER</a>
+                <a class="dropdown-item" href="#">COMMENTAIRES MANAGER</a>
               </div>
-            </div>
+            </li>
+          </ul>
+          <form class="form-inline navbar">
+            <a href="#" class="btn btn-outline-light connected_button">SE CONNECTER</a>
+          </form>
+        </div>
+      </nav>
 
-            <div class="carousel-item">
-              <div class="card-container d-flex justify-content-lg-between justify-content-center flex-wrap">
-                <div class="card card-style" style="width: 18rem;">
-                  <img src="assets/1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <p class="card-text date-card"><strong>Gennevillier</strong> |  03 March 2019</p>
-                      <p class="card-description ccol-12 col-lg-11">Ici sera placer l'intro du skatepark</p>
-                  </div>
-                </div>
-                <div class="card card-style" style="width: 18rem;">
-                  <img src="assets/2.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text date-card"><strong>Poissy</strong> |  04 March 2019</p>
-                    <p class="card-description card-description-orange col-12 col-lg-11">Ici sera placer l'intro du skatepark</p>
-                  </div>
-                </div>
-                <div class="card card-style" style="width: 18rem;">
-                  <img src="assets/3.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text date-card"><strong>Deauville</strong> |  05 March 2019</p>
-                    <p class="card-description col-12">Ici sera placer l'intro du skatepark</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <div class="row justify-content-around">
+        <div class="col-lg-5 text-center text-lg-left mt-lg-5 ml-md-4" id="text-left">
+          <h1 class="text-center text-lg-left mt-lg-5">Envie de rider ?</br>trouve un skatepark </h1>
+          <a href="index.php?action=login" class="btn find_button rounded-pill px-4 py-2">Trouver un skatepark</a>
+        </div>
+        <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mt-lg-5" id="image-container">
+          <img src="assets/quarter.png" alt="rampe" class="col-12 mt-xl-3 mt-5" id="img-right">
+        </div>
+      </div>
+    </div>
+  </header>
 
-            <div class="carousel-item">
-              <div class="card-container d-flex justify-content-lg-between justify-content-center flex-wrap">
-                <div class="card card-style" style="width: 18rem;">
-                  <img src="assets/1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
+  <section id="homeIcon">
+    <div class="container-fluid">
+      <div class="row justify-content-around mt-5">
+        <div class="home_icon col-xl-4 col-md-4 col-7 text-center mt-5">
+          <img class="mx-auto col-xl-5 col-lg-8 col-md-8 col-sm-7" src="assets/map.png" alt="carte de france" id="home_icon_img">
+          <p class="home_icon_text text-center mt-3">chosir sa région</p>
+        </div>
+        <div class="home_icon col-xl-4 col-md-4 col-7 text-center mt-5">
+          <img class="mx-auto col-xl-5 col-lg-8 col-md-8 col-sm-7" src="assets/skate.png" alt="skateur" id="home_icon_img">
+          <p class="home_icon_text text-center mt-3">Aller rider</p>
+        </div>
+        <div class="home_icon col-xl-4 col-md-4 col-7 text-center mt-5">
+          <img class="mx-auto col-xl-5 col-lg-8 col-md-8 col-sm-7" src="assets/review.png" alt="notes" id="home_icon_img">
+          <p class="home_icon_text text-center mt-3">noter le park</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="Actualités">
+    <div class="container-fluid">
+      <div class="row mt-5">
+        <h2 class="mx-auto text-center mt-5">les dernières actualités</h2>
+      </div>
+      <div class="col-xl-10 col-lg-12 col-md-7 col-sm-9 ml-lg-8 mt-lg-3 mx-auto mt-5 text-lg-left text-center">
+          <div id="carouselExampleCaptions" class="carousel slide mt-5" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+              <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="card-container d-flex justify-content-lg-between justify-content-center flex-wrap">
+                  <div class="card card-style" style="width: 18rem;">
+                    <img src="assets/1.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
                       <p class="card-text date-card"><strong>Gennevillier</strong> |  03 March 2019</p>
                       <p class="card-description col-12 col-lg-11">Ici sera placer l'intro du skatepark</p>
+                    </div>
+                  </div>
+                  <div class="card card-style" style="width: 18rem;">
+                    <img src="assets/2.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text date-card"><strong>Poissy</strong> |  04 March 2019</p>
+                      <p class="card-description card-description-orange col-12 col-lg-11">Ici sera placer l'intro du skatepark</p>
+                    </div>
+                  </div>
+                  <div class="card card-style" style="width: 18rem;">
+                    <img src="assets/3.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text date-card"><strong>Deauville</strong> |  05 March 2019</p>
+                      <p class="card-description col-12">Ici sera placer l'intro du skatepark</p>
+                    </div>
                   </div>
                 </div>
-                <div class="card card-style" style="width: 18rem;">
-                  <img src="assets/2.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text date-card"><strong>Poissy</strong> |  04 March 2019</p>
-                    <p class="card-description card-description-orange col-12 col-lg-11">Ici sera placer l'intro du skatepark</p>
+              </div>
+
+              <div class="carousel-item">
+                <div class="card-container d-flex justify-content-lg-between justify-content-center flex-wrap">
+                  <div class="card card-style" style="width: 18rem;">
+                    <img src="assets/1.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <p class="card-text date-card"><strong>Gennevillier</strong> |  03 March 2019</p>
+                        <p class="card-description ccol-12 col-lg-11">Ici sera placer l'intro du skatepark</p>
+                    </div>
+                  </div>
+                  <div class="card card-style" style="width: 18rem;">
+                    <img src="assets/2.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text date-card"><strong>Poissy</strong> |  04 March 2019</p>
+                      <p class="card-description card-description-orange col-12 col-lg-11">Ici sera placer l'intro du skatepark</p>
+                    </div>
+                  </div>
+                  <div class="card card-style" style="width: 18rem;">
+                    <img src="assets/3.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text date-card"><strong>Deauville</strong> |  05 March 2019</p>
+                      <p class="card-description col-12">Ici sera placer l'intro du skatepark</p>
+                    </div>
                   </div>
                 </div>
-                <div class="card card-style" style="width: 18rem;">
-                  <img src="assets/3.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text date-card"><strong>Deauville</strong> |  05 March 2019</p>
-                    <p class="card-description col-12">Ici sera placer l'intro du skatepark</p>
+              </div>
+
+              <div class="carousel-item">
+                <div class="card-container d-flex justify-content-lg-between justify-content-center flex-wrap">
+                  <div class="card card-style" style="width: 18rem;">
+                    <img src="assets/1.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <p class="card-text date-card"><strong>Gennevillier</strong> |  03 March 2019</p>
+                        <p class="card-description col-12 col-lg-11">Ici sera placer l'intro du skatepark</p>
+                    </div>
+                  </div>
+                  <div class="card card-style" style="width: 18rem;">
+                    <img src="assets/2.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text date-card"><strong>Poissy</strong> |  04 March 2019</p>
+                      <p class="card-description card-description-orange col-12 col-lg-11">Ici sera placer l'intro du skatepark</p>
+                    </div>
+                  </div>
+                  <div class="card card-style" style="width: 18rem;">
+                    <img src="assets/3.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text date-card"><strong>Deauville</strong> |  05 March 2019</p>
+                      <p class="card-description col-12">Ici sera placer l'intro du skatepark</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+      </div>
     </div>
-  </div>
+  </section>
 </body>
 </html>

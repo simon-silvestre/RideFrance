@@ -21,12 +21,17 @@ ul a
     background-color: #0554F2!important;
 }
 
+nav#navbar_bleu
+{
+    background-color: #458bc8!important;
+}
+
 /************************** Banner **************************/
 
 #banner
 {
     background-image: url(assets/Banniere.png);
-    background-position: top;
+    background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
     height: 38rem;
@@ -55,10 +60,16 @@ ul a
     font-size: 14px!important;
     letter-spacing: 0.9px;
     margin-top: 1rem!important;
-    color: #5CAFED;
+    color: #5CAFED!important;
 }
 
 /************************** HomeIcons **************************/
+
+section#homeIcon 
+{
+    margin-top: 7rem!important;
+    margin-bottom: 7rem;
+}
 
 .home_icon_text
 {
@@ -130,7 +141,7 @@ ul a
     color: #5CAFED!important;
 }
 
-img .card-img-top 
+img.card-img-top 
 {
     border-radius: 0.80rem 0.80rem 0rem 0rem;
     cursor: pointer;
