@@ -1,9 +1,25 @@
 <?php
 
+require_once('model/CommentManager.php');
+require_once('model/Config.php');
+require_once('model/PostManager.php');
+require_once('model/UserManager.php');
+
 class ControllerfrontEnd
 {
-   function Show_HomePage()
-   {
-    require('view/homePage.php');
+    function viewHomePage()
+    {
+        require('view/homePage.php');
     }
+    
+    function viewLoginPage()
+    {
+        require('view/LoginPage.php');
+    }
+
+    function viewProfilPage()
+    {
+        require('view/ProfilPage.php');
+    }
+    
 }

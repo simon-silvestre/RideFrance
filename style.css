@@ -6,7 +6,7 @@ ul a
     font-size: 14px!important;
 }
 
-.navbar-expand-lg .navbar-nav .dropdown-menu 
+.navbar-expand-lg .navbar-nav .navTransparent
 {
     border-color: #fff!important;
     background-color: transparent!important;
@@ -18,12 +18,12 @@ ul a
 
 .dropdown-item:focus, .dropdown-item:hover 
 {
-    background-color: #0554F2!important;
+    background-color: #5CAFED!important;
 }
 
 nav#navbar_bleu
 {
-    background-color: #458bc8!important;
+    background-image: linear-gradient(228deg, #001E5A 0%, #67C1FF 100%);
 }
 
 /************************** Banner **************************/
@@ -147,6 +147,103 @@ img.card-img-top
     cursor: pointer;
 }
 
+/************************** LoginPage **************************/
+
+
+.form_bg
+{
+    display: flex;
+    align-items: center;
+}
+
+.form_horizontal
+{
+    text-align: center;
+}
+
+#form_container
+{
+    margin-top: 15vh;
+}
+
+.form_horizontal .form_icon
+{
+    font-size: 100px;
+    line-height: 85px;
+    margin: 0 0 13px;
+    color: #222;
+}
+
+.form_horizontal .title 
+{
+    font-size: 23px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0 0 35px 0;
+    font-family: 'HelveticaNeue-Medium';
+    color: #5CAFED;
+}
+
+.form_horizontal .form_group
+{
+    margin: 0 0 10px;
+    position: relative;
+}
+
+.form_horizontal .input-icon
+{
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 13px;
+    color: #5CAFED;
+}
+
+.form_horizontal .form-control
+{
+    color: #000;
+    background-color: #e9ecef;
+    font-size: 13px;
+    letter-spacing: 1px;
+    height: 37px;
+    padding: 2px 15px 2px 35px;
+    border: none;
+    border-radius: 50px;
+}
+
+.form_horizontal .form-control::placeholder
+{
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 14px;
+    text-transform: capitalize;
+}
+
+.form_horizontal .btn
+{
+    color: #FFF;
+    background-color: #222;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    width: 100%;
+    padding: 10px 20px;
+    margin: 0 0 15px 0;
+    border: none;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.form_horizontal .btn:hover {
+    color: #5CAFED;
+    text-decoration: none;
+}
+
+#form_container
+{
+    margin-top: 20vh;
+}
+
 /************************** MediaQueries **************************/
 
 @media (max-width: 992px)
@@ -156,6 +253,11 @@ img.card-img-top
     .navbar-expand-lg .navbar-nav .dropdown-menu 
     {
         border: none;
+    }
+
+    .navbar-expand-lg .navbar-nav .navBlack
+    {
+        background-color: transparent!important;
     }
 
     /**************** Banner ****************/
@@ -180,15 +282,64 @@ img.card-img-top
     {
         top: 62rem!important;
     }
+
+}
+
+@media (max-width: 768px)
+{
+    #form_container
+    {
+        margin-top: 5vh;
+    }
+}
+
+@media (min-width: 768px)
+{
+    /**************** LoginPage ****************/
+    #separation
+    {
+        height: 65vh;
+        position: relative;
+        border: 0.5px solid lightgrey;
+        right: 50%;
+        top: 14vh;
+    }
+
+}
+
+@media screen and (max-width: 415px)
+{
+    /**************** HoemIcons ****************/
+    #home_icon_img {
+        flex: 0 0 90%!important;
+        max-width: 90%!important;
+    }
+
+    /**************** LoginPage ****************/
+    #form_container
+    {
+        margin-top: 5vh;
+    }
+
+    .form_horizontal .form_icon 
+    {
+        font-size: 80px;
+    }
+
+    .form_horizontal .title 
+    {
+        font-size: 20px;
+        margin: 0 0 25px 0;
+    }
 }
 
 @media screen and (max-width: 375px)
 {
     /**************** Actualités ****************/
-
     .card-description 
     {
         font-size: 18px!important;
         line-height: 28px!important;
     }
+    
 }
