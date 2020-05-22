@@ -285,6 +285,7 @@ img.card-img-top
     height: 3rem;
 }
 
+
 #UserImage
 {
     width: 150px;
@@ -293,11 +294,37 @@ img.card-img-top
     background-image: url(assets/test.jpg);
     background-size: cover;
     background-position: center;
-    margin-left: 15%;
+    margin-left: 12%;
     margin-bottom: 5.2rem;
     border: 2px solid #343a40;
     border-radius: 50%;
 }
+
+#profilPseudo
+{
+    font-family: 'HelveticaNeue-CondensedBold'!important;
+    color: #5CAFED;
+}
+
+#profilTitle
+{
+    font-family: 'HelveticaNeue-Medium';
+    font-size: 1.3rem;
+}
+
+#ProfilFormBtn
+{
+    background-color: #5CAFED;
+    border: none;
+    color: #fff;
+    opacity: 1;
+}
+
+#profilSessionInfos
+{
+    color: #5CAFED;
+}
+
 /************************** MediaQueries **************************/
 
 @media (max-width: 992px)
@@ -345,6 +372,18 @@ img.card-img-top
     {
         margin-top: 5vh;
     }
+
+    #UserImage
+    {
+        width: 125px!important;
+        height: 125px!important;
+        margin-bottom: 4rem;
+    }
+
+    #ProfiBar p
+    {
+        font-size: 0.9rem!important;
+    }
 }
 
 @media (min-width: 768px)
@@ -359,6 +398,28 @@ img.card-img-top
         top: 14vh;
     }
 
+    #profilInfosContainer
+    {
+        width: 300px!important;
+    }
+
+}
+
+@media screen and (max-width: 475px)
+{
+    #UserImage
+    {
+        width: 100px!important;
+        height: 100px!important;
+        margin-bottom: 3rem;
+        margin-left: 5%;
+    }
+
+    #ProfiBar p
+    {
+        font-size: 0.8rem!important;
+        margin-left: 1.5rem!important;
+    }
 }
 
 @media screen and (max-width: 415px)
@@ -394,6 +455,20 @@ img.card-img-top
     {
         font-size: 18px!important;
         line-height: 28px!important;
+    }
+
+    #UserImage
+    {
+        width: 85px!important;
+        height: 85px!important;
+        margin-bottom: 2rem;
+        margin-left: 5%;
+    }
+
+    #ProfiBar p
+    {
+        font-size: 0.7rem!important;
+        margin-left: 1.2rem!important;
     }
     
 }

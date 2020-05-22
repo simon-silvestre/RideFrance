@@ -11,7 +11,12 @@ if (isset($_GET['action'])) {
         $ControllerfrontEnd->viewHomePage();
     }
     if ($_GET['action'] == 'Profil') {
-        $ControllerfrontEnd->viewProfilPage();
+        if (isset($_SESSION['id'])){
+            $ControllerfrontEnd->viewProfilPage();
+        }
+        else {
+            echo 'Veuillez vous connecter pour accéder à cette page';
+        }
     }
     else if ($_GET['action'] == 'LoginPage') {
         $ControllerfrontEnd->viewLoginPage();

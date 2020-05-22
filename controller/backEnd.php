@@ -16,6 +16,7 @@ class ControllerbackEnd
 
         $_SESSION['message'] = "Bravo vous êtes inscrit ! Vous pouvez maintenant vous connecter";
         $_SESSION['msg_type'] = "success";
+        $update = false;
 
         require('view/LoginPage.php');
     }
@@ -37,6 +38,7 @@ class ControllerbackEnd
                 $_SESSION['pseudo'] = $resultLogin['pseudo'];
                 $_SESSION['mdp'] = $resultLogin['mdp'];
                 $_SESSION['admin'] = $resultLogin['admin'];
+                $update = false;
 
                 header('Location: index.php?action=Profil');
             } 

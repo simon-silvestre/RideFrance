@@ -19,6 +19,7 @@ class ControllerfrontEnd
 
     function viewProfilPage()
     {
+        $update = false;
         require('view/ProfilPage.php');
     }
     
