@@ -36,17 +36,27 @@
             </li>
             <?php if (isset($_SESSION['id'])){
             if ($_SESSION['admin'] == 1) {?>
-          <li class="nav-item dropdown">
+              <li class="nav-item dropdown">
+                <a class="nav-link mr-lg-3 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                ADMINISTRATEUR
+                </a>
+                <div class="dropdown-menu bg-dark navBlack" aria-labelled="navbarDropdown">
+                  <a class="dropdown-item" href="index.php?action=Profil">PROFIL</a> 
+                  <a class="dropdown-item" href="#">POSTS MANAGER</a>
+                  <a class="dropdown-item" href="#">COMMENTAIRES MANAGER</a>
+                </div>
+              </li>
+            <?php }?>
+            <li class="nav-item dropdown">
             <a class="nav-link mr-lg-3 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              ADMINISTRATEUR
+            PROFIL
             </a>
-            <div class="dropdown-menu bg-dark navBlack" aria-labelled="navbarDropdown">
-              <a class="dropdown-item" href="#">POSTS MANAGER</a>
-              <a class="dropdown-item" href="#">COMMENTAIRES MANAGER</a>
+              <div class="dropdown-menu bg-dark navBlack" aria-labelled="navbarDropdown">
+              <a class="dropdown-item" href="index.php?action=Profil">PROFIL</a> 
+              <a class="dropdown-item" href="#">FAVORIS</a>
             </div>
           </li>
-            <?php }?>
-          <?php }?>
+        <?php }?>
         </ul>
         <form class="form-inline navbar">
         <?php if (isset($_SESSION['id'])){ ?>

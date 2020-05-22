@@ -5,7 +5,6 @@ require_once('model/Config.php');
 require_once('model/PostManager.php');
 require_once('model/UserManager.php');
 
-
 class ControllerbackEnd
 {
     function RegisterSysteme($nom, $prenom, $email, $pseudo, $mdp)
@@ -15,10 +14,10 @@ class ControllerbackEnd
         $userManager = new Simon\RideFrance\Model\UserManager();
         $Register = $userManager->Register($nom, $prenom, $email, $pseudo, $hashpass);
 
-        $_SESSION['message'] = "Vous êtes maintenant inscrit";
+        $_SESSION['message'] = "Bravo vous êtes inscrit ! Vous pouvez maintenant vous connecter";
         $_SESSION['msg_type'] = "success";
 
-        require('view/ProfilPage.php');
+        require('view/LoginPage.php');
     }
 
     function LoginSysteme($pseudo, $mdp)
