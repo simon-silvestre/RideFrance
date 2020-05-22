@@ -42,7 +42,7 @@
                   <a class="dropdown-item" href="#">COMMENTAIRES MANAGER</a>
                 </div>
               </li>
-            <?php }?>
+            <?php } else if(($_SESSION['admin'] !== 1)) {?>
             <li class="nav-item dropdown">
             <a class="nav-link mr-lg-3 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             PROFIL
@@ -52,6 +52,7 @@
               <a class="dropdown-item" href="#">FAVORIS</a>
             </div>
           </li>
+            <?php }?>
         <?php }?>
         </ul>
         <form class="form-inline navbar">

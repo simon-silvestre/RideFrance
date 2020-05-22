@@ -37,9 +37,12 @@ if (isset($_GET['action'])) {
             echo 'Tous les champs ne sont pas remplis !';
         } 
     }
-    elseif ($_GET['action'] == 'Logout') {
+    else if ($_GET['action'] == 'Logout') {
         $ControllerbackEnd->LogoutPage();
     }
+    else if ($_GET['action'] == 'ProfilForm') {
+            $ControllerfrontEnd->viewProfilForm();
+        }
 } 
 else {
     $ControllerfrontEnd->viewHomePage();

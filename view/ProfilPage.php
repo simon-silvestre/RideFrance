@@ -62,23 +62,24 @@ if (isset($_SESSION['message'])) {
                     </div>
                 </div>
                 <div class="form-group text-center">
-                    <button type="submit" class="btn btn-primary col-12 mt-4" name="edit" id="ProfilFormBtn">Modifier mes informations</button>
+                    <a href="index.php?action=ProfilForm" class="btn btn-primary col-12 mt-4" name="edit" id="ProfilFormBtn">Modifier mes informations</a>
                 </div>
             </div>
 
             <?php } else if($update == true) { ?>
 
-            <form action="index.php?action=?>" method="post" class="col-md-10 mt-5 mx-auto profil_Form">
+            <p class="text-center" id="profilTitle">Mes informations</p>
+            <form action="index.php?action=Profil" method="post" class="col-md-10 mt-5 mx-auto profil_Form">
                 <div class="form-group d-flex justify-content-between mb-4">
-                    <input type="text" class="form-control col-5" name=nom placeholder="Nom">
-                    <input type="comment" class="form-control col-5" name="prenom" placeholder="Prénom">
+                    <input type="text" class="form-control col-5" name=nom placeholder="Nom" value="<?= $_SESSION['nom']; ?>">
+                    <input type="comment" class="form-control col-5" name="prenom" placeholder="Prénom" value="<?= $_SESSION['prenom']; ?>">
                 </div>
                 <div class="form-group mb-4">
-                    <input type="email" class="form-control" name=email placeholder="E-mail">
+                    <input type="email" class="form-control" name=email placeholder="E-mail" value="<?= $_SESSION['email']; ?>">
                 </div>
                 <div class="form-group d-flex justify-content-between">
-                    <input type="text" class="form-control col-5" name=pseudo placeholder="Pseudo">
-                    <input type="password" class="form-control col-5" name="mdp" placeholder="Mot de passe">
+                    <input type="text" class="form-control col-5" name=pseudo placeholder="Pseudo" value="<?= $_SESSION['pseudo']; ?>">
+                    <input type="password" class="form-control col-5" name="mdp" placeholder="********" value="">
                 </div>
                 <div class="form-group text-center">
                     <button type="submit" class="btn btn-primary col-12" name="send" id="ProfilFormBtn">Envoyer</button>
@@ -88,6 +89,15 @@ if (isset($_SESSION['message'])) {
         </div>
         <div class="col-md-6 col-12 mt-5 mx-auto">
             <p class="text-center" id="profilTitle">Mes commentaires</p>
+
+            <div class="card-body card mb-3 mt-5" id="ProfilCommentaire">
+                <p class="ml-4">Pseudo<strong></strong> Date</p>
+                <p class="ml-4 mt-2">Commentaires</p>
+            <form class="form-inline">
+                <a class="btn btn-danger ml-auto mr-4 mr-lg-0 " href=""><i class="far fa-trash-alt"></i></a>
+            </form>
+        </div>
+    </div>
         </div>
     </div>
 </div>

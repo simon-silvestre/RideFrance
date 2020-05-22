@@ -23,4 +23,10 @@ class ControllerfrontEnd
         require('view/ProfilPage.php');
     }
     
+    function viewProfilForm()
+    {
+        $update = true;
+        require('view/ProfilPage.php');
+    }
+    
 }
