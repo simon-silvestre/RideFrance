@@ -44,6 +44,7 @@
                   <a class="dropdown-item" href="index.php?action=Profil">PROFIL</a> 
                   <a class="dropdown-item" href="#">POSTS MANAGER</a>
                   <a class="dropdown-item" href="#">COMMENTAIRES MANAGER</a>
+                  <a class="dropdown-item" href="#">UTILISATEURS MANAGER</a>
                 </div>
               </li>
             <?php } else if(($_SESSION['admin'] !== 1)) {?>

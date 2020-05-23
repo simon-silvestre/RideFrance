@@ -15,8 +15,8 @@ if (isset($_SESSION['message'])) {
 
 <div class="form_bg">
     <div class="container-fluid"> 
-         <div class="row justify-content-md-around justify-content-center" id="form_container">
-            <div class="col-lg-4 col-md-5 col-sm-8 col-11">
+         <div class="row justify-content-md-around justify-content-center flex-wrap-reverse" id="form_container">
+            <div class="col-lg-4 col-md-5 col-sm-8 col-11 mt-md-0 mt-5">
                 <form class="form_horizontal" action="index.php?action=connexion" method="post">
                     <div class="form_icon"><i class="fa fa-user-circle"></i></div>
                     <h3 class="title">S'inscrire</h3>
@@ -45,7 +45,7 @@ if (isset($_SESSION['message'])) {
              </div>
 
 
-             <div class="col-lg-4 col-md-5 col-sm-8 col-11 mt-md-0 mt-5">
+             <div class="col-lg-4 col-md-5 col-sm-8 col-11">
                 <form class="form_horizontal" action="index.php?action=connexion" method="post">
                     <div class="form_icon"><i class="fa fa-user-circle"></i></div>
                     <h3 class="title">Se connecter</h3>

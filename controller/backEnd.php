@@ -37,6 +37,7 @@ class ControllerbackEnd
                 $_SESSION['email'] = $resultLogin['email'];
                 $_SESSION['pseudo'] = $resultLogin['pseudo'];
                 $_SESSION['mdp'] = $resultLogin['mdp'];
+                $_SESSION['img'] = $resultLogin['img'];
                 $_SESSION['admin'] = $resultLogin['admin'];
                 $update = false;
 
@@ -60,6 +61,32 @@ class ControllerbackEnd
     {
         session_destroy();
         header('Location: index.php?action=Accueil');
+    }
+
+    function EditProfilInfos($id, $nom, $prenom, $email, $pseudo, $mdp, $img)
+    {
+        $hashmdp = password_hash($mdp, PASSWORD_BCRYPT);
+
+        $userManager = new Simon\RideFrance\Model\UserManager();
+        $resultUpdate = $userManager->saveProfil($id, $nom, $prenom, $email, $pseudo, $hashmdp, $img);
+
+        if ($resultUpdate === false) {
+            throw new Exception('Impossible de modifier le chapitre !');
+        }
+        else {
+            $_SESSION['message'] = "Vos informations ont été modifiés avec succes";
+            $_SESSION['msg_type'] = "info";
+
+            $_SESSION['nom'] = $nom;
+            $_SESSION['prenom'] = $prenom;
+            $_SESSION['email'] = $email;
+            $_SESSION['pseudo'] = $pseudo;
+            $_SESSION['img'] = $img;
+
+            $update = false;
+
+        }
+        require('view/ProfilPage.php');
     }
 
 }

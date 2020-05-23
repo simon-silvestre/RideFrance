@@ -40,6 +40,7 @@
                   <a class="dropdown-item" href="index.php?action=Profil">PROFIL</a> 
                   <a class="dropdown-item" href="#">POSTS MANAGER</a>
                   <a class="dropdown-item" href="#">COMMENTAIRES MANAGER</a>
+                  <a class="dropdown-item" href="#">UTILISATEURS MANAGER</a>
                 </div>
               </li>
             <?php } else if(($_SESSION['admin'] !== 1)) {?>
@@ -56,7 +57,7 @@
         <?php }?>
         </ul>
         <form class="form-inline navbar">
-        <?php if (isset($_SESSION['pseudo'])){ ?>
+        <?php if (isset($_SESSION['id'])){ ?>
           <a href="index.php?action=Logout" class="btn btn-outline-light connected_button">SE DECONNECTER</a>
         <?php } else{?>
           <a href="index.php?action=LoginPage" class="btn btn-outline-light connected_button">SE CONNECTER</a>

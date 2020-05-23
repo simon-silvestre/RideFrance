@@ -61,6 +61,10 @@ if (isset($_SESSION['message'])) {
                         <p id="profilSessionInfos">***********</p>
                     </div>
                 </div>
+                <div class="profilInfos">
+                        <p class="col-12 mt-4">Photo de profil: </p>
+                        <p id="profilSessionInfos"><?= $_SESSION['img']; ?></p>
+                    </div>
                 <div class="form-group text-center">
                     <a href="index.php?action=ProfilForm" class="btn btn-primary col-12 mt-4" name="edit" id="ProfilFormBtn">Modifier mes informations</a>
                 </div>
@@ -69,28 +73,32 @@ if (isset($_SESSION['message'])) {
             <?php } else if($update == true) { ?>
 
             <p class="text-center" id="profilTitle">Mes informations</p>
-            <form action="index.php?action=Profil" method="post" class="col-md-10 mt-5 mx-auto profil_Form">
+            <form action="index.php?action=saveProfil" method="post" class=" mt-5 mx-auto profil_Form" id="profilInfosContainer">
+            <input type="hidden" name="id" value="<?=  $_SESSION['id']; ?>">
                 <div class="form-group d-flex justify-content-between mb-4">
-                    <input type="text" class="form-control col-5" name=nom placeholder="Nom" value="<?= $_SESSION['nom']; ?>">
+                    <input type="text" class="form-control col-5" name="nom" placeholder="Nom" value="<?= $_SESSION['nom']; ?>">
                     <input type="comment" class="form-control col-5" name="prenom" placeholder="Prénom" value="<?= $_SESSION['prenom']; ?>">
                 </div>
                 <div class="form-group mb-4">
-                    <input type="email" class="form-control" name=email placeholder="E-mail" value="<?= $_SESSION['email']; ?>">
+                    <input type="email" class="form-control" name="email" placeholder="E-mail" value="<?= $_SESSION['email']; ?>">
                 </div>
                 <div class="form-group d-flex justify-content-between">
-                    <input type="text" class="form-control col-5" name=pseudo placeholder="Pseudo" value="<?= $_SESSION['pseudo']; ?>">
-                    <input type="password" class="form-control col-5" name="mdp" placeholder="********" value="">
+                    <input type="text" class="form-control col-5" name="pseudo" placeholder="Pseudo" value="<?= $_SESSION['pseudo']; ?>">
+                    <input type="password" class="form-control col-5" name="mdp" placeholder="********"> 
+                </div>
+                <div class="form-group">
+                    <input type="file" class="form-control mr-auto" name="image" value="<?= $_SESSION['img']; ?>">
                 </div>
                 <div class="form-group text-center">
-                    <button type="submit" class="btn btn-primary col-12" name="send" id="ProfilFormBtn">Envoyer</button>
+                    <button type="submit" class="btn btn-primary col-12" name="saveProfil" id="ProfilFormBtn">Enregistrer</button>
                 </div>
             </form>
             <?php } ?>
         </div>
-        <div class="col-md-6 col-12 mt-5 mx-auto">
+        <div class="col-md-7 col-12 mt-5 mx-auto">
             <p class="text-center" id="profilTitle">Mes commentaires</p>
 
-            <div class="card-body card mb-3 mt-5" id="ProfilCommentaire">
+            <div class="card-body card col-md-10 mb-3 mt-5 mx-auto" id="ProfilCommentaire">
                 <p class="ml-4">Pseudo<strong></strong> Date</p>
                 <p class="ml-4 mt-2">Commentaires</p>
             <form class="form-inline">
@@ -101,6 +109,7 @@ if (isset($_SESSION['message'])) {
         </div>
     </div>
 </div>
+
 
 <?php $content = ob_get_clean() ?>
 
