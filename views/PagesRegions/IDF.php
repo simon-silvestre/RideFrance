@@ -5,4 +5,4 @@
 
 <?php $content = ob_get_clean() ?>
 
-<?php require('view/navBarTemplate.php'); ?>
+<?php require('views/NavBarTemplate.php'); ?>

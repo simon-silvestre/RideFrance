@@ -17,4 +17,4 @@ if (isset($_SESSION['message'])) {
 
 <?php $content = ob_get_clean() ?>
 
-<?php require('navBarTemplate.php'); ?>
+<?php require('NavBarTemplate.php'); ?>

@@ -1,10 +1,10 @@
 <?php
 session_start();
-require('controller/frontEnd.php');
-require('controller/backEnd.php');
 
-$ControllerfrontEnd = new ControllerfrontEnd();
-$ControllerbackEnd = new ControllerbackEnd();
+require_once('AutoLoad.php');
+
+$ControllerfrontEnd = new \Controllers\FrontEnd();
+$ControllerbackEnd = new \Controllers\BackEnd();
 
 if (isset($_GET['action'])) {
     /************ View Pages ************/

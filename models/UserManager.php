@@ -1,8 +1,6 @@
 <?php 
 
-namespace Simon\RideFrance\Model;
-
-require_once("model/Config.php");
+namespace Models;
 
 class UserManager extends Config
 {

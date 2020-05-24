@@ -73,7 +73,7 @@
       <div class="row justify-content-around">
         <div class="col-lg-5 text-center text-lg-left mt-lg-5 ml-md-4" id="text-left">
           <h1 class="text-center text-lg-left mt-lg-5">Envie de rider ?</br>trouve un skatepark </h1>
-          <a href="index.php?action=login" class="btn find_button rounded-pill px-4 py-2">Trouver un skatepark</a>
+          <a href="index.php?action=SkateParks" class="btn find_button rounded-pill px-4 py-2">Trouver un skatepark</a>
         </div>
         <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mt-lg-5" id="image-container">
           <img src="assets/quarter.png" alt="rampe" class="col-12 mt-xl-3 mt-5" id="img-right">

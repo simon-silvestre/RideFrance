@@ -1,29 +1,26 @@
 <?php
 
-require_once('model/CommentManager.php');
-require_once('model/Config.php');
-require_once('model/PostManager.php');
-require_once('model/UserManager.php');
+namespace Controllers;
 
-class ControllerbackEnd
+class BackEnd
 {
     function RegisterSysteme($nom, $prenom, $email, $pseudo, $mdp)
     {
         $hashpass = password_hash($mdp, PASSWORD_BCRYPT);
 
-        $userManager = new Simon\RideFrance\Model\UserManager();
+        $userManager = new \Models\UserManager();
         $Register = $userManager->Register($nom, $prenom, $email, $pseudo, $hashpass);
 
         $_SESSION['message'] = "Bravo vous êtes inscrit ! Vous pouvez maintenant vous connecter";
         $_SESSION['msg_type'] = "success";
         $update = false;
 
-        require('view/LoginPage.php');
+        require('views/LoginPage.php');
     }
 
     function LoginSysteme($pseudo, $mdp)
     {
-        $userManager = new Simon\RideFrance\Model\UserManager();
+        $userManager = new \Models\UserManager();
 
         $resultLogin = $userManager->Login($pseudo);
 
@@ -54,7 +51,7 @@ class ControllerbackEnd
             $_SESSION['message'] = "Cet utilisateur n'existe pas";
             $_SESSION['msg_type'] = "danger";
         }
-        require('view/LoginPage.php');
+        require('views/LoginPage.php');
     }
 
     function LogoutPage()
@@ -67,11 +64,11 @@ class ControllerbackEnd
     {
         $hashmdp = password_hash($mdp, PASSWORD_BCRYPT);
 
-        $userManager = new Simon\RideFrance\Model\UserManager();
+        $userManager = new \Models\UserManager();
         $resultUpdate = $userManager->saveProfil($id, $nom, $prenom, $email, $pseudo, $hashmdp, $img);
 
         if ($resultUpdate === false) {
-            throw new Exception('Impossible de modifier le chapitre !');
+            throw new \Exception('Impossible de modifier le chapitre !');
         }
         else {
             $_SESSION['message'] = "Vos informations ont été modifiés avec succes";
@@ -86,7 +83,7 @@ class ControllerbackEnd
             $update = false;
 
         }
-        require('view/ProfilPage.php');
+        require('views/ProfilPage.php');
     }
 
 }

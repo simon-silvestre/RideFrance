@@ -1,6 +1,6 @@
 <?php 
 
-namespace Simon\RideFrance\Model;
+namespace Models;
 
 class Config 
 {
