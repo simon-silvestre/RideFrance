@@ -29,7 +29,7 @@
               <a class="nav-link mr-lg-3" href="index.php?action=Accueil">ACCUEIL <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link mr-lg-3" href="#">SKATEPARKS</a>
+              <a class="nav-link mr-lg-3" href="index.php?action=SkateParks">SKATEPARKS</a>
             </li>
             <li class="nav-item">
               <a class="nav-link mr-lg-3" href="#">CONTACT</a>

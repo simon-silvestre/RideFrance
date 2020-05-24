@@ -7,10 +7,20 @@ $ControllerfrontEnd = new ControllerfrontEnd();
 $ControllerbackEnd = new ControllerbackEnd();
 
 if (isset($_GET['action'])) {
+    /************ View Pages ************/
     if ($_GET['action'] == 'Accueil') {
         $ControllerfrontEnd->viewHomePage();
     }
-    if ($_GET['action'] == 'Profil') {
+    else if ($_GET['action'] == 'SkateParks') {
+        $ControllerfrontEnd->viewSkateparkPage();
+    }
+    else if ($_GET['action'] == 'IDF') {
+        $ControllerfrontEnd->viewIDFPage();
+    }
+    else if ($_GET['action'] == 'ProfilForm') {
+        $ControllerfrontEnd->viewProfilForm();
+    }
+    else if ($_GET['action'] == 'Profil') {
         if (isset($_SESSION['id'])){
             $ControllerfrontEnd->viewProfilPage();
         }
@@ -40,9 +50,6 @@ if (isset($_GET['action'])) {
     else if ($_GET['action'] == 'Logout') {
         $ControllerbackEnd->LogoutPage();
     }
-    else if ($_GET['action'] == 'ProfilForm') {
-            $ControllerfrontEnd->viewProfilForm();
-        }
     elseif (isset($_POST['saveProfil'])){
         if (!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email']) && !empty($_POST['pseudo'])) {
             $ControllerbackEnd->EditProfilInfos( $_POST['id'], $_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['pseudo'], $_POST['mdp'], $_POST['image']);

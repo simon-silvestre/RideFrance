@@ -171,6 +171,23 @@ img.card-img-top
     cursor: pointer;
 }
 
+/************************** SkatePark Page **************************/
+
+#map_image path
+{
+    fill: grey;
+    stroke: #fff;
+    stroke-width: 1px;
+    transition-duration: 300ms;
+    cursor: pointer;
+}
+
+#map_image path:hover 
+{
+    fill: #5CAFED;
+    transform: translateX(1px);
+}
+
 /************************** LoginPage **************************/
 
 .form_bg

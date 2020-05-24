@@ -11,6 +11,16 @@ class ControllerfrontEnd
     {
         require('view/homePage.php');
     }
+
+    function viewSkateparkPage()
+    {
+        require('view/SkateParks.php');
+    }
+
+    function viewIDFPage()
+    {
+        require('view/PagesRegions/IDF.php');
+    }
     
     function viewLoginPage()
     {
