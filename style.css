@@ -3,8 +3,12 @@
 {
     margin: 0;
     padding: 0;
-    text-decoration: none;
+    text-decoration: none!important;
     list-style: none;
+}
+
+body{
+    background-color: #eee;
 }
 
 p
@@ -48,6 +52,12 @@ ul a
 nav#navbar_bleu
 {
     background-image: linear-gradient(228deg, #001E5A 0%, #67C1FF 100%);
+}
+
+#navLogo
+{
+    font-family: 'HelveticaNeue-CondensedBlack';
+    letter-spacing: 1.5px;
 }
 
 /************************** Banner **************************/
@@ -173,9 +183,14 @@ img.card-img-top
 
 /************************** SkatePark Page **************************/
 
+#map_image
+{
+    margin-top: 10vh;
+}
+
 #map_image path
 {
-    fill: grey;
+    fill: rgb(183, 200, 206);
     stroke: #fff;
     stroke-width: 1px;
     transition-duration: 300ms;
@@ -186,6 +201,102 @@ img.card-img-top
 {
     fill: #5CAFED;
     transform: translateX(1px);
+}
+
+/************************** Template Région **************************/
+
+#blogPost
+{
+    font-family: 'HelveticaNeue-Medium';
+    max-width: 26rem!important;
+    padding: 1rem!important;
+    background-color: #fff;
+    box-shadow: 0 1.4rem 8rem rgba(0, 0, 0, 0.2);
+    border-radius: .5rem;
+}
+
+#blogPostImg
+{
+    min-width: 12rem!important;
+    max-width: 12rem!important;
+    height: 12rem!important;
+    transform: translateX(-3rem);
+    position: relative;
+    cursor: pointer;
+    transition-duration: 500ms;
+}
+
+#blogPostImg:hover 
+{
+    transform: scale(1.05) translateX(-2.8rem);
+}
+
+#blogPostImg img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: .5rem;
+}
+
+#blogPostImg::before
+{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    background-image: linear-gradient(228deg, #001E5A 0%, #67C1FF 100%);
+    box-shadow: .5rem .5rem .3rem 1px rgba(0, 0, 0, .05);
+    border-radius: .5rem;
+}
+
+#postInfo
+{
+    transform: translateX(-0.9rem);
+}
+
+#blogPostDate span 
+{
+    font-size: 0.6rem;
+    display: block;
+    color: rgba(0, 0, 0, .5);
+    font-weight: 900;
+}
+
+#blogPostTitle
+{
+    font-size: 0.8rem;
+    margin: 0.5rem 0 1rem;
+    text-transform: uppercase;
+    color: #5CAFED;
+    font-weight: 900;
+}
+
+#blogPostText
+{
+    margin-bottom: 1.4rem!important;
+    font-size: 0.6rem;
+    color: rgba(0, 0, 0, .7);
+}
+
+#blogPostBtn
+{
+    display: inline-block;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    color: #fff;
+    background-image: linear-gradient(228deg, #001E5A 0%, #67C1FF 100%);
+    border-radius: .5rem;
+}
+
+#blogPostBtn:hover 
+{
+    background-image: linear-gradient(228deg, #67C1FF 0%, #001E5A 100%);
 }
 
 /************************** LoginPage **************************/
@@ -385,6 +496,64 @@ img.card-img-top
         top: 62rem!important;
     }
 
+    /**************** Template Région ****************/
+    #blogPost
+    {
+        padding: 1.8rem!important;
+        flex-direction: column;
+    }
+
+    #blogPostImg
+    {
+        min-width: 20rem!important;
+        max-width: 20rem!important;
+        height: 10rem!important;
+        transform: translate(0, -3.5rem);
+    }
+
+    #blogPostImg:hover 
+    {
+        transform: scale(1.05) translateY(-40px);
+    }
+
+    #postInfo
+    {
+        transform: translateX(0);
+        transform: translateY(-10px);
+    }
+
+    #blogPostDate
+    {
+        display: flex;
+        justify-content: center;
+    }
+
+    #blogPostDate span 
+    {
+        font-size: 0.8rem;
+        margin: 0 1rem 0 0;
+    }
+
+    #blogPostTitle
+    {
+        font-size: 1rem;
+        margin: 0.5rem 0 1rem;
+    
+    }
+
+    #blogPostText
+    {
+        margin-bottom: 1.4rem!important;
+        font-size: 0.8rem;
+        text-align: center;
+    }
+
+    #blogPostBtn
+    {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.6rem;
+    }
+
 }
 
 @media (max-width: 768px)
@@ -468,6 +637,21 @@ img.card-img-top
         font-size: 20px;
         margin: 0 0 25px 0;
     }
+
+    /**************** Template Région ****************/
+    #blogPost
+    {
+        padding: 1.8rem!important;
+        flex-direction: column;
+    }
+
+    #blogPostImg
+    {
+        min-width: 16rem!important;
+        max-width: 16rem!important;
+        height: 8rem!important;
+        transform: translate(0, -3.5rem);
+    }
 }
 
 @media screen and (max-width: 375px)
@@ -492,5 +676,4 @@ img.card-img-top
         font-size: 0.7rem!important;
         margin-left: 1.2rem!important;
     }
-    
 }

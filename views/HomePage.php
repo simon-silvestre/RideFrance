@@ -18,7 +18,7 @@
   <header id="banner">
     <div class="container-fluid">
       <nav class="navbar navbar-expand-lg navbar-dark py-4">
-        <a class="navbar-brand" href="#"></a>
+        <a class="navbar-brand ml-4" id="navLogo" href="index.php?action=Accueil">RideFrance</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>

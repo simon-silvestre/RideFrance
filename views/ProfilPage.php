@@ -19,7 +19,7 @@ if (isset($_SESSION['message'])) {
     </div>
     <div class="row">
         <div class="col-12 bg-dark d-flex align-items-center" id="ProfiBar">
-            <div id="UserImage"></div>
+            <div id="UserImage"><img src="<?= $_SESSION["img"]?>" alt=""></div>
             <p class="text-white ml-5">
                 Bienvenue sur votre profil
                 <span id="profilPseudo">

@@ -17,6 +17,9 @@ if (isset($_GET['action'])) {
     else if ($_GET['action'] == 'IDF') {
         $ControllerfrontEnd->viewIDFPage();
     }
+    else if ($_GET['action'] == 'LoginPage') {
+        $ControllerfrontEnd->viewLoginPage();
+    }
     else if ($_GET['action'] == 'ProfilForm') {
         $ControllerfrontEnd->viewProfilForm();
     }
@@ -27,9 +30,6 @@ if (isset($_GET['action'])) {
         else {
             echo 'Veuillez vous connecter pour accéder à cette page';
         }
-    }
-    else if ($_GET['action'] == 'LoginPage') {
-        $ControllerfrontEnd->viewLoginPage();
     }
     else if (isset($_POST['register'])){
         if (!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email']) && !empty($_POST['pseudo']) && !empty($_POST['mdp'])) {
