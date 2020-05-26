@@ -400,14 +400,13 @@ img.card-img-top
 
 #profilBanner
 {
-    background-image: url(assets/profilBanner.jpg);
-    background-size: cover;
+    background: #5CAFED;
 }
 
 #profilBanner img
 {
     max-width: 100%!important;
-    opacity: 0;
+    opacity: 0.9;
 }
 
 #ProfiBar 
@@ -622,6 +621,12 @@ img.card-img-top
 @media screen and (max-width: 415px)
 {
     /**************** HoemIcons ****************/
+    #text-left
+    {
+        padding: 0!important;
+    }
+
+    /**************** HoemIcons ****************/
     #home_icon_img {
         flex: 0 0 90%!important;
         max-width: 90%!important;
@@ -662,6 +667,13 @@ img.card-img-top
 
 @media screen and (max-width: 375px)
 {
+    /**************** HoemIcons ****************/
+    #text-left
+    {
+        padding-right: 15px!important;
+        padding-left: 15px!important;
+    }
+
     /**************** Actualités ****************/
     .card-description 
     {

@@ -105,7 +105,7 @@
   <section id="Actualités">
     <div class="container-fluid">
       <div class="row mt-5">
-        <h2 class="mx-auto text-center mt-5">les dernières actualités</h2>
+        <h2 class="col-sm-12 col-10 mx-auto text-center mt-5">les dernières actualités</h2>
       </div>
       <div class="col-xl-10 col-lg-12 col-md-7 col-sm-9 ml-lg-8 mt-lg-3 mx-auto mt-5 text-lg-left text-center">
           <div id="carouselExampleCaptions" class="carousel slide mt-5" data-ride="carousel">
