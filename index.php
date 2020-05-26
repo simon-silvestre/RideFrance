@@ -14,9 +14,6 @@ if (isset($_GET['action'])) {
     else if ($_GET['action'] == 'SkateParks') {
         $ControllerfrontEnd->viewSkateparkPage();
     }
-    else if ($_GET['action'] == 'IDF') {
-        $ControllerfrontEnd->viewIDFPage();
-    }
     else if ($_GET['action'] == 'LoginPage') {
         $ControllerfrontEnd->viewLoginPage();
     }
@@ -57,6 +54,9 @@ if (isset($_GET['action'])) {
         else {
             echo 'Tous les champs ne sont pas remplis !';
         } 
+    }
+    else if ($_GET['action'] == 'IDF') {
+        $ControllerbackEnd->ShowIDFPage();
     }
 } 
 else {

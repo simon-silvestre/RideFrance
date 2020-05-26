@@ -13,11 +13,6 @@ class FrontEnd
     {
         require('views/SkateParks.php');
     }
-
-    function viewIDFPage()
-    {
-        require('views/PagesRegions/IDF.php');
-    }
     
     function viewLoginPage()
     {

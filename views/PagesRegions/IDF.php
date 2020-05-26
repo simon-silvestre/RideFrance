@@ -4,132 +4,34 @@
 
 <div class="container-fluid" id="containerSkatepark">
     <div class="row justify-content-around pt-4 pt-lg-0">
-        <div class="d-flex align-items-center mt-5 mx-lg-5 mx-3" id="blogPost">
+
+        <?php
+        while ($skatepark = $showIDF->fetch())
+        {
+        ?>
+        <?php if($skatepark['region'] == "IDF"){?>
+        <div class="d-flex align-items-center mt-5 mb-4 mb-lg-0 mx-lg-5 mx-3" id="blogPost">
             <div id="blogPostImg">
-                <img src="assets/1.jpg" alt="skatepark">
+                <img src="assets/<?= $skatepark['image'] ?>" alt="skatepark">
             </div>
             <div id="postInfo">
                 <div id="blogPostDate">
-                    <span>Lundi</span>
-                    <span>mai/25/2020</span>
+                    <span><?=$skatepark['creation_date_fr']?></span>
                 </div>
                 <h1 id="blogPostTitle">
-                    Skatepark de Genevillier
+                    Skatepark de <?= $skatepark['ville'] ?>
                 </h1>
                 <p id="blogPostText">
-                    intro du skatepark intro du skatepark,</br>
-                    intro du skatepark intro du skatepark,</br>
-                    intro du skatepark intro du skatepark</br>
+                    <?=substr($skatepark['contenu'], 0, 120).'...';?>
                 </p>
-                <a href="#" id="blogPostBtn">Voir le skatepark</a>
+                <a href="index.php?action=skateparkPost&id=<?= $skatepark['id'] ?>" id="blogPostBtn">Voir le skatepark</a>
             </div>
         </div>
-
-        <div class="d-flex align-items-center mt-5 mx-lg-5 mx-3" id="blogPost">
-            <div id="blogPostImg">
-                <img src="assets/1.jpg" alt="skatepark">
-            </div>
-            <div id="postInfo">
-                <div id="blogPostDate">
-                    <span>Lundi</span>
-                    <span>mai/25/2020</span>
-                </div>
-                <h1 id="blogPostTitle">
-                    Skatepark de Genevillier
-                </h1>
-                <p id="blogPostText">
-                    intro du skatepark intro du skatepark,</br>
-                    intro du skatepark intro du skatepark,</br>
-                    intro du skatepark intro du skatepark</br>
-                </p>
-                <a href="#" id="blogPostBtn">Voir le skatepark</a>
-            </div>
-        </div>
-
-        <div class="d-flex align-items-center mt-5 mx-lg-5 mx-3" id="blogPost">
-            <div id="blogPostImg">
-                <img src="assets/1.jpg" alt="skatepark">
-            </div>
-            <div id="postInfo">
-                <div id="blogPostDate">
-                    <span>Lundi</span>
-                    <span>mai/25/2020</span>
-                </div>
-                <h1 id="blogPostTitle">
-                    Skatepark de Genevillier
-                </h1>
-                <p id="blogPostText">
-                    intro du skatepark intro du skatepark,</br>
-                    intro du skatepark intro du skatepark,</br>
-                    intro du skatepark intro du skatepark</br>
-                </p>
-                <a href="#" id="blogPostBtn">Voir le skatepark</a>
-            </div>
-        </div>
-
-        <div class="d-flex align-items-center mt-5 mx-lg-5 mx-3" id="blogPost">
-            <div id="blogPostImg">
-                <img src="assets/1.jpg" alt="skatepark">
-            </div>
-            <div id="postInfo">
-                <div id="blogPostDate">
-                    <span>Lundi</span>
-                    <span>mai/25/2020</span>
-                </div>
-                <h1 id="blogPostTitle">
-                    Skatepark de Genevillier
-                </h1>
-                <p id="blogPostText">
-                    intro du skatepark intro du skatepark,</br>
-                    intro du skatepark intro du skatepark,</br>
-                    intro du skatepark intro du skatepark</br>
-                </p>
-                <a href="#" id="blogPostBtn">Voir le skatepark</a>
-            </div>
-        </div>
-
-        <div class="d-flex align-items-center mt-5 mx-lg-5 mx-3" id="blogPost">
-            <div id="blogPostImg">
-                <img src="assets/1.jpg" alt="skatepark">
-            </div>
-            <div id="postInfo">
-                <div id="blogPostDate">
-                    <span>Lundi</span>
-                    <span>mai/25/2020</span>
-                </div>
-                <h1 id="blogPostTitle">
-                    Skatepark de Genevillier
-                </h1>
-                <p id="blogPostText">
-                    intro du skatepark intro du skatepark,</br>
-                    intro du skatepark intro du skatepark,</br>
-                    intro du skatepark intro du skatepark</br>
-                </p>
-                <a href="#" id="blogPostBtn">Voir le skatepark</a>
-            </div>
-        </div>
-
-        <div class="d-flex align-items-center mt-5 mx-lg-5" id="blogPost">
-            <div id="blogPostImg">
-                <img src="assets/1.jpg" alt="skatepark">
-            </div>
-            <div id="postInfo">
-                <div id="blogPostDate">
-                    <span>Lundi</span>
-                    <span>mai/25/2020</span>
-                </div>
-                <h1 id="blogPostTitle">
-                    Skatepark de Genevillier
-                </h1>
-                <p id="blogPostText">
-                    intro du skatepark intro du skatepark,</br>
-                    intro du skatepark intro du skatepark,</br>
-                    intro du skatepark intro du skatepark</br>
-                </p>
-                <a href="#" id="blogPostBtn">Voir le skatepark</a>
-            </div>
-        </div>
-
+        <?php }?>
+        <?php
+        }
+        $showIDF->closeCursor();
+        ?>
 
     </div>
 </div>

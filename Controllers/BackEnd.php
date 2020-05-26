@@ -86,4 +86,13 @@ class BackEnd
         require('views/ProfilPage.php');
     }
 
+    function ShowIDFPage()
+    {
+        $postManager = new \Models\PostManager();
+
+        $showIDF = $postManager->ShowRegionPage();
+
+        require('views/PagesRegions/IDF.php');
+    }
+
 }
