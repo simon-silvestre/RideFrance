@@ -130,7 +130,8 @@ section#homeIcon
 
 .carousel-indicators
 {
-    top: 21rem!important;
+    top: 22rem!important;
+    padding-bottom: 2rem;
 }
 
 .carousel-indicators li
@@ -156,11 +157,6 @@ section#homeIcon
     line-height: 28px;
 }
 
-.card-body
-{
-    padding-left: 0!important;
-}
-
 .card-description
 {
     padding-left: 0!important;
@@ -179,6 +175,11 @@ img.card-img-top
 {
     border-radius: 0.80rem 0.80rem 0rem 0rem;
     cursor: pointer;
+}
+
+#HomePageCard
+{
+    border-radius: 0.80rem 0.80rem 0rem 0rem;
 }
 
 /************************** SkatePark Page **************************/
@@ -493,7 +494,7 @@ img.card-img-top
 
     .carousel-indicators
     {
-        top: 62rem!important;
+        top: 65rem!important;
     }
 
     /**************** Template Région ****************/
@@ -552,6 +553,11 @@ img.card-img-top
     {
         padding: 0.5rem 0.8rem;
         font-size: 0.6rem;
+    }
+
+    .card-body
+    {
+        padding-left: 0!important;
     }
 
 }

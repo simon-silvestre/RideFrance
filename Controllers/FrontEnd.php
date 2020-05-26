@@ -6,7 +6,7 @@ class FrontEnd
 {
     function viewHomePage()
     {
-        require('views/homePage.php');
+        require('views/HomePage.php');
     }
 
     function viewSkateparkPage()

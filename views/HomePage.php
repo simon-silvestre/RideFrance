@@ -117,21 +117,21 @@
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <div class="card-container d-flex justify-content-lg-between justify-content-center flex-wrap">
-                  <div class="card card-style" style="width: 18rem;">
+                  <div class="card card-style rounded-bottom mb-5" id="HomePageCard" style="width: 18rem;">
                     <img src="assets/1.jpg" class="card-img-top" alt="...">
                       <div class="card-body">
                       <p class="card-text date-card"><strong>Gennevillier</strong> |  03 March 2019</p>
                       <p class="card-description col-12 col-lg-11">Ici sera placer l'intro du skatepark</p>
                     </div>
                   </div>
-                  <div class="card card-style" style="width: 18rem;">
-                    <img src="assets/2.jpg" class="card-img-top" alt="...">
+                  <div class="card card-style rounded-bottom mb-5" id="HomePageCard" style="width: 18rem;">
+                    <img src="assets/2.jpg" class="card-img-top " alt="...">
                     <div class="card-body">
                       <p class="card-text date-card"><strong>Poissy</strong> |  04 March 2019</p>
                       <p class="card-description card-description-orange col-12 col-lg-11">Ici sera placer l'intro du skatepark</p>
                     </div>
                   </div>
-                  <div class="card card-style" style="width: 18rem;">
+                  <div class="card card-style rounded-bottom mb-5" id="HomePageCard" style="width: 18rem;">
                     <img src="assets/3.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                       <p class="card-text date-card"><strong>Deauville</strong> |  05 March 2019</p>
@@ -143,21 +143,21 @@
 
               <div class="carousel-item">
                 <div class="card-container d-flex justify-content-lg-between justify-content-center flex-wrap">
-                  <div class="card card-style" style="width: 18rem;">
+                  <div class="card card-style rounded-bottom mb-5" id="HomePageCard" style="width: 18rem;">
                     <img src="assets/1.jpg" class="card-img-top" alt="...">
                       <div class="card-body">
                         <p class="card-text date-card"><strong>Gennevillier</strong> |  03 March 2019</p>
                         <p class="card-description ccol-12 col-lg-11">Ici sera placer l'intro du skatepark</p>
                     </div>
                   </div>
-                  <div class="card card-style" style="width: 18rem;">
+                  <div class="card card-style rounded-bottom mb-5" id="HomePageCard" style="width: 18rem;">
                     <img src="assets/2.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                       <p class="card-text date-card"><strong>Poissy</strong> |  04 March 2019</p>
                       <p class="card-description card-description-orange col-12 col-lg-11">Ici sera placer l'intro du skatepark</p>
                     </div>
                   </div>
-                  <div class="card card-style" style="width: 18rem;">
+                  <div class="card card-style rounded-bottom mb-5" id="HomePageCard" style="width: 18rem;">
                     <img src="assets/3.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                       <p class="card-text date-card"><strong>Deauville</strong> |  05 March 2019</p>
@@ -169,21 +169,21 @@
 
               <div class="carousel-item">
                 <div class="card-container d-flex justify-content-lg-between justify-content-center flex-wrap">
-                  <div class="card card-style" style="width: 18rem;">
+                  <div class="card card-style rounded-bottom mb-5" id="HomePageCard" style="width: 18rem;">
                     <img src="assets/1.jpg" class="card-img-top" alt="...">
                       <div class="card-body">
                         <p class="card-text date-card"><strong>Gennevillier</strong> |  03 March 2019</p>
                         <p class="card-description col-12 col-lg-11">Ici sera placer l'intro du skatepark</p>
                     </div>
                   </div>
-                  <div class="card card-style" style="width: 18rem;">
+                  <div class="card card-style rounded-bottom mb-5" id="HomePageCard" style="width: 18rem;">
                     <img src="assets/2.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                       <p class="card-text date-card"><strong>Poissy</strong> |  04 March 2019</p>
                       <p class="card-description card-description-orange col-12 col-lg-11">Ici sera placer l'intro du skatepark</p>
                     </div>
                   </div>
-                  <div class="card card-style" style="width: 18rem;">
+                  <div class="card card-style rounded-bottom mb-5" id="HomePageCard" style="width: 18rem;">
                     <img src="assets/3.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                       <p class="card-text date-card"><strong>Deauville</strong> |  05 March 2019</p>
