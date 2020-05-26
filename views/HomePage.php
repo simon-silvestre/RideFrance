@@ -1,4 +1,4 @@
-<?php $title = 'Login page'; ?>
+<?php $title = 'Accueil'; ?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -117,81 +117,26 @@
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <div class="card-container d-flex justify-content-lg-between justify-content-center flex-wrap">
-                  <div class="card card-style rounded-bottom mb-5" id="HomePageCard" style="width: 18rem;">
-                    <img src="assets/1.jpg" class="card-img-top" alt="...">
+                <?php
+                while ($lastPark = $showLastSkatepark->fetch())
+                {
+                ?>
+                <div class="card card-style rounded-bottom mb-5" id="HomePageCard" style="width: 18rem;">
+                  <div id="HomeSkateImg">
+                    <a href="index.php?action=skateparkPost&id=<?= $skatepark['id'] ?>"><img src="assets/<?= $lastPark['image'] ?>" alt="..."></a>
+                  </div>
                       <div class="card-body">
-                      <p class="card-text date-card"><strong>Gennevillier</strong> |  03 March 2019</p>
-                      <p class="card-description col-12 col-lg-11">Ici sera placer l'intro du skatepark</p>
+                      <p class="card-text date-card"><strong><?= $lastPark['ville'] ?></strong> | <?= $lastPark['creation_date_fr'] ?></p>
+                      <p class="card-description col-12 col-lg-11"><?=substr($lastPark['contenu'], 0, 50).'...';?></p>
                     </div>
                   </div>
-                  <div class="card card-style rounded-bottom mb-5" id="HomePageCard" style="width: 18rem;">
-                    <img src="assets/2.jpg" class="card-img-top " alt="...">
-                    <div class="card-body">
-                      <p class="card-text date-card"><strong>Poissy</strong> |  04 March 2019</p>
-                      <p class="card-description card-description-orange col-12 col-lg-11">Ici sera placer l'intro du skatepark</p>
-                    </div>
-                  </div>
-                  <div class="card card-style rounded-bottom mb-5" id="HomePageCard" style="width: 18rem;">
-                    <img src="assets/3.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <p class="card-text date-card"><strong>Deauville</strong> |  05 March 2019</p>
-                      <p class="card-description col-12">Ici sera placer l'intro du skatepark</p>
-                    </div>
-                  </div>
+                  <?php 
+                  }
+                  $showLastSkatepark->closeCursor();
+                  ?>
                 </div>
               </div>
-
-              <div class="carousel-item">
-                <div class="card-container d-flex justify-content-lg-between justify-content-center flex-wrap">
-                  <div class="card card-style rounded-bottom mb-5" id="HomePageCard" style="width: 18rem;">
-                    <img src="assets/1.jpg" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <p class="card-text date-card"><strong>Gennevillier</strong> |  03 March 2019</p>
-                        <p class="card-description ccol-12 col-lg-11">Ici sera placer l'intro du skatepark</p>
-                    </div>
-                  </div>
-                  <div class="card card-style rounded-bottom mb-5" id="HomePageCard" style="width: 18rem;">
-                    <img src="assets/2.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <p class="card-text date-card"><strong>Poissy</strong> |  04 March 2019</p>
-                      <p class="card-description card-description-orange col-12 col-lg-11">Ici sera placer l'intro du skatepark</p>
-                    </div>
-                  </div>
-                  <div class="card card-style rounded-bottom mb-5" id="HomePageCard" style="width: 18rem;">
-                    <img src="assets/3.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <p class="card-text date-card"><strong>Deauville</strong> |  05 March 2019</p>
-                      <p class="card-description col-12">Ici sera placer l'intro du skatepark</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="carousel-item">
-                <div class="card-container d-flex justify-content-lg-between justify-content-center flex-wrap">
-                  <div class="card card-style rounded-bottom mb-5" id="HomePageCard" style="width: 18rem;">
-                    <img src="assets/1.jpg" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <p class="card-text date-card"><strong>Gennevillier</strong> |  03 March 2019</p>
-                        <p class="card-description col-12 col-lg-11">Ici sera placer l'intro du skatepark</p>
-                    </div>
-                  </div>
-                  <div class="card card-style rounded-bottom mb-5" id="HomePageCard" style="width: 18rem;">
-                    <img src="assets/2.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <p class="card-text date-card"><strong>Poissy</strong> |  04 March 2019</p>
-                      <p class="card-description card-description-orange col-12 col-lg-11">Ici sera placer l'intro du skatepark</p>
-                    </div>
-                  </div>
-                  <div class="card card-style rounded-bottom mb-5" id="HomePageCard" style="width: 18rem;">
-                    <img src="assets/3.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <p class="card-text date-card"><strong>Deauville</strong> |  05 March 2019</p>
-                      <p class="card-description col-12">Ici sera placer l'intro du skatepark</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              
             </div>
           </div>
       </div>

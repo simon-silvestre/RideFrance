@@ -1,4 +1,4 @@
-<?php $title = 'Login page'; ?>
+<?php $title = 'Profil'; ?>
 
 <?php ob_start(); ?>
 

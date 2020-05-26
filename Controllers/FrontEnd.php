@@ -6,6 +6,10 @@ class FrontEnd
 {
     function viewHomePage()
     {
+        $postManager = new \Models\PostManager();
+
+        $showLastSkatepark = $postManager->showLastSkatepark();
+
         require('views/HomePage.php');
     }
 
@@ -29,6 +33,15 @@ class FrontEnd
     {
         $update = true;
         require('views/ProfilPage.php');
+    }
+
+    function ShowIDFPage()
+    {
+        $postManager = new \Models\PostManager();
+
+        $showIDF = $postManager->ShowRegionPage();
+
+        require('views/PagesRegions/IDF.php');
     }
     
 }

@@ -152,7 +152,7 @@ section#homeIcon
 .date-card
 {
     font-family: 'HelveticaNeue-Medium';
-    font-size: 16px;
+    font-size: 12px;
     color: #807465;
     line-height: 28px;
 }
@@ -161,9 +161,9 @@ section#homeIcon
 {
     padding-left: 0!important;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 14px;
     color: #2F281E;
-    line-height: 34px;
+    line-height: 30px;
 }
 
 .card-description-orange
@@ -171,15 +171,43 @@ section#homeIcon
     color: #5CAFED!important;
 }
 
-img.card-img-top 
+#HomePageCard
 {
+    border-radius: 0.80rem 0.80rem 0rem 0rem;
+    width: 18rem!important;
+}
+
+#HomeSkateImg
+{
+    min-width: 18rem!important;
+    max-width: 18rem!important;
+    height: 10rem!important;
+    position: relative;
+    cursor: pointer;
+}
+
+#HomeSkateImg img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
     border-radius: 0.80rem 0.80rem 0rem 0rem;
     cursor: pointer;
 }
 
-#HomePageCard
+#HomeSkateImg::before
 {
-    border-radius: 0.80rem 0.80rem 0rem 0rem;
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+    background-image: linear-gradient(228deg, #001E5A 0%, #67C1FF 100%);
+    box-shadow: .5rem .5rem .3rem 1px rgba(0, 0, 0, .05);
+    border-radius: .5rem;
 }
 
 /************************** SkatePark Page **************************/

@@ -56,7 +56,7 @@ if (isset($_GET['action'])) {
         } 
     }
     else if ($_GET['action'] == 'IDF') {
-        $ControllerbackEnd->ShowIDFPage();
+        $ControllerfrontEnd->ShowIDFPage();
     }
 } 
 else {

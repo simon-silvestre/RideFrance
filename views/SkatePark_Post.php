@@ -1,4 +1,4 @@
-<?php $title = 'Login page'; ?>
+<?php $title = 'skatepark'; ?>
 
 <?php ob_start(); ?>
 
