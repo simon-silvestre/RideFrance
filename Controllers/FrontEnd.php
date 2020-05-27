@@ -43,5 +43,14 @@ class FrontEnd
 
         require('views/PagesRegions/IDF.php');
     }
+
+    function ShowSkatePark($postId)
+    {
+        $postManager = new \Models\PostManager();
+
+        $skateparkPage = $postManager->GetSkatePark($postId);
+
+        require('views/SkateparkPostTemplate.php');
+    }
     
 }

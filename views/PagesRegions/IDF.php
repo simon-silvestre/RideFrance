@@ -24,7 +24,7 @@
                 <p id="blogPostText">
                     <?=substr($skatepark['contenu'], 0, 110).'...';?>
                 </p>
-                <a href="index.php?action=skateparkPost&id=<?= $skatepark['id'] ?>" id="blogPostBtn">Voir le skatepark</a>
+                <a href="index.php?action=viewSkatepark&id=<?= $skatepark['id'] ?>" id="blogPostBtn">Voir le skatepark</a>
             </div>
         </div>
         <?php }?>

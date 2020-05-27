@@ -34,7 +34,7 @@ class BackEnd
                 $_SESSION['email'] = $resultLogin['email'];
                 $_SESSION['pseudo'] = $resultLogin['pseudo'];
                 $_SESSION['mdp'] = $resultLogin['mdp'];
-                $_SESSION['img'] = $resultLogin['img'];
+                $_SESSION['img'] = $resultLogin['imageProfil'];
                 $_SESSION['admin'] = $resultLogin['admin'];
                 $update = false;
 
@@ -62,15 +62,28 @@ class BackEnd
 
     function EditProfilInfos($id, $nom, $prenom, $email, $pseudo, $mdp, $img)
     {
-        $hashmdp = password_hash($mdp, PASSWORD_BCRYPT);
-
         $userManager = new \Models\UserManager();
-        $resultUpdate = $userManager->saveProfil($id, $nom, $prenom, $email, $pseudo, $hashmdp, $img);
 
-        if ($resultUpdate === false) {
-            throw new \Exception('Impossible de modifier le chapitre !');
+        if($img === "" && $mdp === "") {
+            $img = $_SESSION['img'];
+            $mdp = $_SESSION['mdp'];
+
+            $resultUpdate = $userManager->saveProfil($id, $nom, $prenom, $email, $pseudo, $mdp, $img);
+
+            $_SESSION['message'] = "Vos informations ont été modifiés avec succes";
+            $_SESSION['msg_type'] = "info";
+
+            $_SESSION['nom'] = $nom;
+            $_SESSION['prenom'] = $prenom;
+            $_SESSION['email'] = $email;
+            $_SESSION['pseudo'] = $pseudo;
+            
         }
-        else {
+        else if($mdp === "") {
+            $mdp = $_SESSION['mdp'];
+
+            $resultUpdate = $userManager->saveProfil($id, $nom, $prenom, $email, $pseudo, $mdp, $img);
+
             $_SESSION['message'] = "Vos informations ont été modifiés avec succes";
             $_SESSION['msg_type'] = "info";
 
@@ -81,9 +94,50 @@ class BackEnd
             $_SESSION['img'] = $img;
 
             $update = false;
+        }
+        else if($img === "") {
+            $img = $_SESSION['img'];
+
+            $mdp = password_hash($mdp, PASSWORD_BCRYPT);
+
+            $resultUpdate = $userManager->saveProfil($id, $nom, $prenom, $email, $pseudo, $mdp, $img);
+
+            $_SESSION['message'] = "Vos informations ont été modifiés avec succes";
+            $_SESSION['msg_type'] = "info";
+
+            $_SESSION['nom'] = $nom;
+            $_SESSION['prenom'] = $prenom;
+            $_SESSION['email'] = $email;
+            $_SESSION['pseudo'] = $pseudo;
+            $_SESSION['mdp'] = $mdp;
 
         }
+        else
+        {
+            $mdp = password_hash($mdp, PASSWORD_BCRYPT);
+            
+            $userManager = new \Models\UserManager();
+            $resultUpdate = $userManager->saveProfil($id, $nom, $prenom, $email, $pseudo, $mdp, $img);
+
+            if ($resultUpdate === false) {
+                throw new \Exception('Impossible de modifier vos informations!');
+            }
+            else {
+                $_SESSION['message'] = "Vos informations ont été modifiés avec succes";
+                $_SESSION['msg_type'] = "info";
+
+                $_SESSION['nom'] = $nom;
+                $_SESSION['prenom'] = $prenom;
+                $_SESSION['email'] = $email;
+                $_SESSION['pseudo'] = $pseudo;
+                $_SESSION['mdp'] = $mdp;
+                $_SESSION['img'] = $img;
+
+            }
+        }
+        $update = false;
         require('views/ProfilPage.php');
     }
+
 
 }

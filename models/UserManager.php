@@ -23,11 +23,11 @@ class UserManager extends Config
         return $resultLogin;
     }
 
-    public function saveProfil($id, $nom, $prenom, $email, $pseudo, $hashmdp, $img)
+    public function saveProfil($id, $nom, $prenom, $email, $pseudo, $mdp, $img)
     {
         $db = $this->dbConnect();
         $up = $db->prepare("UPDATE Users SET nom= ?, prenom = ?, email = ?, pseudo = ?, mdp = ?, imageProfil = ? WHERE id = ?");
-        $update = $up->execute(array($nom, $prenom, $email, $pseudo, $hashmdp, $img, $id));
+        $update = $up->execute(array($nom, $prenom, $email, $pseudo, $mdp, $img, $id));
 
         return $update;
     }

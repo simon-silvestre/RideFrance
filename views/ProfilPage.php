@@ -19,7 +19,7 @@ if (isset($_SESSION['message'])) {
     </div>
     <div class="row">
         <div class="col-12 bg-dark d-flex align-items-center" id="ProfiBar">
-            <div id="UserImage"><img src="<?= $_SESSION["img"]?>" alt=""></div>
+            <div id="UserImage"><img src="<?= $_SESSION["img"]; ?>" alt=""></div>
             <p class="text-white ml-5">
                 Bienvenue sur votre profil
                 <span id="profilPseudo">
@@ -87,7 +87,7 @@ if (isset($_SESSION['message'])) {
                     <input type="password" class="form-control col-5" name="mdp" placeholder="********"> 
                 </div>
                 <div class="form-group">
-                    <input type="file" class="form-control mr-auto" name="image" value="<?= $_SESSION['img']; ?>">
+                    <input type="file" class="form-control mr-auto" name="image">
                 </div>
                 <div class="form-group text-center">
                     <button type="submit" class="btn btn-primary col-12" name="saveProfil" id="ProfilFormBtn">Enregistrer</button>
