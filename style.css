@@ -163,7 +163,7 @@ section#homeIcon
     font-weight: bold;
     font-size: 14px;
     color: rgba(0, 0, 0, .7);
-    line-height: 30px;
+    line-height: 25px;
 }
 
 .card-description-orange
@@ -342,12 +342,31 @@ section#homeIcon
     color: #5CAFED;
 }
 
-#SkateParkDescription h2
+#SkateParkDescription h2, #SkateparkCommentaireTitle
 {
     font-size: 20px;
     color: #eee;
     padding: 2px;
     background-color: #5CAFED;
+}
+
+#CommentForm h2
+{
+    font-size: 20px;
+    color: #eee;
+    padding: 2px;
+    background-color: #5CAFED;
+}
+
+#CommentForm, #inputCommentForm
+{
+    border: 2px solid #5CAFED!important;
+    background-color: #eee;
+}
+
+#inputCommentForm
+{
+    border-width: 1px!important;
 }
 
 /************************** LoginPage **************************/

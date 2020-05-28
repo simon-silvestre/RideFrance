@@ -47,8 +47,11 @@ class FrontEnd
     function ShowSkatePark($postId)
     {
         $postManager = new \Models\PostManager();
+        $commentManager = new \Models\CommentManager();
 
         $skateparkPage = $postManager->GetSkatePark($postId);
+        $showComments = $commentManager->ShowComments();
+        $showNotes = $commentManager->showNotes();
 
         require('views/SkateparkPostTemplate.php');
     }

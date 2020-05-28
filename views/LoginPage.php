@@ -26,7 +26,7 @@ if (isset($_SESSION['message'])) {
                     </div>
                     <div class="form_group">
                         <span class="input-icon"><i class="fa fa-user"></i></span>
-                        <input class="form-control" type="text" name="prenom" placeholder="Pénom">
+                        <input class="form-control" type="text" name="prenom" placeholder="Prénom">
                     </div>
                     <div class="form_group">
                         <span class="input-icon"><i class="fas fa-envelope"></i></span>

@@ -9,7 +9,7 @@
         while ($skatepark = $showIDF->fetch())
         {
         ?>
-        <?php if($skatepark['region'] == "IDF"){?>
+        <?php if($skatepark['region'] == "Île-de-France"){?>
         <div class="d-flex align-items-center mt-5 mb-4 mb-lg-0 mx-lg-4 mx-3" id="blogPost">
             <div id="blogPostImg">
                 <img src="assets/<?= $skatepark['image'] ?>" alt="skatepark">
