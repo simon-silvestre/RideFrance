@@ -12,19 +12,21 @@
         <?php if($skatepark['region'] == "Île-de-France"){?>
         <div class="d-flex align-items-center mt-5 mb-4 mb-lg-0 mx-lg-4 mx-3" id="blogPost">
             <div id="blogPostImg">
-                <img src="assets/<?= $skatepark['image'] ?>" alt="skatepark">
+                <a href="index.php?action=viewSkatepark&id=<?= $skatepark['id'] ?>"><img src="assets/<?= $skatepark['image'] ?>" alt="skatepark"></a>
             </div>
             <div id="postInfo">
                 <div id="blogPostDate">
                     <span><?=$skatepark['creation_date_fr']?></span>
                 </div>
-                <h1 id="blogPostTitle">
+                <h1 class="text-center text-lg-left" id="blogPostTitle">
                     Skatepark de <?= $skatepark['ville'] ?>
                 </h1>
                 <p id="blogPostText">
                     <?=substr($skatepark['contenu'], 0, 110).'...';?>
                 </p>
-                <a href="index.php?action=viewSkatepark&id=<?= $skatepark['id'] ?>" id="blogPostBtn">Voir le skatepark</a>
+                <div class="form-inline justify-content-center justify-content-lg-start">
+                    <a href="index.php?action=viewSkatepark&id=<?= $skatepark['id'] ?>" id="blogPostBtn">Voir le skatepark</a>
+                </div>
             </div>
         </div>
         <?php }?>

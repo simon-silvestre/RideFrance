@@ -342,7 +342,14 @@ section#homeIcon
     color: #5CAFED;
 }
 
-#SkateParkDescription h2, #SkateparkCommentaireTitle
+.notes_Container i
+{
+    font-size: 2rem;
+    cursor: pointer;
+    color: gold;
+}
+
+#SkateParkDescriptionLeft h2,#SkateParkDescriptionRight h2, #SkateParkDescriptionMap h2, #SkateparkCommentaireForm h2
 {
     font-size: 20px;
     color: #eee;
@@ -360,7 +367,7 @@ section#homeIcon
 
 #CommentForm, #inputCommentForm
 {
-    border: 2px solid #5CAFED!important;
+    border: 2px solid black!important;
     background-color: #eee;
 }
 
@@ -521,7 +528,7 @@ section#homeIcon
     color: #5CAFED;
 }
 
-#ProfilCommentaire
+#ProfilCommentaire .card-body
 {
     border: 2px solid #5CAFED!important;
     background-color: #f0f4f7;
@@ -600,7 +607,6 @@ section#homeIcon
     #blogPostDate span 
     {
         font-size: 0.8rem;
-        margin: 0 1rem 0 0;
     }
 
     #blogPostTitle
@@ -731,6 +737,26 @@ section#homeIcon
         max-width: 16rem!important;
         height: 8rem!important;
         transform: translate(0, -3.5rem);
+    }
+    /**************** Skatepark Post Template ****************/
+    #SkateParkDescriptionLeft
+    {
+        padding: 0;
+        text-align: center;
+    }
+
+    #SkateParkDescriptionRight, #SkateParkDescriptionMap, #SkateparkCommentaireForm, #ProfilCommentaire
+    {
+        margin-left: 1rem!important;
+        margin-right: 1rem!important;
+    }
+    
+
+    #SkateParkDescription p 
+    {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
