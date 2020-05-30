@@ -4,7 +4,7 @@ namespace Models;
 
 class PostManager extends Config
 {
-    public function  ShowRegionPage()
+    public function  ShowSkatePark()
     {
         $db = $this->dbConnect();
         $skateparks = $db->query('SELECT id, region, ville, contenu, image, adresse, DATE_FORMAT(creation_date, \'%d/%M/%Y\') AS creation_date_fr FROM skateParks ORDER BY creation_date');

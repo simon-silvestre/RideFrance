@@ -61,6 +61,9 @@ if (isset($_GET['action'])) {
     else if ($_GET['action'] == 'viewSkatepark') {
         $ControllerfrontEnd->ShowSkatePark($_GET['id']);
     }
+    else if ($_GET['action'] == 'SkateManager') {
+        $ControllerbackEnd->ShowSkateParkManager();
+    }
 } 
 else {
     $ControllerfrontEnd->viewHomePage();

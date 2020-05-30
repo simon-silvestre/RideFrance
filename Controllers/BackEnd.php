@@ -139,5 +139,11 @@ class BackEnd
         require('views/ProfilPage.php');
     }
 
+    function ShowSkateParkManager()
+    {
+        $postManager = new \Models\PostManager();
+        $skatepark = $postManager->ShowSkatePark();
+        require('views/SkateParkAdmin.php');
+    }
 
 }

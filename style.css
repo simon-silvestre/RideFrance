@@ -533,6 +533,42 @@ section#homeIcon
     border: 2px solid #5CAFED!important;
     background-color: #f0f4f7;
 }
+
+
+/************************** SkatePark Admin **************************/
+
+thead#adminTab
+{
+    background-color: #222;
+    color: white;
+}
+
+#adminTabRow
+{
+    color: #222;
+}
+
+#adminTabRow tr td
+{
+    font-family: 'HelveticaNeue-Medium';
+}
+
+#adminTabRow tr td, #adminTab tr th
+{
+    vertical-align: middle!important;
+}
+
+#adminTab tr th
+{
+    font-family: 'HelveticaNeue-bold';
+}
+
+#addSkateParkBtn
+{
+    background-color: #5CAFED;
+    color: #eee;
+}
+
 /************************** MediaQueries **************************/
 
 @media (max-width: 992px)
@@ -693,6 +729,20 @@ section#homeIcon
     }
 }
 
+@media (max-width: 438px)
+{
+    /**************** Skatepark Admin ****************/
+    .icon_container
+    {
+        width: 100%;
+    }
+
+    .center_form
+    {
+        text-align: center!important;
+    }
+}
+
 @media screen and (max-width: 415px)
 {
     /**************** HoemIcons ****************/
@@ -788,5 +838,16 @@ section#homeIcon
     {
         font-size: 0.7rem!important;
         margin-left: 1.2rem!important;
+    }
+
+    /**************** Skatepark Admin ****************/
+    .icon_btn
+    {
+        margin-bottom: 1rem;
+    }
+
+    .icon_container 
+    {
+        width: 30%!important;
     }
 }

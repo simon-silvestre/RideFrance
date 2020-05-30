@@ -39,7 +39,7 @@ class FrontEnd
     {
         $postManager = new \Models\PostManager();
 
-        $showIDF = $postManager->ShowRegionPage();
+        $showIDF = $postManager->ShowSkatePark();
 
         require('views/PagesRegions/IDF.php');
     }
