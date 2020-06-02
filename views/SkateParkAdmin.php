@@ -1,4 +1,4 @@
-<?php $title = 'Chapitres manager'; ?>
+<?php $title = 'Skatepark manager'; ?>
 
 
 <?php ob_start(); ?>
@@ -33,9 +33,9 @@ if (isset($_SESSION['message'])) {
             <td><?= $listSkatePark['ville']?></td>
             <td class="text-sm-center"><?= $listSkatePark['region']?></td>
             <td class="text-center icon_container">
-                <a class="btn btn-warning icon_btn" href="index.php?action=post&id=<?= $listSkatePark['id'] ?>"><i class="far fa-eye"></i></a>
-                <a class="btn btn-info icon_btn" href="index.php?action=edit&amp;id=<?= $listSkatePark['id'] ?>"><i class="far fa-edit"></i></a>
-                <a class="btn btn-danger" href="index.php?action=deleteChapter&amp;id=<?= $listSkatePark['id'] ?>"><i class="far fa-trash-alt"></i></a>
+                <a class="btn btn-warning icon_btn" href="index.php?action=viewSkatepark&amp;id=<?= $listSkatePark['id'] ?>"><i class="far fa-eye"></i></a>
+                <a class="btn btn-info icon_btn" href="index.php?action=editSkatepark&amp;id=<?= $listSkatePark['id'] ?>"><i class="far fa-edit"></i></a>
+                <a class="btn btn-danger" href="index.php?action=deleteSkatepark&amp;id=<?= $listSkatePark['id'] ?>"><i class="far fa-trash-alt"></i></a>
                 
             </td>
         </tr>
@@ -46,7 +46,7 @@ if (isset($_SESSION['message'])) {
     </tbody>
     </table>
 
-    <a class="btn mb-5" href="index.php?action=addChapter" id="addSkateParkBtn">Ajouter un SkatePark</i></a>
+    <a class="btn mb-5" href="index.php?action=addSkatepark" id="addSkateParkBtn">Ajouter un SkatePark</i></a>
 </div>
 
 

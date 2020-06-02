@@ -73,28 +73,29 @@ if (isset($_SESSION['message'])) {
         <h2 class="text-center mb-4 col-12">Commentaires</h2>
         <div class="col-12 card-body card" id="CommentForm">
             <form action="index.php?action=addComment&amp;id=<?= $skateparkPage['id'] ?>" method="post">
+            <input type="hidden" name="pseudo" value="<?= $_SESSION['pseudo'] ?>">
                 <div class="form-group ml-3 ml-lg-0 mr-3 mr-lg-0">
                     <label for="comment">Commentaire</label>
-                    <input type="comment" class="form-control comment_input" id="inputCommentForm" name="comment">
+                    <input type="comment" class="form-control comment_input" id="inputCommentForm" name="commentaire">
                 </div>
                 <button type="submit" class="btn btn-dark ml-3 ml-lg-0">Envoyer</button>
             </form>
         </div>
     </div>
         <?php
-        while ($comment = $showComments->fetch())
+        while ($comments = $showComments->fetch())
         {
-        ?>
-        <div class="row mr-5 ml-5" id="ProfilCommentaire">
+        if($comments['signaler'] == 0){?>
+        <div class="row mr-5 ml-5" id="SkateparkCommentaire">
             <div class=" col card-body card mb-3">
-                <p class="ml-4 ml-lg-0"><strong><?= $comment['User_pseudo'] ?></strong> le <?= $comment['comment_date_fr'] ?></p>
-                <p class="mt-2 ml-4 ml-lg-0"><?= $comment['contenu'] ?></p>
+                <p class="ml-4 ml-lg-0"><strong><?= $comments['User_pseudo'] ?></strong> le <?= $comments['comment_date_fr'] ?></p>
+                <p class="mt-2 ml-4 ml-lg-0"><?= $comments['contenu'] ?></p>
                 <form class="form-inline">
-                    <a class="btn btn-danger ml-auto mr-4 mr-lg-0 " href=""><i class="fas fa-exclamation"></i></a>
+                    <a class="btn btn-danger ml-auto mr-4 mr-lg-0 " href="index.php?action=signalerCommentaire&amp;id=<?= $comments['id'] ?>&amp;postid=<?= $skateparkPage['id'] ?>"><i class="fas fa-exclamation"></i></a>
                 </form>
             </div>
         </div>
-        <?php
+        <?php }
         }
         $showComments->closeCursor();
         ?>

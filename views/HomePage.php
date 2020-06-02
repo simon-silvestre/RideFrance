@@ -121,9 +121,9 @@
                 while ($lastPark = $showLastSkatepark->fetch())
                 {
                 ?>
-                <div class="card card-style mb-5" id="HomePageCard" style="width: 18rem;">
+                <div class="card card-style mb-5" id="HomePageCard">
                   <div id="HomeSkateImg">
-                    <a href="index.php?action=skateparkPost&id=<?= $skatepark['id'] ?>"><img src="assets/<?= $lastPark['image'] ?>" alt="..."></a>
+                    <a href="index.php?action=viewSkatepark&amp;id=<?= $skatepark['id'] ?>"><img src="assets/<?= $lastPark['image'] ?>" alt="..."></a>
                   </div>
                       <div class="card-body">
                       <p class="card-text date-card"><strong><?= $lastPark['ville'] ?></strong> | <?= $lastPark['creation_date_fr'] ?></p>

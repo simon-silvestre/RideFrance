@@ -146,4 +146,57 @@ class BackEnd
         require('views/SkateParkAdmin.php');
     }
 
+    function ShowAddForm()
+    {
+        $update = false;
+        $region = '';
+        $ville = '';
+        $contenu = '';
+        $adresse = '';
+        require('views/AddEditForm.php');
+    }
+
+    function addSkatepark($region, $ville, $contenu, $image, $adresse)
+    {
+        $postManager = new \Models\PostManager();
+        $skatepark = $postManager->addSkatepark($region, $ville, $contenu, $image, $adresse);
+
+        if ($skatepark === false) {
+            throw new \Exception('Impossible d\'ajouter le Skatepark !');
+        }
+        else {
+            $_SESSION['message'] = "Le Skatepark a été enregistré avec succès";
+            $_SESSION['msg_type'] = "success";
+            
+            header('Location: index.php?action=SkateManager');
+        }
+    }
+
+    function ShowEditForm($postId)
+    {
+        $update = true;
+
+        $postManager = new \Models\PostManager();
+        $skateparkPage = $postManager->GetSkatePark($postId);
+
+        $region = $skateparkPage['region'];
+        $ville = $skateparkPage['ville'];
+        $contenu = $skateparkPage['contenu'];
+        $adresse = $skateparkPage['adresse'];
+
+        require('views/AddEditForm.php');
+    }
+
+    function supprimerSkatepark($id)
+    {
+        $postManager = new \Models\PostManager();
+        $skateparkPage = $postManager->supprimerSkatepark($id);
+
+
+        $_SESSION['message'] = "Le Skatepark a été supprimé avec succès";
+        $_SESSION['msg_type'] = "danger";
+        
+        header('Location: index.php?action=SkateManager');
+    }
+
 }

@@ -25,7 +25,7 @@
                     <?=substr($skatepark['contenu'], 0, 110).'...';?>
                 </p>
                 <div class="form-inline justify-content-center justify-content-lg-start">
-                    <a href="index.php?action=viewSkatepark&id=<?= $skatepark['id'] ?>" id="blogPostBtn">Voir le skatepark</a>
+                    <a href="index.php?action=viewSkatepark&amp;id=<?= $skatepark['id'] ?>" id="blogPostBtn">Voir le skatepark</a>
                 </div>
             </div>
         </div>

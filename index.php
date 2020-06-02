@@ -22,7 +22,7 @@ if (isset($_GET['action'])) {
     }
     else if ($_GET['action'] == 'Profil') {
         if (isset($_SESSION['id'])){
-            $ControllerfrontEnd->viewProfilPage();
+            $ControllerfrontEnd->viewProfilPage($_SESSION['pseudo']);
         }
         else {
             echo 'Veuillez vous connecter pour accéder à cette page';
@@ -61,9 +61,37 @@ if (isset($_GET['action'])) {
     else if ($_GET['action'] == 'viewSkatepark') {
         $ControllerfrontEnd->ShowSkatePark($_GET['id']);
     }
+    else if ($_GET['action'] == 'addComment') {
+        if (!empty($_POST['commentaire'])) {
+            $ControllerfrontEnd->AddCommentaire($_GET['id'], $_POST['pseudo'], $_POST['commentaire']);
+        }   
+        else {
+            echo 'Tous les champs ne sont pas remplis !';
+        }
+    }
+    else if ($_GET['action'] == 'signalerCommentaire') {
+        $ControllerfrontEnd->SignalerCommentaire($_GET['id'], $_GET['postid']);
+    }
     else if ($_GET['action'] == 'SkateManager') {
         $ControllerbackEnd->ShowSkateParkManager();
     }
+    else if ($_GET['action'] == 'deleteSkatepark') {
+        $ControllerbackEnd->supprimerSkatepark($_GET['id']);
+    }
+    else if ($_GET['action'] == 'addSkatepark') {
+        $ControllerbackEnd->ShowAddForm();
+    }
+    else if ($_GET['action'] == 'editSkatepark') {
+        $ControllerbackEnd->ShowEditForm($_GET['id']);
+    }
+    else if (isset($_POST['saveSkatepark'])){
+        if (!empty($_POST['region']) && !empty($_POST['ville']) && !empty($_POST['contenu']) && !empty($_POST['adresse'])) {
+            $ControllerbackEnd->addSkatepark($_POST['region'], $_POST['ville'], $_POST['contenu'], $_POST['image'], $_POST['adresse']);
+        }
+        else {
+            echo 'Tous les champs ne sont pas remplis !';
+        }
+    } 
 } 
 else {
     $ControllerfrontEnd->viewHomePage();

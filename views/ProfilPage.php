@@ -31,7 +31,7 @@ if (isset($_SESSION['message'])) {
         </div>
     </div>
     <div class="row">
-        <div class="col-md-3 col-12 mt-5 mx-auto px-5 px-md-0">
+        <div class="col-lg-3 col-12 mt-5 mx-auto px-5 px-lg-0">
 
             <?php if($update == false) { ?>
 
@@ -95,17 +95,26 @@ if (isset($_SESSION['message'])) {
             </form>
             <?php } ?>
         </div>
-        <div class="col-md-7 col-12 mt-5 mx-auto">
-            <p class="text-center" id="profilTitle">Mes commentaires</p>
+        <div class="col-lg-7 col-12 mt-5 mx-auto">
+            <p class="text-center mb-5" id="profilTitle">Mes commentaires</p>
 
-            <div class="card-body card col-md-10 mb-3 mt-5 mx-auto" id="ProfilCommentaire">
-                <p class="ml-4">Pseudo<strong></strong> Date</p>
-                <p class="ml-4 mt-2">Commentaires</p>
-            <form class="form-inline">
-                <a class="btn btn-danger ml-auto mr-4 mr-lg-0 " href=""><i class="far fa-trash-alt"></i></a>
-            </form>
-        </div>
-    </div>
+            <?php
+            while ($comments = $Ucommentaires->fetch())
+            {
+            if($comments['signaler'] == 0){?>
+            <div class="col-12 ml-lg-4 ml-0" id="ProfilCommentaire">
+                <div class="card-body card mb-3">
+                    <p class="ml-4 ml-lg-0"><strong><?= $comments['User_pseudo'] ?></strong> le <?= $comments['comment_date_fr'] ?></p>
+                    <p class="mt-2 ml-4 ml-lg-0"><?= $comments['contenu'] ?></p>
+                    <form class="form-inline">
+                        <a class="btn btn-danger ml-auto mr-4 mr-lg-0" href="index.php?action=deleteSkatepark&amp;id=<?= $listSkatePark['id'] ?>"><i class="far fa-trash-alt"></i></a>
+                    </form>
+                </div>
+            </div>
+            <?php }
+            }
+            $Ucommentaires->closeCursor();
+            ?>
         </div>
     </div>
 </div>

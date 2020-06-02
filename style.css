@@ -528,14 +528,14 @@ section#homeIcon
     color: #5CAFED;
 }
 
-#ProfilCommentaire .card-body
+#ProfilCommentaire .card-body, #SkateparkCommentaire .card-body
 {
     border: 2px solid #5CAFED!important;
     background-color: #f0f4f7;
 }
 
 
-/************************** SkatePark Admin **************************/
+/************************** SkatePark Manager **************************/
 
 thead#adminTab
 {
@@ -569,7 +569,24 @@ thead#adminTab
     color: #eee;
 }
 
+
+/************************** AddEditForm Page **************************/
+
+#AddEditForm
+{
+    margin-top: 12vh;
+}
+
 /************************** MediaQueries **************************/
+
+
+@media (min-width: 992px)
+{
+    #profilInfosContainer
+    {
+        width: 300px!important;
+    }
+}
 
 @media (max-width: 992px)
 {
@@ -705,11 +722,6 @@ thead#adminTab
         top: 14vh;
     }
 
-    #profilInfosContainer
-    {
-        width: 300px!important;
-    }
-
 }
 
 @media screen and (max-width: 475px)
@@ -783,8 +795,8 @@ thead#adminTab
 
     #blogPostImg
     {
-        min-width: 16rem!important;
-        max-width: 16rem!important;
+        min-width: 19rem!important;
+        max-width: 19rem!important;
         height: 8rem!important;
         transform: translate(0, -3.5rem);
     }
@@ -795,7 +807,7 @@ thead#adminTab
         text-align: center;
     }
 
-    #SkateParkDescriptionRight, #SkateParkDescriptionMap, #SkateparkCommentaireForm, #ProfilCommentaire
+    #SkateParkDescriptionRight, #SkateParkDescriptionMap, #SkateparkCommentaireForm, #SkateparkCommentaire
     {
         margin-left: 1rem!important;
         margin-right: 1rem!important;
@@ -812,7 +824,7 @@ thead#adminTab
 
 @media screen and (max-width: 375px)
 {
-    /**************** HoemIcons ****************/
+    /**************** HomeIcons ****************/
     #text-left
     {
         padding-right: 15px!important;
@@ -831,7 +843,7 @@ thead#adminTab
         width: 85px!important;
         height: 85px!important;
         margin-bottom: 2rem;
-        margin-left: 5%;
+        margin-left: 0;
     }
 
     #ProfiBar p
@@ -849,5 +861,15 @@ thead#adminTab
     .icon_container 
     {
         width: 30%!important;
+    }
+}
+
+@media screen and (max-width: 325px)
+{
+    /**************** Template Région ****************/
+    #blogPostImg
+    {
+        min-width: 16rem!important;
+        max-width: 16rem!important;
     }
 }
