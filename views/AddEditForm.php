@@ -16,16 +16,16 @@
                     <option>Auvergne-Rhône-Alpes</option>
                     <option>Bourgogne-Franche-Comté</option>
                     <option>Bretagne</option>
-                    <option>Centre-Val de Loire</option>
+                    <option>Centre-Val-de-Loire</option>
                     <option>Corse</option>
-                    <option>Grand Est</option>
+                    <option>Grand-Est</option>
                     <option>Hauts-de-France</option>
                     <option>Île-de-France</option>
                     <option>Normandie</option>
                     <option>Nouvelle-Aquitaine</option>
                     <option>Occitanie</option>
-                    <option>Pays de la Loire</option>
-                    <option>Provence-Alpes-Côte d'Azur</option>
+                    <option>Pays-de-la-Loire</option>
+                    <option>Provence-Alpes-Côte-d'Azur</option>
                 </select>
             </div>
 

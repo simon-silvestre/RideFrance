@@ -43,13 +43,13 @@ class FrontEnd
         require('views/ProfilPage.php');
     }
 
-    function ShowIDFPage()
+    function ShowRegionPage($region)
     {
         $postManager = new \Models\PostManager();
 
-        $showIDF = $postManager->ShowSkatePark();
+        $showRegion = $postManager->ShowRegionSkatePark($region);
 
-        require('views/PagesRegions/IDF.php');
+        require('views/RegionTemplate.php');
     }
 
     function ShowSkatePark($postId)

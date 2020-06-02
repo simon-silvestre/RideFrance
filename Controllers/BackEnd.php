@@ -171,7 +171,7 @@ class BackEnd
     function ShowSkateParkManager()
     {
         $postManager = new \Models\PostManager();
-        $skatepark = $postManager->ShowSkatePark();
+        $skatepark = $postManager->ShowAllSkatePark();
         require('views/SkateParkAdmin.php');
     }
 
@@ -214,6 +214,23 @@ class BackEnd
         $adresse = $skateparkPage['adresse'];
 
         require('views/AddEditForm.php');
+    }
+
+    function updateChapitre($id, $region, $ville, $contenu, $adresse)
+    {
+        $postManager = new \Models\PostManager();
+        $updateSkatepark = $postManager->updateSkatepark($id, $region, $ville, $contenu, $adresse);
+
+        
+        if ($updateSkatepark === false) {
+            throw new \Exception('Impossible de modifier le chapitre !');
+        }
+        else {
+            $_SESSION['message'] = "Le Skatepark a été modifié avec succès";
+            $_SESSION['msg_type'] = "info";
+
+            header('Location: index.php?action=SkateManager');
+        }
     }
 
     function supprimerSkatepark($id)

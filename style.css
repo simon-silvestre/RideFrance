@@ -234,6 +234,12 @@ section#homeIcon
 
 /************************** Skatepark Région **************************/
 
+#listDeTri
+{
+    width: 110px!important;
+    margin-bottom: -3rem;
+}
+
 #blogPost
 {
     font-family: 'HelveticaNeue-Medium';
@@ -585,6 +591,13 @@ thead#adminTab
 
 /************************** MediaQueries **************************/
 
+@media (min-width: 1320px)
+{
+    #blogPost 
+    {
+        transform: translateX(15px);
+    }
+}
 
 @media (min-width: 992px)
 {
@@ -763,13 +776,12 @@ thead#adminTab
 
 @media screen and (max-width: 415px)
 {
-    /**************** HoemIcons ****************/
+    /**************** HomeIcons ****************/
     #text-left
     {
         padding: 0!important;
     }
 
-    /**************** HoemIcons ****************/
     #home_icon_img {
         flex: 0 0 90%!important;
         max-width: 90%!important;
@@ -805,6 +817,11 @@ thead#adminTab
         max-width: 19rem!important;
         height: 8rem!important;
         transform: translate(0, -3.5rem);
+    }
+
+    #listDeTri
+    {
+        margin-bottom: -1.5rem;
     }
     /**************** Skatepark Post Template ****************/
     #SkateParkDescriptionLeft

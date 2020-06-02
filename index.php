@@ -55,8 +55,8 @@ if (isset($_GET['action'])) {
             echo 'Tous les champs ne sont pas remplis !';
         } 
     }
-    else if ($_GET['action'] == 'IDF') {
-        $ControllerfrontEnd->ShowIDFPage();
+    else if ($_GET['action'] == 'region') {
+        $ControllerfrontEnd->ShowRegionPage($_GET['region']);
     }
     else if ($_GET['action'] == 'viewSkatepark') {
         $ControllerfrontEnd->ShowSkatePark($_GET['id']);
@@ -83,6 +83,11 @@ if (isset($_GET['action'])) {
     }
     else if ($_GET['action'] == 'editSkatepark') {
         $ControllerbackEnd->ShowEditForm($_GET['id']);
+    }
+    else if (isset($_POST['updateSkatepark'])){
+        if (!empty($_POST['region']) && !empty($_POST['ville']) && !empty($_POST['contenu']) && !empty($_POST['adresse'])) {
+            $ControllerbackEnd->updateChapitre($_POST['id'], $_POST['region'], $_POST['ville'], $_POST['contenu'], $_POST['adresse']);
+        }
     }
     else if (isset($_POST['saveSkatepark'])){
         if (!empty($_POST['region']) && !empty($_POST['ville']) && !empty($_POST['contenu']) && !empty($_POST['adresse'])) {
