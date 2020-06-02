@@ -72,7 +72,9 @@ if (isset($_SESSION['message'])) {
     <div class="row mb-5 mr-5 ml-5" id="SkateparkCommentaireForm">
         <h2 class="text-center mb-4 col-12">Commentaires</h2>
         <div class="col-12 card-body card" id="CommentForm">
-            <form action="index.php?action=addComment&amp;id=<?= $skateparkPage['id'] ?>" method="post">
+
+        <?php if (isset($_SESSION['id'])){ ?>
+        <form action="index.php?action=addComment&amp;id=<?= $skateparkPage['id'] ?>" method="post">
             <input type="hidden" name="pseudo" value="<?= $_SESSION['pseudo'] ?>">
                 <div class="form-group ml-3 ml-lg-0 mr-3 mr-lg-0">
                     <label for="comment">Commentaire</label>
@@ -80,6 +82,13 @@ if (isset($_SESSION['message'])) {
                 </div>
                 <button type="submit" class="btn btn-dark ml-3 ml-lg-0">Envoyer</button>
             </form>
+        <?php } else { ?>
+            <h3 class="text-center px-5" id="connectPublishComment">Veuillez vous connecter pour publier un commentaire</h3>
+            <form class="form-inline">
+                <a href="index.php?action=LoginPage" class="btn btn-dark mt-3 mx-auto">SE CONNECTER</a>
+            </form>
+        <?php }?>
+
         </div>
     </div>
         <?php

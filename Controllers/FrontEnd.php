@@ -33,9 +33,13 @@ class FrontEnd
         require('views/ProfilPage.php');
     }
     
-    function viewProfilForm()
+    function viewProfilForm($pseudo)
     {
         $update = true;
+
+        $userManager = new \Models\UserManager();
+        $Ucommentaires = $userManager->UserCommentaire($pseudo);
+
         require('views/ProfilPage.php');
     }
 

@@ -10,11 +10,18 @@ class BackEnd
 
         $userManager = new \Models\UserManager();
         $Register = $userManager->Register($nom, $prenom, $email, $pseudo, $hashpass);
-
-        $_SESSION['message'] = "Bravo vous êtes inscrit ! Vous pouvez maintenant vous connecter";
-        $_SESSION['msg_type'] = "success";
-        $update = false;
-
+        
+        if($Register == false)
+        {
+            $_SESSION['message'] = "Attention ! Adresse mail ou pseudo déja utilisé";
+            $_SESSION['msg_type'] = "danger";
+        } 
+        else 
+        {
+            $_SESSION['message'] = "Bravo vous êtes inscrit ! Vous pouvez maintenant vous connecter";
+            $_SESSION['msg_type'] = "success";
+            $update = false;
+        }
         require('views/LoginPage.php');
     }
 
@@ -64,36 +71,52 @@ class BackEnd
     {
         $userManager = new \Models\UserManager();
 
+        $userManager = new \Models\UserManager();
+        $Ucommentaires = $userManager->UserCommentaire($pseudo);
+
         if($img === "" && $mdp === "") {
             $img = $_SESSION['img'];
             $mdp = $_SESSION['mdp'];
 
             $resultUpdate = $userManager->saveProfil($id, $nom, $prenom, $email, $pseudo, $mdp, $img);
 
-            $_SESSION['message'] = "Vos informations ont été modifiés avec succes";
-            $_SESSION['msg_type'] = "info";
+            if($resultUpdate == false)
+            {
+                $_SESSION['message'] = "Attention ! Adresse mail ou pseudo déja utilisé";
+                $_SESSION['msg_type'] = "danger";
+            } 
+            else 
+            {
+                $_SESSION['message'] = "Vos informations ont été modifiés avec succes";
+                $_SESSION['msg_type'] = "info";
 
-            $_SESSION['nom'] = $nom;
-            $_SESSION['prenom'] = $prenom;
-            $_SESSION['email'] = $email;
-            $_SESSION['pseudo'] = $pseudo;
-            
+                $_SESSION['nom'] = $nom;
+                $_SESSION['prenom'] = $prenom;
+                $_SESSION['email'] = $email;
+                $_SESSION['pseudo'] = $pseudo;
+            }
         }
         else if($mdp === "") {
             $mdp = $_SESSION['mdp'];
 
             $resultUpdate = $userManager->saveProfil($id, $nom, $prenom, $email, $pseudo, $mdp, $img);
 
-            $_SESSION['message'] = "Vos informations ont été modifiés avec succes";
-            $_SESSION['msg_type'] = "info";
+            if($resultUpdate == false)
+            {
+                $_SESSION['message'] = "Attention ! Adresse mail ou pseudo déja utilisé";
+                $_SESSION['msg_type'] = "danger";
+            } 
+            else 
+            {
+                $_SESSION['message'] = "Vos informations ont été modifiés avec succes";
+                $_SESSION['msg_type'] = "info";
 
-            $_SESSION['nom'] = $nom;
-            $_SESSION['prenom'] = $prenom;
-            $_SESSION['email'] = $email;
-            $_SESSION['pseudo'] = $pseudo;
-            $_SESSION['img'] = $img;
-
-            $update = false;
+                $_SESSION['nom'] = $nom;
+                $_SESSION['prenom'] = $prenom;
+                $_SESSION['email'] = $email;
+                $_SESSION['pseudo'] = $pseudo;
+                $_SESSION['img'] = $img;
+            }
         }
         else if($img === "") {
             $img = $_SESSION['img'];
@@ -102,15 +125,22 @@ class BackEnd
 
             $resultUpdate = $userManager->saveProfil($id, $nom, $prenom, $email, $pseudo, $mdp, $img);
 
-            $_SESSION['message'] = "Vos informations ont été modifiés avec succes";
-            $_SESSION['msg_type'] = "info";
+            if($resultUpdate == false)
+            {
+                $_SESSION['message'] = "Attention ! Adresse mail ou pseudo déja utilisé";
+                $_SESSION['msg_type'] = "danger";
+            } 
+            else 
+            {
+                $_SESSION['message'] = "Vos informations ont été modifiés avec succes";
+                $_SESSION['msg_type'] = "info";
 
-            $_SESSION['nom'] = $nom;
-            $_SESSION['prenom'] = $prenom;
-            $_SESSION['email'] = $email;
-            $_SESSION['pseudo'] = $pseudo;
-            $_SESSION['mdp'] = $mdp;
-
+                $_SESSION['nom'] = $nom;
+                $_SESSION['prenom'] = $prenom;
+                $_SESSION['email'] = $email;
+                $_SESSION['pseudo'] = $pseudo;
+                $_SESSION['mdp'] = $mdp;
+            }
         }
         else
         {
@@ -132,7 +162,6 @@ class BackEnd
                 $_SESSION['pseudo'] = $pseudo;
                 $_SESSION['mdp'] = $mdp;
                 $_SESSION['img'] = $img;
-
             }
         }
         $update = false;

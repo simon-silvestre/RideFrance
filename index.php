@@ -18,7 +18,7 @@ if (isset($_GET['action'])) {
         $ControllerfrontEnd->viewLoginPage();
     }
     else if ($_GET['action'] == 'ProfilForm') {
-        $ControllerfrontEnd->viewProfilForm();
+        $ControllerfrontEnd->viewProfilForm($_SESSION['pseudo']);
     }
     else if ($_GET['action'] == 'Profil') {
         if (isset($_SESSION['id'])){

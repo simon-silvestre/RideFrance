@@ -376,6 +376,12 @@ section#homeIcon
     border-width: 1px!important;
 }
 
+#connectPublishComment
+{
+    font-family: 'HelveticaNeue-CondensedBlack';
+    font-size: 20px;
+}
+
 /************************** LoginPage **************************/
 
 .form_bg
@@ -861,6 +867,12 @@ thead#adminTab
     .icon_container 
     {
         width: 30%!important;
+    }
+
+    /**************** Skatepark Post ****************/
+    #SkateParkTitle h1 
+    {
+        font-size: 20px;
     }
 }
 
