@@ -335,6 +335,17 @@ section#homeIcon
 }
 
 /************************** SkatePark Post Page **************************/
+#favorisIcon
+{
+    font-size: 25px;
+    cursor: pointer;
+}
+
+#coeurPlein
+{
+    color: rgb(255, 0, 98);
+}
+
 #SkateParkTitle h1
 {
     font-size: 25px;
@@ -581,6 +592,11 @@ thead#adminTab
     color: #eee;
 }
 
+.icon_container 
+    {
+        width: 40%!important;
+    }
+
 
 /************************** AddEditForm Page **************************/
 
@@ -787,6 +803,17 @@ thead#adminTab
         max-width: 90%!important;
     }
 
+    /**************** Skatepark Admin ****************/
+    .icon_btn
+    {
+        margin-bottom: 1rem;
+    }
+
+    .icon_container 
+    {
+        width: 25%!important;
+    }
+
     /**************** LoginPage ****************/
     #form_container
     {
@@ -824,6 +851,13 @@ thead#adminTab
         margin-bottom: -1.5rem;
     }
     /**************** Skatepark Post Template ****************/
+    #favorisIcon
+    {
+        font-size: 20px;
+        cursor: pointer;
+        margin-right: 2rem!important;
+    }
+
     #SkateParkDescriptionLeft
     {
         padding: 0;
@@ -873,17 +907,6 @@ thead#adminTab
     {
         font-size: 0.7rem!important;
         margin-left: 1.2rem!important;
-    }
-
-    /**************** Skatepark Admin ****************/
-    .icon_btn
-    {
-        margin-bottom: 1rem;
-    }
-
-    .icon_container 
-    {
-        width: 30%!important;
     }
 
     /**************** Skatepark Post ****************/

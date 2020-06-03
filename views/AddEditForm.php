@@ -6,7 +6,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col card-body mb-5">
+        <div class="col-11 mx-auto card-body mb-5">
             <form action="index.php?action=update" method="post" id="AddEditForm"> 
             <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
             <div class="form-group">

@@ -97,6 +97,18 @@ if (isset($_GET['action'])) {
             echo 'Tous les champs ne sont pas remplis !';
         }
     } 
+    else if ($_GET['action'] == 'AllUsers') {
+        $ControllerbackEnd->GetAllUsers();
+    }
+    else if ($_GET['action'] == 'deleteUser') {
+        $ControllerbackEnd->supprimerUtilisateur($_GET['id']);
+    }
+    else if ($_GET['action'] == 'changeAdmin') {
+        $ControllerbackEnd->changeAdmin($_GET['id']);
+    }
+    else if ($_GET['action'] == 'changeUser') {
+        $ControllerbackEnd->changeUser($_GET['id']);
+    }
 } 
 else {
     $ControllerfrontEnd->viewHomePage();

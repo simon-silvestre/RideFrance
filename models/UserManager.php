@@ -41,4 +41,38 @@ class UserManager extends Config
         return $Ucomment;
     }
 
+    public function GetAllUsers()
+    {
+        $db = $this->dbConnect();
+        $Users = $db->query('SELECT id, nom, prenom, email, pseudo, imageProfil, admin FROM Users ORDER BY pseudo');
+        
+        return $Users;
+    }
+
+    public function deleteUser($id)
+    {
+        $db = $this->dbConnect();
+        $delUser = $db->prepare("DELETE FROM Users WHERE id= ? ");
+        $delUser->execute(array($id));
+
+        return $delUser;
+    }
+
+    public function changeAdmin($id)
+    {
+        $db = $this->dbConnect();
+        $up = $db->prepare("UPDATE Users SET admin = 1 WHERE id = ?");
+        $update = $up->execute(array($id));
+
+        return $update;
+    }
+
+    public function changeUser($id)
+    {
+        $db = $this->dbConnect();
+        $up = $db->prepare("UPDATE Users SET admin = 0 WHERE id = ?");
+        $update = $up->execute(array($id));
+
+        return $update;
+    }
 }

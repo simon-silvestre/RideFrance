@@ -15,7 +15,13 @@ if (isset($_SESSION['message'])) {
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-5 col-8 mt-5 ml-md-5 mx-auto text-center text-md-left" id="SkateParkTitle">
+    <div class="ml-auto mt-4 mr-md-5 mr-3" id="favorisIcon">
+            <i class="far fa-heart" id="coeurVide"></i>
+            <i class="fas fa-heart" id="coeurPlein"></i>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5 col-8 ml-md-5 mx-auto text-center text-md-left" id="SkateParkTitle">
             <h1>Skatepark de <span id="SkateparkName"><?= $skateparkPage['ville'] ?></span></h1>
         </div>
     </div>

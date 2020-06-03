@@ -172,7 +172,7 @@ class BackEnd
     {
         $postManager = new \Models\PostManager();
         $skatepark = $postManager->ShowAllSkatePark();
-        require('views/SkateParkAdmin.php');
+        require('views/SkateParkManager.php');
     }
 
     function ShowAddForm()
@@ -182,6 +182,7 @@ class BackEnd
         $ville = '';
         $contenu = '';
         $adresse = '';
+
         require('views/AddEditForm.php');
     }
 
@@ -243,6 +244,43 @@ class BackEnd
         $_SESSION['msg_type'] = "danger";
         
         header('Location: index.php?action=SkateManager');
+    }
+
+    function GetAllUsers()
+    {
+        $usersManager = new \Models\UserManager();
+        $AllUsers = $usersManager->GetAllUsers();
+
+        require('views/UtilisateursManager.php');
+    }
+
+    function supprimerUtilisateur($id)
+    {
+        $usersManager = new \Models\UserManager();
+        $deleteUser = $usersManager->deleteUser($id);
+
+        $_SESSION['message'] = "L'utilisateur a été supprimé avec succès";
+        $_SESSION['msg_type'] = "danger";
+
+        header('Location: index.php?action=AllUsers');
+    }
+
+    function changeAdmin($id)
+    {
+        $usersManager = new \Models\UserManager();
+        $changeAdmin = $usersManager->changeAdmin($id);
+
+        header('Location: index.php?action=AllUsers');
+        require('views/UtilisateursManager.php');
+    }
+
+    function changeUser($id)
+    {
+        $usersManager = new \Models\UserManager();
+        $changeuser = $usersManager->changeUser($id);
+
+        header('Location: index.php?action=AllUsers');
+        require('views/UtilisateursManager.php');
     }
 
 }

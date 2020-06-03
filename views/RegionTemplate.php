@@ -1,4 +1,4 @@
-<?php $title = 'Skateparks d\'île de france'; ?>
+<?php $title = 'Skateparks'; ?>
 
 <?php ob_start(); ?>
 
