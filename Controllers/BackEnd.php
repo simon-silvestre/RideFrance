@@ -67,10 +67,18 @@ class BackEnd
         header('Location: index.php?action=Accueil');
     }
 
+    private function storageSession($nom, $prenom, $email, $pseudo, $mdp = null, $img = null)
+    {
+        $_SESSION['nom'] = $nom;
+        $_SESSION['prenom'] = $prenom;
+        $_SESSION['email'] = $email;
+        $_SESSION['pseudo'] = $pseudo;
+        $_SESSION['mdp'] = $mdp;
+        $_SESSION['img'] = $img;
+    }
+
     function EditProfilInfos($id, $nom, $prenom, $email, $pseudo, $mdp, $img)
     {
-        $userManager = new \Models\UserManager();
-
         $userManager = new \Models\UserManager();
         $Ucommentaires = $userManager->UserCommentaire($pseudo);
 
@@ -90,10 +98,7 @@ class BackEnd
                 $_SESSION['message'] = "Vos informations ont été modifiés avec succes";
                 $_SESSION['msg_type'] = "info";
 
-                $_SESSION['nom'] = $nom;
-                $_SESSION['prenom'] = $prenom;
-                $_SESSION['email'] = $email;
-                $_SESSION['pseudo'] = $pseudo;
+                $this->storageSession($nom, $prenom, $email, $pseudo);
             }
         }
         else if($mdp === "") {
@@ -111,11 +116,7 @@ class BackEnd
                 $_SESSION['message'] = "Vos informations ont été modifiés avec succes";
                 $_SESSION['msg_type'] = "info";
 
-                $_SESSION['nom'] = $nom;
-                $_SESSION['prenom'] = $prenom;
-                $_SESSION['email'] = $email;
-                $_SESSION['pseudo'] = $pseudo;
-                $_SESSION['img'] = $img;
+                $this->storageSession($nom, $prenom, $email, $pseudo, $img);
             }
         }
         else if($img === "") {
@@ -135,11 +136,7 @@ class BackEnd
                 $_SESSION['message'] = "Vos informations ont été modifiés avec succes";
                 $_SESSION['msg_type'] = "info";
 
-                $_SESSION['nom'] = $nom;
-                $_SESSION['prenom'] = $prenom;
-                $_SESSION['email'] = $email;
-                $_SESSION['pseudo'] = $pseudo;
-                $_SESSION['mdp'] = $mdp;
+                $this->storageSession($nom, $prenom, $email, $pseudo, $mdp);
             }
         }
         else
@@ -156,12 +153,7 @@ class BackEnd
                 $_SESSION['message'] = "Vos informations ont été modifiés avec succes";
                 $_SESSION['msg_type'] = "info";
 
-                $_SESSION['nom'] = $nom;
-                $_SESSION['prenom'] = $prenom;
-                $_SESSION['email'] = $email;
-                $_SESSION['pseudo'] = $pseudo;
-                $_SESSION['mdp'] = $mdp;
-                $_SESSION['img'] = $img;
+                $this->storageSession($nom, $prenom, $email, $pseudo, $mdp, $img);
             }
         }
         $update = false;

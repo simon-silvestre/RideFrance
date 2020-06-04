@@ -61,9 +61,15 @@ if (isset($_GET['action'])) {
     else if ($_GET['action'] == 'viewSkatepark') {
         $ControllerfrontEnd->ShowSkatePark($_GET['id']);
     }
+    else if ($_GET['action'] == 'Favoris') {
+        $ControllerfrontEnd->Favoris($_GET['id'], $_SESSION['id']);
+    }
+    else if ($_GET['action'] == 'FavorisPage') {
+        $ControllerfrontEnd->ShowFavorisPage();
+    }
     else if ($_GET['action'] == 'addComment') {
         if (!empty($_POST['commentaire'])) {
-            $ControllerfrontEnd->AddCommentaire($_GET['id'], $_POST['pseudo'], $_POST['commentaire']);
+            $ControllerfrontEnd->AddCommentaire($_GET['id'], $_POST['pseudo'], $_POST['rating'], $_POST['commentaire']);
         }   
         else {
             echo 'Tous les champs ne sont pas remplis !';

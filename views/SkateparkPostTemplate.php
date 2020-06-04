@@ -16,7 +16,7 @@ if (isset($_SESSION['message'])) {
 <div class="container-fluid">
     <div class="row">
     <div class="ml-auto mt-4 mr-md-5 mr-3" id="favorisIcon">
-            <i class="far fa-heart" id="coeurVide"></i>
+            <a href="index.php?action=Favoris&amp;id=<?= $skateparkPage['id'] ?>"><i class="far fa-heart" id="coeurVide"></i></a>
             <i class="fas fa-heart" id="coeurPlein"></i>
         </div>
     </div>
@@ -40,31 +40,7 @@ if (isset($_SESSION['message'])) {
 
             <div>
                 <h2 class="text-center mb-5 mt-5">Notes des membres</h2>
-                <div class="d-flex justify-content-center notes_Container">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                    <i class="far fa-star"></i>
-                </div>
-            </div>
-            
-            <div>
-                <h2 class="text-center mb-4 mt-5">Notes le skatepark</h2>
-                <?php if (isset($_SESSION['id'])){ ?>
-                    <div class="d-flex justify-content-center notes_Container">
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                </div>
-                <?php }else { ?>
-                    <p class="text-center">Vous devez être inscrit pour noter le skatepark</p>
-                    <form class="form-inline">
-                    <a href="index.php?action=LoginPage" class="btn btn-dark mt-4 mx-auto">SE CONNECTER</a>
-                    </form>
-                <?php }?>
+                    <div class="mx-auto" id="avgNotes"></div>
             </div>
         </div>
     </div>
@@ -82,9 +58,14 @@ if (isset($_SESSION['message'])) {
         <?php if (isset($_SESSION['id'])){ ?>
         <form action="index.php?action=addComment&amp;id=<?= $skateparkPage['id'] ?>" method="post">
             <input type="hidden" name="pseudo" value="<?= $_SESSION['pseudo'] ?>">
+            <div class="form-group ml-3 ml-lg-0 mr-3 mr-lg-0">
+                <label for="comment">Note :</label>
+                <div class="p-0" id="rateYo"></div>
+            </div>
                 <div class="form-group ml-3 ml-lg-0 mr-3 mr-lg-0">
                     <label for="comment">Commentaire</label>
-                    <input type="comment" class="form-control comment_input" id="inputCommentForm" name="commentaire">
+                    <input type="text" class="form-control comment_input" id="inputCommentForm" name="commentaire">
+                    <input type="hidden" name="rating" id="rating">
                 </div>
                 <button type="submit" class="btn btn-dark ml-3 ml-lg-0">Envoyer</button>
             </form>
@@ -102,10 +83,21 @@ if (isset($_SESSION['message'])) {
         {
         if($comments['signaler'] == 0){?>
         <div class="row mr-5 ml-5" id="SkateparkCommentaire">
-            <div class=" col card-body card mb-3">
+            <div class="col card-body card mb-3">
                 <p class="ml-4 ml-lg-0"><strong><?= $comments['User_pseudo'] ?></strong> le <?= $comments['comment_date_fr'] ?></p>
-                <p class="mt-2 ml-4 ml-lg-0"><?= $comments['contenu'] ?></p>
+                <p><div class="ml-3 ml-lg-0 p-lg-0 mt-1 rateYo-<?= $comments['Notes'] ?>"></div></p>
+
+                <script>
+                $(function () {
+                    $(".rateYo-<?= $comments['Notes'] ?>").rateYo({
+                        starWidth: "15px",
+                        readOnly: true,
+                        rating: <?= $comments['Notes'] ?>
+                    });
+                });
+                </script>
                 <form class="form-inline">
+                    <p class="mt-2 ml-4 ml-lg-0"><?= $comments['contenu'] ?></p>
                     <a class="btn btn-danger ml-auto mr-4 mr-lg-0 " href="index.php?action=signalerCommentaire&amp;id=<?= $comments['id'] ?>&amp;postid=<?= $skateparkPage['id'] ?>"><i class="fas fa-exclamation"></i></a>
                 </form>
             </div>
@@ -116,7 +108,23 @@ if (isset($_SESSION['message'])) {
         ?>
 </div>
 
+    <script>
+    $(function () {
+        $("#rateYo").rateYo({
+            rating: 3,
+            fullStar: true,
+            onSet: function(rating, rateYoInstance){
+                $("#rating").val(rating);
+            }
+        });
 
+        $("#avgNotes").rateYo({
+            starWidth: "40px",
+            readOnly: true,
+            rating: '<?= $notesMoyenne['avg'] ?>'
+        });
+    });
+    </script>
 
 <?php $content = ob_get_clean() ?>
 

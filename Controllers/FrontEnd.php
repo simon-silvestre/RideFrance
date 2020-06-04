@@ -59,14 +59,15 @@ class FrontEnd
 
         $skateparkPage = $postManager->GetSkatePark($postId);
         $showComments = $commentManager->showComments($postId);
+        $notesMoyenne = $commentManager->getAvgRating();
 
         require('views/SkateparkPostTemplate.php');
     }
 
-    function AddCommentaire($post_id, $pseudo, $commentaire)
+    function AddCommentaire($post_id, $pseudo, $note, $commentaire)
     {
         $commentManager = new \Models\CommentManager();
-        $PostCommentaire = $commentManager->AddComments($post_id, $pseudo, $commentaire);
+        $PostCommentaire = $commentManager->AddComments($post_id, $pseudo, $note, $commentaire);
 
         if ($PostCommentaire === false) {
             throw new \Exception('Impossible d\'ajouter le commentaire !');
@@ -87,6 +88,34 @@ class FrontEnd
         $_SESSION['msg_type'] = "danger";
 
         header('Location: index.php?action=viewSkatepark&id=' . $post_id);
+    }
+
+    function ShowFavorisPage()
+    {
+        $postManager = new \Models\PostManager();
+        $Favoris = $postManager->GetFavoris();
+
+        $AllFavoris = $postManager->GetFavSkatepark($Favoris['post_id']);
+
+        require('views/FavorisPage.php');
+    }
+
+    function Favoris($post_id, $user_id)
+    {
+        $postManager = new \Models\PostManager();
+        $Favoris = $postManager->Favoris($post_id, $user_id);
+
+        if($Favoris == false){
+            $_SESSION['message'] = "Le skatepark est deja dans vos favoris";
+            $_SESSION['msg_type'] = "danger";
+
+            header('Location: index.php?action=viewSkatepark&id=' . $post_id);
+        } else {
+            $_SESSION['message'] = "Le skatepark à bien été ajouté aux favoris";
+            $_SESSION['msg_type'] = "success";
+
+            header('Location: index.php?action=viewSkatepark&id=' . $post_id);
+        }
     }
     
 }
