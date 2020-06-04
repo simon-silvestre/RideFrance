@@ -39,10 +39,11 @@ class CommentManager extends Config
         return $signalerCom;
     }
 
-    public function getAvgRating()
+    public function getAvgRating($postId)
     {
         $db = $this->dbConnect();
-        $notesMoyenne = $db->query('SELECT avg(Notes) as avg FROM Commentaires');
+        $notesMoyenne = $db->prepare('SELECT avg(Notes) as avg FROM Commentaires  WHERE post_id = ?');
+        $notesMoyenne->execute(array($postId));
         $Moyenne = $notesMoyenne->fetch();
 
         return $Moyenne;

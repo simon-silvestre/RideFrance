@@ -59,7 +59,7 @@ class FrontEnd
 
         $skateparkPage = $postManager->GetSkatePark($postId);
         $showComments = $commentManager->showComments($postId);
-        $notesMoyenne = $commentManager->getAvgRating();
+        $notesMoyenne = $commentManager->getAvgRating($postId);
 
         require('views/SkateparkPostTemplate.php');
     }
