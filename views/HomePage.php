@@ -45,7 +45,7 @@
                 <div class="dropdown-menu bg-dark navBlack" aria-labelled="navbarDropdown">
                   <a class="dropdown-item" href="index.php?action=Profil">PROFIL</a> 
                   <a class="dropdown-item" href="index.php?action=SkateManager">SKATEPARKS MANAGER</a>
-                  <a class="dropdown-item" href="CommentaireManager">COMMENTAIRES MANAGER</a>
+                  <a class="dropdown-item" href="index.php?action=CommentManager">COMMENTAIRES MANAGER</a>
                   <a class="dropdown-item" href="index.php?action=AllUsers">UTILISATEURS MANAGER</a>
                 </div>
               </li>
@@ -107,40 +107,28 @@
   <section id="Actualités">
     <div class="container-fluid">
       <div class="row mt-5">
-        <h2 class="col-sm-12 col-10 mx-auto text-center mt-5">les dernières actualités</h2>
+        <h2 class="col-sm-12 col-10 mx-auto text-center mt-5 mb-lg-5 mb-2">les dernières actualités</h2>
       </div>
       <div class="col-xl-10 col-lg-12 col-md-7 col-sm-9 ml-lg-8 mt-lg-3 mx-auto mt-5 text-lg-left text-center">
-          <div id="carouselExampleCaptions" class="carousel slide mt-5" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-              <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="card-container d-flex justify-content-lg-between justify-content-center flex-wrap">
-                <?php
-                while ($lastPark = $showLastSkatepark->fetch())
-                {
-                ?>
-                <div class="card card-style mb-5" id="HomePageCard">
-                  <div id="HomeSkateImg">
-                    <a href="index.php?action=viewSkatepark&amp;id=<?= $skatepark['id'] ?>"><img src="assets/<?= $lastPark['image'] ?>" alt="..."></a>
-                  </div>
-                      <div class="card-body">
-                      <p class="card-text date-card"><strong><?= $lastPark['ville'] ?></strong> | <?= $lastPark['creation_date_fr'] ?></p>
-                      <p class="card-description col-12 col-lg-11"><?=substr($lastPark['contenu'], 0, 50).'...';?></p>
-                    </div>
-                  </div>
-                  <?php 
-                  }
-                  $showLastSkatepark->closeCursor();
-                  ?>
-                </div>
-              </div>
-
+        <div class="card-container d-flex justify-content-lg-between justify-content-center flex-wrap">
+          <?php
+          while ($lastPark = $showLastSkatepark->fetch())
+          {
+          ?>
+          <div class="card card-style mb-5" id="HomePageCard">
+            <div id="HomeSkateImg">
+              <a href="index.php?action=viewSkatepark&amp;id=<?= $skatepark['id'] ?>"><img src="assets/<?= $lastPark['image'] ?>" alt="..."></a>
+            </div>
+            <div class="card-body">
+              <p class="card-text date-card"><strong><?= $lastPark['ville'] ?></strong> | <?= $lastPark['creation_date_fr'] ?></p>
+              <p class="card-description col-12 col-lg-11"><?=substr($lastPark['contenu'], 0, 50).'...';?></p>
             </div>
           </div>
+          <?php 
+          }
+          $showLastSkatepark->closeCursor();
+          ?>
+        </div>
       </div>
     </div>
   </section>

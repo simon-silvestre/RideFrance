@@ -371,7 +371,7 @@ section#homeIcon
     font-size: 20px;
     color: #eee;
     padding: 2px;
-    background-color: #5CAFED;
+    background-color: #222;
 }
 
 #CommentForm h2
@@ -517,12 +517,27 @@ section#homeIcon
 {
     width: 150px;
     height: 150px;
-    background-color: rgb(128, 128, 128);
+    background-color: #fff;
+    background-size: cover;
+    background-position: center;
     margin-left: 12%;
     margin-bottom: 5.2rem;
     border: 2px solid #343a40;
     border-radius: 50%;
-    cursor: pointer;
+    transition-duration: 500ms;
+}
+
+#UserImageminiature
+{
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    background-size: cover;
+    background-position: center;
+    margin-left: 12%;
+    margin-bottom: 5.2rem;
+    border: 2px solid #343a40;
+    border-radius: 50%;
     transition-duration: 500ms;
 }
 
@@ -540,7 +555,7 @@ section#homeIcon
 
 #ProfilFormBtn
 {
-    background-color: #5CAFED;
+    background-color: #222;
     border: none;
     color: #fff;
     opacity: 1;
@@ -553,8 +568,8 @@ section#homeIcon
 
 #ProfilCommentaire .card-body, #SkateparkCommentaire .card-body
 {
-    border: 2px solid #5CAFED!important;
-    background-color: #f0f4f7;
+    border: none!important;
+    background-color: #dfe5e6;
 }
 
 
@@ -562,8 +577,7 @@ section#homeIcon
 
 thead#adminTab
 {
-    background-color: #222;
-    color: white;
+    background-color: #dbd8d8;
 }
 
 #adminTabRow
@@ -604,6 +618,15 @@ thead#adminTab
 {
     margin-top: 12vh;
 }
+
+
+/**************************  CommentaireManager  **************************/
+
+#containerCommentaireManager
+{
+    margin-top: 8vh;
+}
+
 
 /************************** MediaQueries **************************/
 
@@ -812,6 +835,11 @@ thead#adminTab
     .icon_container 
     {
         width: 25%!important;
+    }
+
+    .iconCommentaireManager
+    {
+        width: 32%!important;
     }
 
     /**************** LoginPage ****************/

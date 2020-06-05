@@ -19,7 +19,7 @@ if (isset($_SESSION['message'])) {
     </div>
     <div class="row">
         <div class="col-12 bg-dark d-flex align-items-center" id="ProfiBar">
-            <div id="UserImage"><img src="<?= $_SESSION["img"]; ?>" alt=""></div>
+            <div id="UserImage" style="background-image: url(assets/<?= $_SESSION["img"]; ?>);"></div>
             <p class="text-white ml-5">
                 Bienvenue sur votre profil
                 <span id="profilPseudo">
@@ -99,26 +99,36 @@ if (isset($_SESSION['message'])) {
             <p class="text-center mb-5" id="profilTitle">Mes commentaires</p>
 
             <?php
-            while ($comments = $Ucommentaires->fetch())
-            {
-            if($comments['signaler'] == 0){?>
-            <div class="col-12 ml-lg-4 ml-0" id="ProfilCommentaire">
-                <div class="card-body card mb-3">
-                    <p class="ml-4 ml-lg-0"><strong><?= $comments['User_pseudo'] ?></strong> le <?= $comments['comment_date_fr'] ?></p>
+        while ($comments = $Ucommentaires->fetch())
+        {
+        if($comments['signaler'] == 0){?>
+        <div class="row mr-5 ml-5" id="SkateparkCommentaire">
+            <div class="col card-body card mb-3">
+                <p class="ml-4 ml-lg-0"><strong><?= $comments['User_pseudo'] ?></strong> le <?= $comments['comment_date_fr'] ?></p>
+                <p><div class="ml-3 ml-lg-0 p-lg-0 mt-1 rateYo-<?= $comments['Notes'] ?>"></div></p>
+
+                <script>
+                $(function () {
+                    $(".rateYo-<?= $comments['Notes'] ?>").rateYo({
+                        starWidth: "15px",
+                        readOnly: true,
+                        rating: <?= $comments['Notes'] ?>
+                    });
+                });
+                </script>
+                <form class="form-inline">
                     <p class="mt-2 ml-4 ml-lg-0"><?= $comments['contenu'] ?></p>
-                    <form class="form-inline">
-                        <a class="btn btn-danger ml-auto mr-4 mr-lg-0" href="index.php?action=deleteSkatepark&amp;id=<?= $listSkatePark['id'] ?>"><i class="far fa-trash-alt"></i></a>
-                    </form>
-                </div>
+                    <a class="btn btn-danger ml-auto mr-4 mr-lg-0" href="index.php?action=deleteCommentaire&amp;id=<?= $comments['id'] ?>"><i class="far fa-trash-alt"></i></a>
+                </form>
             </div>
-            <?php }
-            }
-            $Ucommentaires->closeCursor();
-            ?>
+        </div>
+        <?php }
+        }
+        $Ucommentaires->closeCursor();
+        ?>
         </div>
     </div>
 </div>
-
 
 <?php $content = ob_get_clean() ?>
 

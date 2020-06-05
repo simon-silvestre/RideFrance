@@ -41,7 +41,7 @@
                 <div class="dropdown-menu bg-dark navBlack" aria-labelled="navbarDropdown">
                   <a class="dropdown-item" href="index.php?action=Profil">PROFIL</a> 
                   <a class="dropdown-item" href="index.php?action=SkateManager">SKATEPARKS MANAGER</a>
-                  <a class="dropdown-item" href="CommentaireManager">COMMENTAIRES MANAGER</a>
+                  <a class="dropdown-item" href="index.php?action=CommentManager">COMMENTAIRES MANAGER</a>
                   <a class="dropdown-item" href="index.php?action=AllUsers">UTILISATEURS MANAGER</a>
                 </div>
               </li>

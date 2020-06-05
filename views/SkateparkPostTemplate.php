@@ -84,6 +84,10 @@ if (isset($_SESSION['message'])) {
         if($comments['signaler'] == 0){?>
         <div class="row mr-5 ml-5" id="SkateparkCommentaire">
             <div class="col card-body card mb-3">
+                <div>
+
+                </div> 
+                <div>
                 <p class="ml-4 ml-lg-0"><strong><?= $comments['User_pseudo'] ?></strong> le <?= $comments['comment_date_fr'] ?></p>
                 <p><div class="ml-3 ml-lg-0 p-lg-0 mt-1 rateYo-<?= $comments['Notes'] ?>"></div></p>
 
@@ -100,6 +104,7 @@ if (isset($_SESSION['message'])) {
                     <p class="mt-2 ml-4 ml-lg-0"><?= $comments['contenu'] ?></p>
                     <a class="btn btn-danger ml-auto mr-4 mr-lg-0 " href="index.php?action=signalerCommentaire&amp;id=<?= $comments['id'] ?>&amp;postid=<?= $skateparkPage['id'] ?>"><i class="fas fa-exclamation"></i></a>
                 </form>
+            </div>
             </div>
         </div>
         <?php }

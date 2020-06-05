@@ -16,7 +16,7 @@ class CommentManager extends Config
     public function showAllComments()
     {
         $db = $this->dbConnect();
-        $SkateParkComments = $db->query('SELECT id, post_id, User_pseudo, Notes, contenu, signaler DATE_FORMAT(comment_date, \'%d/%M/%Y\') AS comment_date_fr FROM Commentaires ORDER BY comment_date');
+        $SkateParkComments = $db->query('SELECT id, post_id, User_pseudo, Notes, contenu, signaler, DATE_FORMAT(comment_date, \'%d/%M/%Y\') AS comment_date_fr FROM Commentaires ORDER BY comment_date DESC');
 
         return $SkateParkComments;
     }
@@ -34,6 +34,25 @@ class CommentManager extends Config
     {
         $db = $this->dbConnect();
         $signalerCom = $db->prepare('UPDATE Commentaires SET signaler = 1  WHERE id = ?');
+        $signalerCom->execute(array($id));
+
+        return $signalerCom;
+    }
+    
+
+    public function deleteCommentaire($id)
+    {
+        $db = $this->dbConnect();
+        $delCommentaire = $db->prepare("DELETE FROM commentaires WHERE id= ?");
+        $delCommentaire->execute(array($id));
+
+        return $delCommentaire;
+    }
+
+    public function ApprouverCommentaires($id)
+    {
+        $db = $this->dbConnect();
+        $signalerCom = $db->prepare('UPDATE Commentaires SET signaler = 0  WHERE id = ?');
         $signalerCom->execute(array($id));
 
         return $signalerCom;

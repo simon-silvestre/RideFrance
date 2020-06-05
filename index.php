@@ -115,6 +115,15 @@ if (isset($_GET['action'])) {
     else if ($_GET['action'] == 'changeUser') {
         $ControllerbackEnd->changeUser($_GET['id']);
     }
+    else if ($_GET['action'] == 'deleteCommentaire'){
+        $ControllerbackEnd->deleteCommentaire($_GET['id']);
+    }
+    else if ($_GET['action'] == 'CommentManager'){
+        $ControllerbackEnd->ShowCommentaireManager();
+    }
+    else if ($_GET['action'] == 'approuverComment'){
+        $ControllerbackEnd->ApprouverComment($_GET['id']);
+    }
 } 
 else {
     $ControllerfrontEnd->viewHomePage();

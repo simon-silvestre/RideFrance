@@ -14,7 +14,7 @@ if (isset($_SESSION['message'])) {
 </div>
 
 <div class="container">
-    <table class="table mt-5">
+    <table class="table mt-5 border">
     <thead id="adminTab">
         <tr class="center_form">
         <th scope="col">Pseudo</th>

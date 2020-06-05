@@ -67,16 +67,6 @@ class BackEnd
         header('Location: index.php?action=Accueil');
     }
 
-    private function storageSession($nom, $prenom, $email, $pseudo, $mdp = null, $img = null)
-    {
-        $_SESSION['nom'] = $nom;
-        $_SESSION['prenom'] = $prenom;
-        $_SESSION['email'] = $email;
-        $_SESSION['pseudo'] = $pseudo;
-        $_SESSION['mdp'] = $mdp;
-        $_SESSION['img'] = $img;
-    }
-
     function EditProfilInfos($id, $nom, $prenom, $email, $pseudo, $mdp, $img)
     {
         $userManager = new \Models\UserManager();
@@ -98,7 +88,10 @@ class BackEnd
                 $_SESSION['message'] = "Vos informations ont été modifiés avec succes";
                 $_SESSION['msg_type'] = "info";
 
-                $this->storageSession($nom, $prenom, $email, $pseudo);
+                $_SESSION['nom'] = $nom;
+                $_SESSION['prenom'] = $prenom;
+                $_SESSION['email'] = $email;
+                $_SESSION['pseudo'] = $pseudo;
             }
         }
         else if($mdp === "") {
@@ -116,7 +109,11 @@ class BackEnd
                 $_SESSION['message'] = "Vos informations ont été modifiés avec succes";
                 $_SESSION['msg_type'] = "info";
 
-                $this->storageSession($nom, $prenom, $email, $pseudo, $img);
+                $_SESSION['nom'] = $nom;
+                $_SESSION['prenom'] = $prenom;
+                $_SESSION['email'] = $email;
+                $_SESSION['pseudo'] = $pseudo;
+                $_SESSION['img'] = $img;
             }
         }
         else if($img === "") {
@@ -136,7 +133,11 @@ class BackEnd
                 $_SESSION['message'] = "Vos informations ont été modifiés avec succes";
                 $_SESSION['msg_type'] = "info";
 
-                $this->storageSession($nom, $prenom, $email, $pseudo, $mdp);
+                $_SESSION['nom'] = $nom;
+                $_SESSION['prenom'] = $prenom;
+                $_SESSION['email'] = $email;
+                $_SESSION['pseudo'] = $pseudo;
+                $_SESSION['mdp'] = $mdp;
             }
         }
         else
@@ -153,7 +154,12 @@ class BackEnd
                 $_SESSION['message'] = "Vos informations ont été modifiés avec succes";
                 $_SESSION['msg_type'] = "info";
 
-                $this->storageSession($nom, $prenom, $email, $pseudo, $mdp, $img);
+                $_SESSION['nom'] = $nom;
+                $_SESSION['prenom'] = $prenom;
+                $_SESSION['email'] = $email;
+                $_SESSION['pseudo'] = $pseudo;
+                $_SESSION['mdp'] = $mdp;
+                $_SESSION['img'] = $img;
             }
         }
         $update = false;
@@ -273,6 +279,36 @@ class BackEnd
 
         header('Location: index.php?action=AllUsers');
         require('views/UtilisateursManager.php');
+    }
+
+    function deleteCommentaire($id)
+    {
+        $commentManager = new \Models\CommentManager();
+        $delCommentaire = $commentManager->deleteCommentaire($id);
+
+        $_SESSION['message'] = "Le commentaire a été supprimé avec succès";
+        $_SESSION['msg_type'] = "danger";
+        
+        header('Location: index.php?action=Profil');
+    }
+
+    function ShowCommentaireManager()
+    {
+        $commentManager = new \Models\CommentManager();
+        $showAllcomment = $commentManager->showAllComments();
+
+        require('views/CommentairesManager.php');
+    }
+
+    function ApprouverComment($id)
+    {
+        $commentManager = new \Models\CommentManager();
+        $approuverCommentaire = $commentManager->ApprouverCommentaires($id);
+
+        $_SESSION['message'] = "Le commentaire a été approuvé avec succès";
+        $_SESSION['msg_type'] = "info";
+
+        header('Location: index.php?action=CommentManager');
     }
 
 }

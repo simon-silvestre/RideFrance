@@ -35,7 +35,7 @@ class UserManager extends Config
     public function UserCommentaire($pseudo)
     {
         $db = $this->dbConnect();
-        $Ucomment = $db->prepare('SELECT id, post_id, User_pseudo, contenu, signaler, DATE_FORMAT(comment_date, \'%d/%M/%Y\') AS comment_date_fr FROM Commentaires WHERE User_pseudo = ?');
+        $Ucomment = $db->prepare('SELECT id, post_id, User_pseudo, Notes, contenu, signaler, DATE_FORMAT(comment_date, \'%d/%M/%Y\') AS comment_date_fr FROM Commentaires WHERE User_pseudo = ?');
         $Ucomment->execute(array($pseudo));
 
         return $Ucomment;

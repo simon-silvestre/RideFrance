@@ -85,7 +85,7 @@ class FrontEnd
         $PostCommentaire = $commentManager->signalerCommentaire($id);
 
         $_SESSION['message'] = "Le commentaire a été signalé avec succès";
-        $_SESSION['msg_type'] = "danger";
+        $_SESSION['msg_type'] = "success";
 
         header('Location: index.php?action=viewSkatepark&id=' . $post_id);
     }
