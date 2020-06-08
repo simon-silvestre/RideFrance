@@ -117,7 +117,7 @@
           ?>
           <div class="card card-style mb-5" id="HomePageCard">
             <div id="HomeSkateImg">
-              <a href="index.php?action=viewSkatepark&amp;id=<?= $skatepark['id'] ?>"><img src="assets/<?= $lastPark['image'] ?>" alt="..."></a>
+              <a href="index.php?action=viewSkatepark&amp;id=<?= $skatepark['id'] ?>"><img src="assets/MiniatureSkateParks/<?= $lastPark['image'] ?>" alt="..."></a>
             </div>
             <div class="card-body">
               <p class="card-text date-card"><strong><?= $lastPark['ville'] ?></strong> | <?= $lastPark['creation_date_fr'] ?></p>

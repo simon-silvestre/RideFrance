@@ -83,11 +83,9 @@ if (isset($_SESSION['message'])) {
         {
         if($comments['signaler'] == 0){?>
         <div class="row mr-5 ml-5" id="SkateparkCommentaire">
-            <div class="col card-body card mb-3">
-                <div>
-
-                </div> 
-                <div>
+            <div class="d-flex flex-row card-body card mb-3">
+                <div id="UserCommentImage" style="background-image: url(assets/ProfilImg/<?= $showImgUserInfos["imageProfil"]; ?>);"></div>
+                <div class="ml-4">
                 <p class="ml-4 ml-lg-0"><strong><?= $comments['User_pseudo'] ?></strong> le <?= $comments['comment_date_fr'] ?></p>
                 <p><div class="ml-3 ml-lg-0 p-lg-0 mt-1 rateYo-<?= $comments['Notes'] ?>"></div></p>
 

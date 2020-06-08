@@ -49,6 +49,16 @@ class UserManager extends Config
         return $Users;
     }
 
+    public function GetUser($User_Pseudo)
+    {
+        $db = $this->dbConnect();
+        $Users = $db->prepare('SELECT id, nom, prenom, email, pseudo, imageProfil, admin FROM Users WHERE pseudo = ?');
+        $Users->execute(array($User_Pseudo));
+        $resultUsers = $Users->fetch();
+
+        return $resultUsers;
+    }
+
     public function deleteUser($id)
     {
         $db = $this->dbConnect();

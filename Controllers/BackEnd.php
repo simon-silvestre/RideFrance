@@ -218,8 +218,8 @@ class BackEnd
     {
         $extensionUpload = strtolower(substr(strrchr($image, '.'), 1));
         $extensionsValides = array('jpg', 'jpeg', 'png');
-        $chemin = "assets/MiniatureSkateParks/".$ville.'.'.$extensionUpload;
-        $image = $ville.'.'.$extensionUpload;
+        $chemin = "assets/MiniatureSkateParks/".$adresse.'.'.$extensionUpload;
+        $image = $adresse.'.'.$extensionUpload;
 
         if(in_array($extensionUpload, $extensionsValides))
         {
@@ -261,14 +261,14 @@ class BackEnd
     {
         $extensionUpload = strtolower(substr(strrchr($image, '.'), 1));
         $extensionsValides = array('jpg', 'jpeg', 'png');
-        $chemin = "assets/MiniatureSkateParks/".$ville.'.'.$extensionUpload;
+        $chemin = "assets/MiniatureSkateParks/".$adresse.'.'.$extensionUpload;
         $postManager = new \Models\PostManager();
         
         if($image === "") 
         {
             $getSkatparkInfos = $postManager->GetSkatePark($id);
             $image = $getSkatparkInfos['image'];
-
+            
             $updateSkatepark = $postManager->updateSkatepark($id, $region, $ville, $contenu, $image, $adresse);
     
             if ($updateSkatepark === false) {
@@ -288,7 +288,7 @@ class BackEnd
                 $resultat = move_uploaded_file($_FILES['image']['tmp_name'], $chemin);
                 if($resultat)
                 {
-                    $image = $ville.'.'.$extensionUpload;
+                    $image = $adresse.'.'.$extensionUpload;
                     $updateSkatepark = $postManager->updateSkatepark($id, $region, $ville, $contenu, $image, $adresse);
         
                     if ($updateSkatepark === false) {
@@ -362,13 +362,18 @@ class BackEnd
         $_SESSION['message'] = "Le commentaire a été supprimé avec succès";
         $_SESSION['msg_type'] = "danger";
         
-        header('Location: index.php?action=Profil');
+        header('Location: index.php?action=CommentManager');
     }
 
     function ShowCommentaireManager()
     {
         $commentManager = new \Models\CommentManager();
+        $usersManager = new \Models\UserManager();
         $showAllcomment = $commentManager->showAllComments();
+
+        if($CommentSkatepark = $showAllcomment->fetch()){
+            $showImgUserInfos = $usersManager->GetUser($CommentSkatepark['User_pseudo']);
+        }
 
         require('views/CommentairesManager.php');
     }

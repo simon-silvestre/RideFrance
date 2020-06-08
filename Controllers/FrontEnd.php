@@ -56,9 +56,11 @@ class FrontEnd
     {
         $postManager = new \Models\PostManager();
         $commentManager = new \Models\CommentManager();
+        $usersManager = new \Models\UserManager();
 
         $skateparkPage = $postManager->GetSkatePark($postId);
         $showComments = $commentManager->showComments($postId);
+
         $notesMoyenne = $commentManager->getAvgRating($postId);
 
         require('views/SkateparkPostTemplate.php');
