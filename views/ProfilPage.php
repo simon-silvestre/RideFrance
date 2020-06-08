@@ -19,7 +19,7 @@ if (isset($_SESSION['message'])) {
     </div>
     <div class="row">
         <div class="col-12 bg-dark d-flex align-items-center" id="ProfiBar">
-            <div id="UserImage" style="background-image: url(assets/<?= $_SESSION["img"]; ?>);"></div>
+            <div id="UserImage" style="background-image: url(assets/ProfilImg/<?= $_SESSION["img"]; ?>);"></div>
             <p class="text-white ml-5">
                 Bienvenue sur votre profil
                 <span id="profilPseudo">
@@ -73,7 +73,7 @@ if (isset($_SESSION['message'])) {
             <?php } else if($update == true) { ?>
 
             <p class="text-center" id="profilTitle">Mes informations</p>
-            <form action="index.php?action=saveProfil" method="post" class=" mt-5 mx-auto profil_Form" id="profilInfosContainer">
+            <form action="index.php?action=saveProfil" method="post" enctype="multipart/form-data" class=" mt-5 mx-auto profil_Form" id="profilInfosContainer">
             <input type="hidden" name="id" value="<?=  $_SESSION['id']; ?>">
                 <div class="form-group d-flex justify-content-between mb-4">
                     <input type="text" class="form-control col-5" name="nom" placeholder="Nom" value="<?= $_SESSION['nom']; ?>">

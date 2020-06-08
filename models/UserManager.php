@@ -26,8 +26,8 @@ class UserManager extends Config
     public function saveProfil($id, $nom, $prenom, $email, $pseudo, $mdp, $img)
     {
         $db = $this->dbConnect();
-        $up = $db->prepare("UPDATE Users SET nom= ?, prenom = ?, email = ?, pseudo = ?, mdp = ?, imageProfil = ? WHERE id = ?");
-        $update = $up->execute(array($nom, $prenom, $email, $pseudo, $mdp, $img, $id));
+        $update = $db->prepare("UPDATE Users SET nom= ?, prenom = ?, email = ?, pseudo = ?, mdp = ?, imageProfil = ? WHERE id = ?");
+        $update->execute(array($nom, $prenom, $email, $pseudo, $mdp, $img, $id));
 
         return $update;
     }

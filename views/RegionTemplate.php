@@ -3,14 +3,6 @@
 <?php ob_start(); ?>
 
 <div class="container-fluid" id="containerSkatepark">
-    <div class="row mt-4 mr-md-4 mr-1">
-        <select class="ml-auto form-control" name="region" id='listDeTri'>
-            <option>Trier par</option>
-            <option>Date d'ajout</option>
-            <option>Notes Croissantes</option>
-            <option>Notes Decroissantes</option>
-        </select>
-    </div>
     <div class="row justify-content-around mt-3 pt-4 pt-lg-0">
 
         <?php

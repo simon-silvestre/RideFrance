@@ -49,7 +49,7 @@ if (isset($_GET['action'])) {
     }
     elseif (isset($_POST['saveProfil'])){
         if (!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email']) && !empty($_POST['pseudo'])) {
-            $ControllerbackEnd->EditProfilInfos($_POST['id'], $_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['pseudo'], $_POST['mdp'], $_POST['image']);
+            $ControllerbackEnd->EditProfilInfos($_POST['id'], $_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['pseudo'], $_POST['mdp'], $_FILES['image']['name']);
         }
         else {
             echo 'Tous les champs ne sont pas remplis !';

@@ -72,6 +72,10 @@ class BackEnd
         $userManager = new \Models\UserManager();
         $Ucommentaires = $userManager->UserCommentaire($pseudo);
 
+        $extensionUpload = strtolower(substr(strrchr($img, '.'), 1));
+        $extensionsValides = array('jpg', 'jpeg', 'png');
+        $chemin = "assets/ProfilImg/".$_SESSION['id'].'.'.$extensionUpload;
+
         if($img === "" && $mdp === "") {
             $img = $_SESSION['img'];
             $mdp = $_SESSION['mdp'];
@@ -97,23 +101,36 @@ class BackEnd
         else if($mdp === "") {
             $mdp = $_SESSION['mdp'];
 
-            $resultUpdate = $userManager->saveProfil($id, $nom, $prenom, $email, $pseudo, $mdp, $img);
-
-            if($resultUpdate == false)
+            if(in_array($extensionUpload, $extensionsValides))
             {
-                $_SESSION['message'] = "Attention ! Adresse mail ou pseudo déja utilisé";
+                $resultat = move_uploaded_file($_FILES['image']['tmp_name'], $chemin);
+                if($resultat)
+                {
+                    $img = $_SESSION['id'].'.'.$extensionUpload;
+                    $resultUpdate = $userManager->saveProfil($id, $nom, $prenom, $email, $pseudo, $mdp, $img);
+
+                    if($resultUpdate == false)
+                    {
+                        $_SESSION['message'] = "Attention ! Adresse mail ou pseudo déja utilisé";
+                        $_SESSION['msg_type'] = "danger";
+                    } 
+                    else 
+                    {
+                        $_SESSION['message'] = "Vos informations ont été modifiés avec succes";
+                        $_SESSION['msg_type'] = "info";
+        
+                        $_SESSION['nom'] = $nom;
+                        $_SESSION['prenom'] = $prenom;
+                        $_SESSION['email'] = $email;
+                        $_SESSION['pseudo'] = $pseudo;
+                        $_SESSION['img'] = $img;
+                    }
+                }
+            }
+            else
+            {
+                $_SESSION['message'] = "Attention ! Votre image doit être au format jpg, jpeg ou png";
                 $_SESSION['msg_type'] = "danger";
-            } 
-            else 
-            {
-                $_SESSION['message'] = "Vos informations ont été modifiés avec succes";
-                $_SESSION['msg_type'] = "info";
-
-                $_SESSION['nom'] = $nom;
-                $_SESSION['prenom'] = $prenom;
-                $_SESSION['email'] = $email;
-                $_SESSION['pseudo'] = $pseudo;
-                $_SESSION['img'] = $img;
             }
         }
         else if($img === "") {
@@ -142,24 +159,37 @@ class BackEnd
         }
         else
         {
-            $mdp = password_hash($mdp, PASSWORD_BCRYPT);
-            
-            $userManager = new \Models\UserManager();
-            $resultUpdate = $userManager->saveProfil($id, $nom, $prenom, $email, $pseudo, $mdp, $img);
-
-            if ($resultUpdate === false) {
-                throw new \Exception('Impossible de modifier vos informations!');
+            if(in_array($extensionUpload, $extensionsValides))
+            {
+                $resultat = move_uploaded_file($_FILES['image']['tmp_name'], $chemin);
+                if($resultat)
+                {
+                    $img = $_SESSION['id'].'.'.$extensionUpload;
+                    $mdp = password_hash($mdp, PASSWORD_BCRYPT);
+                
+                    $userManager = new \Models\UserManager();
+                    $resultUpdate = $userManager->saveProfil($id, $nom, $prenom, $email, $pseudo, $mdp, $img);
+    
+                    if ($resultUpdate === false) {
+                        throw new \Exception('Impossible de modifier vos informations!');
+                    }
+                    else {
+                        $_SESSION['message'] = "Vos informations ont été modifiés avec succes";
+                        $_SESSION['msg_type'] = "info";
+    
+                        $_SESSION['nom'] = $nom;
+                        $_SESSION['prenom'] = $prenom;
+                        $_SESSION['email'] = $email;
+                        $_SESSION['pseudo'] = $pseudo;
+                        $_SESSION['mdp'] = $mdp;
+                        $_SESSION['img'] = $img;
+                    }
+                }
             }
-            else {
-                $_SESSION['message'] = "Vos informations ont été modifiés avec succes";
-                $_SESSION['msg_type'] = "info";
-
-                $_SESSION['nom'] = $nom;
-                $_SESSION['prenom'] = $prenom;
-                $_SESSION['email'] = $email;
-                $_SESSION['pseudo'] = $pseudo;
-                $_SESSION['mdp'] = $mdp;
-                $_SESSION['img'] = $img;
+            else 
+            {
+                $_SESSION['message'] = "Attention ! Votre image doit être au format jpg, jpeg ou png";
+                $_SESSION['msg_type'] = "danger";
             }
         }
         $update = false;
