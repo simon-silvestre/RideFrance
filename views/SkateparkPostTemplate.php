@@ -28,7 +28,7 @@ if (isset($_SESSION['message'])) {
     <div class="row justify-content-between">
         <div class="col-md-5 col-10 mt-5 ml-md-5 mx-auto" id="SkateParkDescriptionLeft">
             <h2 class="text-center mb-4 ">Description</h2>
-            <img src="assets/<?= $skateparkPage['image'] ?>" alt="skatepark" class="col-12 p-0 m-0">
+            <img src="assets/MiniatureSkateParks/<?= $skateparkPage['image'] ?>" alt="skatepark" class="col-12 p-0 m-0">
             <p class="mt-5"><?= $skateparkPage['contenu'] ?></p>
         </div>
         <div class="col-md-4 mt-5 mr-5 ml-5 ml-md-0" id="SkateParkDescriptionRight">

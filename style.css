@@ -527,18 +527,11 @@ section#homeIcon
     transition-duration: 500ms;
 }
 
-#UserImageminiature
+#profilInputImage
 {
-    width: 60px;
-    height: 60px;
-    background-color: #fff;
-    background-size: cover;
-    background-position: center;
-    margin-left: 12%;
-    margin-bottom: 5.2rem;
-    border: 2px solid #343a40;
-    border-radius: 50%;
-    transition-duration: 500ms;
+    background-color: transparent!important;
+    border: none!important;
+    padding: 0!important;
 }
 
 #profilPseudo

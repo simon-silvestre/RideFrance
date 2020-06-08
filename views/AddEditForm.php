@@ -7,7 +7,7 @@
 <div class="container">
     <div class="row">
         <div class="col-11 mx-auto card-body mb-5">
-            <form action="index.php?action=update" method="post" id="AddEditForm"> 
+            <form action="index.php?action=update" method="post" enctype="multipart/form-data" id="AddEditForm"> 
             <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
             <div class="form-group">
                 <label for="region">Région</label>
@@ -46,7 +46,7 @@
                     
                     <div class="col-6 pr-0">
                         <label for="image">Image</label>
-                        <input type="file" class="form-control mr-auto" name="image">
+                        <input type="file" class="form-control mr-auto" name="image" id="profilInputImage">
                     </div>
                 </div>
                 <?php if ($update == true){?>

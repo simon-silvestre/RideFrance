@@ -87,7 +87,7 @@ if (isset($_SESSION['message'])) {
                     <input type="password" class="form-control col-5" name="mdp" placeholder="********"> 
                 </div>
                 <div class="form-group">
-                    <input type="file" class="form-control mr-auto" name="image">
+                    <input type="file" class="form-control mr-auto" name="image" id="profilInputImage">
                 </div>
                 <div class="form-group text-center">
                     <button type="submit" class="btn btn-primary col-12" name="saveProfil" id="ProfilFormBtn">Enregistrer</button>

@@ -84,11 +84,11 @@ class PostManager extends Config
         return $delChapitre;
     }
 
-    public function updateSkatepark($id, $region, $ville, $contenu, $adresse)
+    public function updateSkatepark($id, $region, $ville, $contenu, $image, $adresse)
     {
         $db = $this->dbConnect();
-        $up = $db->prepare("UPDATE skateParks SET region= ?, Ville = ?, contenu = ?, adresse = ?  WHERE id = ?");
-        $update = $up->execute(array($region, $ville, $contenu, $adresse, $id));
+        $up = $db->prepare("UPDATE skateParks SET region= ?, Ville = ?, contenu = ?, image= ?, adresse = ?  WHERE id = ?");
+        $update = $up->execute(array($region, $ville, $contenu, $image, $adresse, $id));
 
         return $update;
     }

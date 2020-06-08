@@ -92,12 +92,12 @@ if (isset($_GET['action'])) {
     }
     else if (isset($_POST['updateSkatepark'])){
         if (!empty($_POST['region']) && !empty($_POST['ville']) && !empty($_POST['contenu']) && !empty($_POST['adresse'])) {
-            $ControllerbackEnd->updateChapitre($_POST['id'], $_POST['region'], $_POST['ville'], $_POST['contenu'], $_POST['adresse']);
+            $ControllerbackEnd->updateChapitre($_POST['id'], $_POST['region'], $_POST['ville'], $_POST['contenu'], $_FILES['image']['name'], $_POST['adresse']);
         }
     }
     else if (isset($_POST['saveSkatepark'])){
-        if (!empty($_POST['region']) && !empty($_POST['ville']) && !empty($_POST['contenu']) && !empty($_POST['adresse'])) {
-            $ControllerbackEnd->addSkatepark($_POST['region'], $_POST['ville'], $_POST['contenu'], $_POST['image'], $_POST['adresse']);
+        if (!empty($_POST['region']) && !empty($_POST['ville']) && !empty($_POST['contenu']) &&  !empty($_FILES['image']['name']) &&  !empty($_POST['adresse'])) {
+            $ControllerbackEnd->addSkatepark($_POST['region'], $_POST['ville'], $_POST['contenu'], $_FILES['image']['name'], $_POST['adresse']);
         }
         else {
             echo 'Tous les champs ne sont pas remplis !';

@@ -216,17 +216,29 @@ class BackEnd
 
     function addSkatepark($region, $ville, $contenu, $image, $adresse)
     {
-        $postManager = new \Models\PostManager();
-        $skatepark = $postManager->addSkatepark($region, $ville, $contenu, $image, $adresse);
+        $extensionUpload = strtolower(substr(strrchr($image, '.'), 1));
+        $extensionsValides = array('jpg', 'jpeg', 'png');
+        $chemin = "assets/MiniatureSkateParks/".$ville.'.'.$extensionUpload;
+        $image = $ville.'.'.$extensionUpload;
 
-        if ($skatepark === false) {
-            throw new \Exception('Impossible d\'ajouter le Skatepark !');
-        }
-        else {
-            $_SESSION['message'] = "Le Skatepark a été enregistré avec succès";
-            $_SESSION['msg_type'] = "success";
-            
-            header('Location: index.php?action=SkateManager');
+        if(in_array($extensionUpload, $extensionsValides))
+        {
+            $resultat = move_uploaded_file($_FILES['image']['tmp_name'], $chemin);
+            if($resultat)
+            {
+                $postManager = new \Models\PostManager();
+                $skatepark = $postManager->addSkatepark($region, $ville, $contenu, $image, $adresse);
+
+                if ($skatepark === false) {
+                    throw new \Exception('Impossible d\'ajouter le Skatepark !');
+                }
+                else {
+                    $_SESSION['message'] = "Le Skatepark a été enregistré avec succès";
+                    $_SESSION['msg_type'] = "success";
+                        
+                    header('Location: index.php?action=SkateManager');
+                }
+            }
         }
     }
 
@@ -245,20 +257,51 @@ class BackEnd
         require('views/AddEditForm.php');
     }
 
-    function updateChapitre($id, $region, $ville, $contenu, $adresse)
+    function updateChapitre($id, $region, $ville, $contenu, $image, $adresse)
     {
+        $extensionUpload = strtolower(substr(strrchr($image, '.'), 1));
+        $extensionsValides = array('jpg', 'jpeg', 'png');
+        $chemin = "assets/MiniatureSkateParks/".$ville.'.'.$extensionUpload;
         $postManager = new \Models\PostManager();
-        $updateSkatepark = $postManager->updateSkatepark($id, $region, $ville, $contenu, $adresse);
-
         
-        if ($updateSkatepark === false) {
-            throw new \Exception('Impossible de modifier le chapitre !');
-        }
-        else {
-            $_SESSION['message'] = "Le Skatepark a été modifié avec succès";
-            $_SESSION['msg_type'] = "info";
+        if($image === "") 
+        {
+            $getSkatparkInfos = $postManager->GetSkatePark($id);
+            $image = $getSkatparkInfos['image'];
 
-            header('Location: index.php?action=SkateManager');
+            $updateSkatepark = $postManager->updateSkatepark($id, $region, $ville, $contenu, $image, $adresse);
+    
+            if ($updateSkatepark === false) {
+                throw new \Exception('Impossible de modifier le chapitre !');
+            }
+            else {
+                $_SESSION['message'] = "Le Skatepark a été modifié avec succès";
+                $_SESSION['msg_type'] = "info";
+    
+                header('Location: index.php?action=SkateManager');
+            }
+        }
+        else
+        {
+            if(in_array($extensionUpload, $extensionsValides))
+            {
+                $resultat = move_uploaded_file($_FILES['image']['tmp_name'], $chemin);
+                if($resultat)
+                {
+                    $image = $ville.'.'.$extensionUpload;
+                    $updateSkatepark = $postManager->updateSkatepark($id, $region, $ville, $contenu, $image, $adresse);
+        
+                    if ($updateSkatepark === false) {
+                        throw new \Exception('Impossible de modifier le chapitre !');
+                    }
+                    else {
+                        $_SESSION['message'] = "Le Skatepark a été modifié avec succès";
+                        $_SESSION['msg_type'] = "info";
+        
+                        header('Location: index.php?action=SkateManager');
+                    }
+                }
+            }
         }
     }
 
