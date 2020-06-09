@@ -64,7 +64,7 @@ nav#navbar_bleu
 
 #banner
 {
-    background-image: url(assets/Banniere.png);
+    background-image: url(../assets/Banniere.png);
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
@@ -527,8 +527,8 @@ section#homeIcon
 
 #UserImage
 {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
     background-color: #fff;
     background-size: cover;
     background-position: center;
@@ -612,9 +612,14 @@ thead#adminTab
 }
 
 .icon_container 
-    {
-        width: 40%!important;
-    }
+{
+    width: 40%!important;
+}
+
+.SkateparkValide
+{
+    font-size: 0.7rem!important;
+}
 
 
 /************************** AddEditForm Page **************************/
@@ -761,8 +766,8 @@ thead#adminTab
 
     #UserImage
     {
-        width: 125px!important;
-        height: 125px!important;
+        width: 115px!important;
+        height: 115px!important;
         margin-bottom: 4rem;
     }
 
@@ -791,8 +796,8 @@ thead#adminTab
 {
     #UserImage
     {
-        width: 100px!important;
-        height: 100px!important;
+        width: 90px!important;
+        height: 90px!important;
         margin-bottom: 3rem;
         margin-left: 5%;
     }
@@ -802,6 +807,11 @@ thead#adminTab
         font-size: 0.8rem!important;
         margin-left: 1.5rem!important;
     }
+
+    #AddEditForm {
+        margin-top: 5vh;
+    }
+
 }
 
 @media (max-width: 438px)
@@ -910,6 +920,24 @@ thead#adminTab
         margin-left: auto;
         margin-right: auto;
     }
+
+    /**************** AddEdit Form ****************/
+    #adresseImageForm
+    {
+        flex-direction: column!important;
+    }
+
+    #adresseImageForm div 
+    {
+        flex: 0 0 100%!important;
+        max-width: 100%!important;
+        padding: 0!important;
+    }
+
+    #adresseImageForm .col-6.pr-0
+    {
+        margin-top: 1rem!important;
+    }
 }
 
 @media screen and (max-width: 375px)
@@ -930,8 +958,8 @@ thead#adminTab
 
     #UserImage
     {
-        width: 85px!important;
-        height: 85px!important;
+        width: 80px!important;
+        height: 80px!important;
         margin-bottom: 2rem;
         margin-left: 0;
     }

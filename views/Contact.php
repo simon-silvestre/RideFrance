@@ -1,4 +1,4 @@
-<?php $title = 'SkatePark manager'; ?>
+<?php $title = 'Contact'; ?>
 
 
 
@@ -12,7 +12,6 @@
             <div class="form-group">
                 <label for="region">Région</label>
                 <select class="form-control" name="region">
-                    <option value="<?= $region; ?>"><?= $region; ?></option>
                     <option>Auvergne-Rhône-Alpes</option>
                     <option>Bourgogne-Franche-Comté</option>
                     <option>Bretagne</option>
@@ -31,29 +30,25 @@
 
                 <div class="form-group">
                     <label for="ville">Ville</label>
-                    <input type="text" class="form-control comment_input" id="InputTitle" name="ville" value="<?= $ville; ?>">
+                    <input type="text" class="form-control comment_input" id="InputTitle" name="ville">
                 </div>
                 
                 <div class="form-group">
                     <label for="content">Contenu</label>
-                    <textarea class="form-control" id="mytextarea" name="contenu" rows="5"><?= $contenu; ?></textarea>
+                    <textarea class="form-control" id="mytextarea" name="contenu" rows="5"></textarea>
                 </div>
-                <div class="form-group d-flex justify-content-between" id="adresseImageForm">
+                <div class="form-group d-flex justify-content-between">
                     <div class="col-6 pl-0">
                         <label for="Adresse">Adresse</label>
-                        <input type="text" class="form-control comment_input" id="InputTitle" name="adresse" value="<?= $adresse; ?>">
+                        <input type="text" class="form-control comment_input" id="InputTitle" name="adresse">
                     </div>
                     
                     <div class="col-6 pr-0">
                         <label for="image">Image</label>
-                        <input type="file" class="form-control" name="image" id="profilInputImage">
+                        <input type="file" class="form-control mr-auto" name="image" id="profilInputImage">
                     </div>
                 </div>
-                <?php if ($update == true){?>
-                    <button type="submit" class="btn btn-info  mt-3" name="updateSkatepark">Modifier</button>
-                <?php }else{?>
-                    <button type="submit" class="btn btn-success" name="saveSkatepark">Ajouter l'article</button>
-                <?php }?>
+                    <button type="submit" class="btn btn-success" name="sendSkatepark">Envoyer le skatepark</button>
             </form>
         </div>
     </div>

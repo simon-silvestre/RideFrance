@@ -17,7 +17,7 @@ if (isset($_SESSION['message'])) {
     <div class="row">
     <div class="ml-auto mt-4 mr-md-5 mr-3" id="favorisIcon">
             <a href="index.php?action=Favoris&amp;id=<?= $skateparkPage['id'] ?>"><i class="far fa-heart" id="coeurVide"></i></a>
-            <i class="fas fa-heart" id="coeurPlein"></i>
+            <a href="index.php?action=Favoris&amp;id=<?= $skateparkPage['id'] ?>"><i class="fas fa-heart" id="coeurPlein"></i></a>
         </div>
     </div>
     <div class="row">
@@ -111,23 +111,23 @@ if (isset($_SESSION['message'])) {
         ?>
 </div>
 
-    <script>
-    $(function () {
-        $("#rateYo").rateYo({
-            rating: 3,
-            fullStar: true,
-            onSet: function(rating, rateYoInstance){
-                $("#rating").val(rating);
-            }
-        });
-
-        $("#avgNotes").rateYo({
-            starWidth: "40px",
-            readOnly: true,
-            rating: '<?= $notesMoyenne['avg'] ?>'
-        });
+<script>
+$(function () {
+    $("#rateYo").rateYo({
+        rating: 3,
+        fullStar: true,
+         onSet: function(rating, rateYoInstance){
+            $("#rating").val(rating);
+        }
     });
-    </script>
+
+    $("#avgNotes").rateYo({
+        starWidth: "40px",
+        readOnly: true,
+        rating: '<?= $notesMoyenne['avg'] ?>'
+    });
+});
+</script>
 
 <?php $content = ob_get_clean() ?>
 

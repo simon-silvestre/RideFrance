@@ -11,7 +11,7 @@
         ?>
         <div class="d-flex align-items-center mt-5 mb-4 mb-lg-0 mx-lg-4 mx-3" id="blogPost">
             <div id="blogPostImg">
-                <a href="index.php?action=viewSkatepark&id=<?= $skatepark['id'] ?>"><img src="assets/<?= $skatepark['image'] ?>" alt="skatepark"></a>
+                <a href="index.php?action=viewSkatepark&id=<?= $skatepark['id'] ?>"><img src="assets/MiniatureSkateParks/<?= $skatepark['image'] ?>" alt="skatepark"></a>
             </div>
             <div id="postInfo">
                 <div id="blogPostDate">

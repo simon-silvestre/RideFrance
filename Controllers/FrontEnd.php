@@ -61,6 +61,9 @@ class FrontEnd
         $skateparkPage = $postManager->GetSkatePark($postId);
         $showComments = $commentManager->showComments($postId);
 
+        if($CommentSkatepark = $showComments->fetch()){
+            $showImgUserInfos = $usersManager->GetUser($CommentSkatepark['User_pseudo']);
+        }
         $notesMoyenne = $commentManager->getAvgRating($postId);
 
         require('views/SkateparkPostTemplate.php');
@@ -117,6 +120,39 @@ class FrontEnd
             $_SESSION['msg_type'] = "success";
 
             header('Location: index.php?action=viewSkatepark&id=' . $post_id);
+        }
+    }
+
+    function ShowContactForm()
+    {
+        require('views/Contact.php');
+    }
+
+    function addSkateparkUsers($region, $ville, $contenu, $image, $adresse)
+    {
+        $extensionUpload = strtolower(substr(strrchr($image, '.'), 1));
+        $extensionsValides = array('jpg', 'jpeg', 'png');
+        $chemin = "assets/MiniatureSkateParks/".$adresse.'.'.$extensionUpload;
+        $image = $adresse.'.'.$extensionUpload;
+
+        if(in_array($extensionUpload, $extensionsValides))
+        {
+            $resultat = move_uploaded_file($_FILES['image']['tmp_name'], $chemin);
+            if($resultat)
+            {
+                $postManager = new \Models\PostManager();
+                $SkateparkUsers = $postManager->UserSkatepark($region, $ville, $contenu, $image, $adresse);
+                
+                if ($SkateparkUsers === false) {
+                    throw new \Exception('Impossible d\'ajouter le Skatepark !');
+                }
+                else {
+                    $_SESSION['message'] = "Le Skatepark a été envoyé avec succès";
+                    $_SESSION['msg_type'] = "success";
+                        
+                    header('Location: index.php?action=Accueil');
+                }
+            }
         }
     }
     

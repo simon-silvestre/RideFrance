@@ -81,6 +81,9 @@ if (isset($_GET['action'])) {
     else if ($_GET['action'] == 'SkateManager') {
         $ControllerbackEnd->ShowSkateParkManager();
     }
+    else if ($_GET['action'] == 'valideSkatepark') {
+        $ControllerbackEnd->validateSkatepark($_GET['id']);
+    }
     else if ($_GET['action'] == 'deleteSkatepark') {
         $ControllerbackEnd->supprimerSkatepark($_GET['id']);
     }
@@ -124,6 +127,17 @@ if (isset($_GET['action'])) {
     else if ($_GET['action'] == 'approuverComment'){
         $ControllerbackEnd->ApprouverComment($_GET['id']);
     }
+    else if ($_GET['action'] == 'Contact'){
+        $ControllerfrontEnd->ShowContactForm();
+    }
+    else if (isset($_POST['sendSkatepark'])){
+        if (!empty($_POST['region']) && !empty($_POST['ville']) && !empty($_POST['contenu']) &&  !empty($_FILES['image']['name']) &&  !empty($_POST['adresse'])) {
+            $ControllerfrontEnd->addSkateparkUsers($_POST['region'], $_POST['ville'], $_POST['contenu'], $_FILES['image']['name'], $_POST['adresse']);
+        }
+        else {
+            echo 'Tous les champs ne sont pas remplis !';
+        }
+    } 
 } 
 else {
     $ControllerfrontEnd->viewHomePage();

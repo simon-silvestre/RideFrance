@@ -26,9 +26,8 @@ if (isset($_SESSION['message'])) {
 
     <tbody id="adminTabRow">
         <?php
-        while ($listSkatePark = $skatepark->fetch())
-        {
-        ?>
+        while ($listSkatePark = $skatepark->fetch()){ ?>
+        <?php if($listSkatePark['User'] == 0){?>
          <tr class="center_form">
             <td><?= $listSkatePark['ville']?></td>
             <td class="text-sm-center"><?= $listSkatePark['region']?></td>
@@ -39,6 +38,18 @@ if (isset($_SESSION['message'])) {
                 
             </td>
         </tr>
+        <?php } else if($listSkatePark['User'] == 1){ ?>
+         <tr class="center_form">
+            <td><?= $listSkatePark['ville']?> <p class="text-info SkateparkValide">Non approuvé</p></td>
+            <td class="text-sm-center"><?= $listSkatePark['region']?></td>
+            <td class="text-center icon_container">
+                <a class="btn btn-success icon_btn" href="index.php?action=valideSkatepark&amp;id=<?= $listSkatePark['id'] ?>"><i class="far fa-thumbs-up"></i></i></a>
+                <a class="btn btn-warning icon_btn" href="index.php?action=viewSkatepark&amp;id=<?= $listSkatePark['id'] ?>"><i class="far fa-eye"></i></a>
+                <a class="btn btn-info icon_btn" href="index.php?action=editSkatepark&amp;id=<?= $listSkatePark['id'] ?>"><i class="far fa-edit"></i></a>
+                <a class="btn btn-danger" href="index.php?action=deleteSkatepark&amp;id=<?= $listSkatePark['id'] ?>"><i class="far fa-trash-alt"></i></a>
+            </td>
+        </tr>
+        <?php } ?>
         <?php 
         }
         $skatepark->closeCursor();
@@ -48,6 +59,7 @@ if (isset($_SESSION['message'])) {
 
     <a class="btn mb-5" href="index.php?action=addSkatepark" id="addSkateParkBtn">Ajouter un SkatePark</i></a>
 </div>
+
 
 
 <?php $content = ob_get_clean() ?>

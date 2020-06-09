@@ -304,6 +304,16 @@ class BackEnd
             }
         }
     }
+    function validateSkatepark($id)
+    {
+        $postManager = new \Models\PostManager();
+        $valideSkatepark = $postManager->valideSkatepark($id);
+
+        $_SESSION['message'] = "Le Skatepark a été approuvé";
+        $_SESSION['msg_type'] = "info";
+        
+        header('Location: index.php?action=SkateManager');
+    }
 
     function supprimerSkatepark($id)
     {
