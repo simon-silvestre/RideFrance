@@ -381,10 +381,6 @@ class BackEnd
         $usersManager = new \Models\UserManager();
         $showAllcomment = $commentManager->showAllComments();
 
-        if($CommentSkatepark = $showAllcomment->fetch()){
-            $showImgUserInfos = $usersManager->GetUser($CommentSkatepark['User_pseudo']);
-        }
-
         require('views/CommentairesManager.php');
     }
 

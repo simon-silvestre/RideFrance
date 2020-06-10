@@ -20,7 +20,7 @@ if (isset($_SESSION['message'])) {
         <div class="row mr-5 ml-5" id="SkateparkCommentaire">
             <div class="d-flex flex-row card-body card mb-3">
                 <div class="ml-3 ml-lg-0">
-                    <div id="UserCommentImage" style="background-image: url(assets/ProfilImg/<?= $showImgUserInfos["imageProfil"]; ?>);"></div>
+                    <div id="UserCommentImage" style="background-image: url(assets/ProfilImg/<?= $comments["imageProfil"]; ?>);"></div>
                 </div>
                 <div class="ml-2 col-lg-11">
                 <p class="ml-4 ml-lg-0"><strong><?= $comments['User_pseudo'] ?></strong> le <?= $comments['comment_date_fr'] ?></p>
@@ -49,7 +49,7 @@ if (isset($_SESSION['message'])) {
         <div class="row mr-5 ml-5" id="SkateparkCommentaire">
             <div class="d-flex flex-row card-body card mb-3">
                 <div class="ml-3 ml-lg-0">
-                    <div id="UserCommentImage" style="background-image: url(assets/ProfilImg/<?= $showImgUserInfos["imageProfil"]; ?>);"></div>
+                    <div id="UserCommentImage" style="background-image: url(assets/ProfilImg/<?= $comments["imageProfil"]; ?>);"></div>
                 </div>
                 <div class="ml-2 col-lg-11">
                 <p class="ml-4 ml-lg-0"><strong><?= $comments['User_pseudo'] ?></strong> le <?= $comments['comment_date_fr'] ?></p>
