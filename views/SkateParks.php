@@ -4,7 +4,7 @@
 
 <div class="container-fluid" id="map">
     <div class="row">
-        <div class="col-xl-5 col-lg-9 col-md-11 col-12 mx-auto" id="map_image">
+        <div class="col-xl-6 col-lg-8 col-md-10 col-12 mx-auto" id="map_image">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 612 585">
                 <g>
                     <a xlink:href="index.php?action=region&amp;region=Grand-Est">

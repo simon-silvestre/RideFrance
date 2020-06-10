@@ -150,7 +150,7 @@ class FrontEnd
                     $_SESSION['message'] = "Le Skatepark a été envoyé avec succès";
                     $_SESSION['msg_type'] = "success";
                         
-                    header('Location: index.php?action=Accueil');
+                    header('Location: index.php?action=SkateParks');
                 }
             }
         }

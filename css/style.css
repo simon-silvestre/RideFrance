@@ -214,7 +214,7 @@ section#homeIcon
 
 #map_image
 {
-    margin-top: 10vh;
+    margin-top: 8vh;
 }
 
 #map_image path
@@ -382,8 +382,7 @@ section#homeIcon
     background-size: cover;
     background-position: center;
     border: 2px solid #343a40;
-    border-radius: 50%;
-    transition-duration: 500ms; 
+    border-radius: 50%; 
 }
 
 #CommentForm h2
@@ -534,7 +533,7 @@ section#homeIcon
     background-position: center;
     margin-left: 12%;
     margin-bottom: 5.2rem;
-    border: 2px solid #343a40;
+    border: 2px solid #0f1113;
     border-radius: 50%;
     transition-duration: 500ms;
 }
@@ -812,6 +811,12 @@ thead#adminTab
         margin-top: 5vh;
     }
 
+     /**************** Skatepark Map ****************/
+    #map_image
+    {
+        margin-top: 20vh;
+    }
+
 }
 
 @media (max-width: 438px)
@@ -921,6 +926,15 @@ thead#adminTab
         margin-right: auto;
     }
 
+    .signalercomment
+    {
+        font-size: 0.8rem;
+        width: 25px!important;
+        line-height: 25px!important;
+        padding: 0;
+        margin-right: 0!important;
+    }
+
     /**************** AddEdit Form ****************/
     #adresseImageForm
     {
@@ -937,6 +951,12 @@ thead#adminTab
     #adresseImageForm .col-6.pr-0
     {
         margin-top: 1rem!important;
+    }
+
+    /**************** commentaire admin ****************/
+    #containerCommentaireManager 
+    {
+        margin-top: 3vh;
     }
 }
 
@@ -975,6 +995,19 @@ thead#adminTab
     {
         font-size: 20px;
     }
+
+    #SkateparkCommentaire
+    {
+        font-size: 0.8rem!important;
+    }
+
+    /**************** Commentaire Admin ****************/
+    #SkateParkDescriptionRight, #SkateParkDescriptionMap, #SkateparkCommentaireForm, #SkateparkCommentaire 
+    {
+        margin-left: 0rem!important;
+        margin-right: 0rem!important;
+    }
+
 }
 
 @media screen and (max-width: 325px)
@@ -985,4 +1018,5 @@ thead#adminTab
         min-width: 16rem!important;
         max-width: 16rem!important;
     }
+
 }

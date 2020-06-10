@@ -24,7 +24,7 @@ class PostManager extends Config
     public function  showLastSkatepark()
     {
         $db = $this->dbConnect();
-        $LastSkateparks = $db->query('SELECT id, region, ville, contenu, image, adresse, DATE_FORMAT(creation_date, \'%d/%M/%Y\') AS creation_date_fr FROM skateParks  WHERE = User = 0 ORDER BY creation_date  DESC LIMIT 3');
+        $LastSkateparks = $db->query('SELECT id, region, ville, contenu, image, adresse, DATE_FORMAT(creation_date, \'%d/%M/%Y\') AS creation_date_fr FROM skateParks  WHERE User = 0 ORDER BY creation_date  DESC LIMIT 3');
         
         return $LastSkateparks;
     }

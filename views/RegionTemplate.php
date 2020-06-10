@@ -2,6 +2,17 @@
 
 <?php ob_start(); ?>
 
+<?php 
+if (isset($_SESSION['message'])) { 
+?>
+
+<div class="alert alert-<?=$_SESSION['msg_type']?>">
+<?php
+    echo $_SESSION['message'];
+    unset ($_SESSION['message']);
+}?>
+</div>
+
 <div class="container-fluid" id="containerSkatepark">
     <div class="row justify-content-around mt-3 pt-4 pt-lg-0">
 
