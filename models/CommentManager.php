@@ -7,7 +7,7 @@ class CommentManager extends Config
     public function showComments($postId)
     {
         $db = $this->dbConnect();
-        $SkateParkComments = $db->prepare('SELECT id, User_pseudo, Notes, contenu, signaler, DATE_FORMAT(comment_date, \'%d/%M/%Y\') AS comment_date_fr FROM Commentaires WHERE post_id = ? ORDER BY comment_date DESC');
+        $SkateParkComments = $db->prepare('SELECT u.*, c.id, c.post_id, c.User_pseudo, c.Notes, c.contenu, c.signaler, DATE_FORMAT(c.comment_date, \'%d/%M/%Y\') AS comment_date_fr FROM commentaires c INNER JOIN Users u ON c.User_pseudo = u.pseudo WHERE c.post_id = ?');
         $SkateParkComments->execute(array($postId));
 
         return $SkateParkComments;

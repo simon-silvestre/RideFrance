@@ -60,10 +60,7 @@ class FrontEnd
 
         $skateparkPage = $postManager->GetSkatePark($postId);
         $showComments = $commentManager->showComments($postId);
-
-        if($CommentSkatepark = $showComments->fetch()){
-            $showImgUserInfos = $usersManager->GetUser($CommentSkatepark['User_pseudo']);
-        }
+        
         $notesMoyenne = $commentManager->getAvgRating($postId);
 
         require('views/SkateparkPostTemplate.php');
@@ -95,12 +92,10 @@ class FrontEnd
         header('Location: index.php?action=viewSkatepark&id=' . $post_id);
     }
 
-    function ShowFavorisPage()
+    function ShowFavorisPage($userId)
     {
         $postManager = new \Models\PostManager();
-        $Favoris = $postManager->GetFavoris();
-
-        $AllFavoris = $postManager->GetFavSkatepark($Favoris['post_id']);
+        $Favoris = $postManager->GetFavoris($userId);
 
         require('views/FavorisPage.php');
     }

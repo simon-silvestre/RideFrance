@@ -6,7 +6,7 @@
     <div class="row justify-content-around mt-3 pt-4 pt-lg-0">
 
         <?php
-        while ($skatepark = $AllFavoris->fetch())
+        while ($skatepark = $Favoris->fetch())
         {
         ?>
         <div class="d-flex align-items-center mt-5 mb-4 mb-lg-0 mx-lg-4 mx-3" id="blogPost">
@@ -30,7 +30,7 @@
         </div>
         <?php
         }
-        $AllFavoris->closeCursor();
+        $Favoris->closeCursor();
         ?>
 
     </div>

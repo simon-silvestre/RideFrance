@@ -65,7 +65,7 @@ if (isset($_GET['action'])) {
         $ControllerfrontEnd->Favoris($_GET['id'], $_SESSION['id']);
     }
     else if ($_GET['action'] == 'FavorisPage') {
-        $ControllerfrontEnd->ShowFavorisPage();
+        $ControllerfrontEnd->ShowFavorisPage($_SESSION['id']);
     }
     else if ($_GET['action'] == 'addComment') {
         if (!empty($_POST['commentaire'])) {

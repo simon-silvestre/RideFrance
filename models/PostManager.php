@@ -48,13 +48,13 @@ class PostManager extends Config
         return $Favoris;
     }
 
-    public function GetFavoris()
+    public function GetFavoris($userId)
     {
         $db = $this->dbConnect();
-        $Favoris = $db->query('SELECT post_id, user_id FROM Favoris');
-        $AllFavoris = $Favoris->fetch();
+        $Favoris = $db->prepare('SELECT s.id, s.region, s.ville, s.contenu, s.image, s.adresse, DATE_FORMAT(s.creation_date, \'%d/%M/%Y\') AS creation_date_fr, s.User, f.post_id, f.user_id FROM Favoris f INNER JOIN skateParks s ON f.post_id = s.id WHERE f.user_id = ?');
+        $Favoris->execute(array($userId));
 
-        return $AllFavoris;
+        return $Favoris;
     }
 
     public function GetFavSkatepark($post_id)
