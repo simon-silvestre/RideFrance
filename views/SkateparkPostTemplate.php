@@ -15,9 +15,9 @@ if (isset($_SESSION['message'])) {
 
 <div class="container-fluid">
     <div class="row">
-    <div class="ml-auto mt-4 mr-md-5 mr-3" id="favorisIcon">
-            <a href="index.php?action=Favoris&amp;id=<?= $skateparkPage['id'] ?>"><i class="far fa-heart" id="coeurVide"></i></a>
+        <div class="ml-auto mt-4 mr-md-5 mr-3" id="favorisIcon">
             <a href="index.php?action=Favoris&amp;id=<?= $skateparkPage['id'] ?>"><i class="fas fa-heart" id="coeurPlein"></i></a>
+            <a href="index.php?action=Favoris&amp;id=<?= $skateparkPage['id'] ?>"><i class="far fa-heart" id="coeurVide"></i></a>
         </div>
     </div>
     <div class="row">
@@ -47,7 +47,7 @@ if (isset($_SESSION['message'])) {
     <div class="row justify-content-between mb-5 mt-5">
         <div class="col mr-5 ml-5" id="SkateParkDescriptionMap">
             <h2 class="text-center mb-4 ">Localisation</h2>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2630.571690043915!2d2.348097315740805!3d48.75187797927727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67699a1b0f8d1%3A0x46c69deb7234bb63!2s7%20Petite%20Voie%20des%20Fontaines%2C%2094150%20Rungis!5e0!3m2!1sfr!2sfr!4v1590666243951!5m2!1sfr!2sfr" 
+            <iframe src="https://maps.google.com/maps?q=<?= $skateparkPage['adresse'] ?>&output=embed" 
             height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" class="col-12 p-0"></iframe>
         </div>
     </div>

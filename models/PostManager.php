@@ -57,15 +57,6 @@ class PostManager extends Config
         return $Favoris;
     }
 
-    public function GetFavSkatepark($post_id)
-    {
-        $db = $this->dbConnect();
-        $Favoris = $db->prepare('SELECT id, region, ville, contenu, image, adresse, DATE_FORMAT(creation_date, \'%d/%M/%Y\') AS creation_date_fr FROM skateParks WHERE id = ?');
-        $Favoris->execute(array($post_id));
-
-        return $Favoris;
-    }
-
     public function addSkatepark($region, $ville, $contenu, $image, $adresse)
     {
         $db = $this->dbConnect();

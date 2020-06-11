@@ -62,7 +62,7 @@ if (isset($_GET['action'])) {
         $ControllerfrontEnd->ShowSkatePark($_GET['id']);
     }
     else if ($_GET['action'] == 'Favoris') {
-        $ControllerfrontEnd->Favoris($_GET['id'], $_SESSION['id']);
+        $ControllerfrontEnd->AddFavoris($_GET['id'], $_SESSION['id']);
     }
     else if ($_GET['action'] == 'FavorisPage') {
         $ControllerfrontEnd->ShowFavorisPage($_SESSION['id']);

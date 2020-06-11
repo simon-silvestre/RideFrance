@@ -60,9 +60,8 @@ class FrontEnd
 
         $skateparkPage = $postManager->GetSkatePark($postId);
         $showComments = $commentManager->showComments($postId);
-        
         $notesMoyenne = $commentManager->getAvgRating($postId);
-
+        
         require('views/SkateparkPostTemplate.php');
     }
 
@@ -100,7 +99,7 @@ class FrontEnd
         require('views/FavorisPage.php');
     }
 
-    function Favoris($post_id, $user_id)
+    function AddFavoris($post_id, $user_id)
     {
         $postManager = new \Models\PostManager();
         $Favoris = $postManager->Favoris($post_id, $user_id);
@@ -111,9 +110,6 @@ class FrontEnd
 
             header('Location: index.php?action=viewSkatepark&id=' . $post_id);
         } else {
-            $_SESSION['message'] = "Le skatepark à bien été ajouté aux favoris";
-            $_SESSION['msg_type'] = "success";
-
             header('Location: index.php?action=viewSkatepark&id=' . $post_id);
         }
     }
