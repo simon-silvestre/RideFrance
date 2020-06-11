@@ -21,9 +21,7 @@ if (isset($_SESSION['message'])) {
         {
         ?>
         <div class="d-flex align-items-center mt-5 mb-4 mb-lg-0 mx-lg-4 mx-3" id="blogPost">
-            <div id="blogPostImg">
-                <a href="index.php?action=viewSkatepark&id=<?= $skatepark['id'] ?>"><img src="assets/MiniatureSkateParks/<?= $skatepark['image'] ?>" alt="skatepark"></a>
-            </div>
+                <a href="index.php?action=viewSkatepark&id=<?= $skatepark['id'] ?>" id="blogPostImg"><img src="assets/MiniatureSkateParks/<?= $skatepark['image'] ?>" alt="skatepark"></a>
             <div id="postInfo">
                 <div id="blogPostDate">
                     <span><?=$skatepark['creation_date_fr']?></span>

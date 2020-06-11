@@ -177,6 +177,12 @@ section#homeIcon
     width: 18rem!important;
 }
 
+#HomePageCard .card-body
+{
+    background-color: #dde4ea;
+    border-radius: 0rem 0rem 0.80rem 0.80rem;
+}
+
 #HomeSkateImg
 {
     min-width: 18rem!important;
@@ -751,7 +757,8 @@ thead#adminTab
 
     .card-body
     {
-        padding-left: 0!important;
+        padding-left: 1rem!important;
+        padding-right: 1rem!important;
     }
 
 }
@@ -972,7 +979,7 @@ thead#adminTab
     /**************** Actualités ****************/
     .card-description 
     {
-        font-size: 18px!important;
+        font-size: 15px!important;
         line-height: 28px!important;
     }
 

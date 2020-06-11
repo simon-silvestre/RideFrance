@@ -116,9 +116,7 @@
           {
           ?>
           <div class="card card-style mb-5" id="HomePageCard">
-            <div id="HomeSkateImg">
-              <a href="index.php?action=viewSkatepark&amp;id=<?= $lastPark['id'] ?>"><img src="assets/MiniatureSkateParks/<?= $lastPark['image'] ?>" alt="..."></a>
-            </div>
+              <a href="index.php?action=viewSkatepark&amp;id=<?= $lastPark['id'] ?>" id="HomeSkateImg"><img src="assets/MiniatureSkateParks/<?= $lastPark['image'] ?>" alt="..."></a>
             <div class="card-body">
               <p class="card-text date-card"><strong><?= $lastPark['ville'] ?></strong> | <?= $lastPark['creation_date_fr'] ?></p>
               <p class="card-description col-12 col-lg-11"><?=substr($lastPark['contenu'], 0, 50).'...';?></p>
